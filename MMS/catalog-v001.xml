@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="User Entered Import Resolution" name="http://ncbi.nlm.nih.gov/gap/mms/v2.1.5" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/dbGaP/dbGaPEx2.1.5.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/dat" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/designation.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/class" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/class.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/data" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/data.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/ontology.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/id" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/id.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/basic" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/basic.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/admin" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/admin.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/naming" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/naming.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/rels" uri="file:/Users/mrf7578/Projects/bioCaddie/ontologies/ISO11179/rels.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/iao/dev/ontology-metadata" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//OCRE/ontology-metadata.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/generic" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//OCRE/generic.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/study_protocol" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//OCRE/study_protocol.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/study_design" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//OCRE/study_design.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/statistics" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//OCRE/statistics.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/OCRe" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//OCRE/OCRe.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://ncbi.nlm.nih.gov/gap/mms#" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//dbGaP/dbGaPEx2.1.5.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/ontology.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/naming" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/naming.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/id" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/id.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/rels" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/rels.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/dat" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/data.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/class" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/class.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/basic" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/basic.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/admin" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/admin.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3" uri="https://raw.githubusercontent.com/crDDI/ontologies/master//ISO11179/iso11179.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
-    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/OCRe" uri="../OCRE/OCRe.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3" uri="../ISO11179/iso11179.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://ncbi.nlm.nih.gov/gap/mms#" uri="../dbGaP/dbGaPEx2.1.5.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/data" uri="../ISO11179/data.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/dat" uri="../ISO11179/designation.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/admin" uri="../ISO11179/admin.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/id" uri="../ISO11179/id.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/rels" uri="../ISO11179/rels.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/naming" uri="vnaming.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/ontology" uri="../ISO11179/ontology.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/basic" uri="../ISO11179/basic.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/class" uri="../ISO11179/class.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/generic.owl" uri="../OCRE/generic.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/statistics.owl" uri="../OCRE/statistics.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/study_design.owl" uri="../OCRE/study_design.ttl"/>
-    <uri id="User Entered Import Resolution" name="http://purl.org/net/OCRe/study_protocol.owl" uri="../OCRE/study_protocol.ttl"/>
 </catalog>
