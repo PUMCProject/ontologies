@@ -34,4 +34,11 @@ Additional changes:
 
 Note that the root module for ISO11179 is `caDSR.ttl`, which, in turn imports all of the other modules.
 
+## OCRE
+The Ontology of Clinical Research
+
+It is a bit of a challenge to convince Protege to load the sources locally rather than off of the interwebs.  We removed the ".owl" suffixes on both the namespaces and the import statements, but that didn't appear to be sufficient.  We finally just blocked access to the network when loading OCRe.ttl, which forced Protege to look locally.  The ".owl" changes have been kept for the time being...
+
+Additionally, we added  the text "OCRe " to all `rdfs:label`s in the local files and preserved the original name as `skos:prefLabel`
+
 

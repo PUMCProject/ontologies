@@ -1,0 +1,929 @@
+@prefix : <http://purl.org/net/OCRe/study_design#> .
+@prefix OCRe: <http://purl.org/net/OCRe/OCRe#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/Image> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix statistics: <http://purl.org/net/OCRe/statistics#> .
+@prefix study_protocol: <http://purl.org/net/OCRe/study_protocol#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+
+obo:IAO_0000115 a owl:AnnotationProperty .
+
+obo:IAO_0000116 a owl:AnnotationProperty .
+
+obo:IAO_0000117 a owl:AnnotationProperty .
+
+obo:IAO_0000119 a owl:AnnotationProperty .
+
+obo:IAO_0000232 a owl:AnnotationProperty .
+
+statistics:curator a owl:AnnotationProperty .
+
+statistics:definition a owl:AnnotationProperty .
+
+<http://purl.org/net/OCRe/study_design> a owl:Ontology ;
+    rdfs:comment "An ontology of study design descriptors and categorization of study design types in terms of their design descriptors."^^xsd:string .
+
+:OCRE100008 a owl:Class ;
+    rdfs:label "OCRe Open label" ;
+    obo:IAO_0000115 "Open label indicates that no blinding is in effect: the investigator and participant are aware which intervention is being used for which participant (i.e. not blinded)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    owl:disjointWith :OCRE100014,
+        :OCRE100036,
+        :OCRE100053,
+        :OCRE100064,
+        :OCRE100080,
+        :OCRE100084 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100045 [ a owl:Class ;
+                        owl:complementOf :OCRE100064 ] [ a owl:Class ;
+                        owl:complementOf :OCRE100084 ] ) ] ;
+    skos:prefLabel "Open label"^^xsd:string .
+
+:OCRE100011 a owl:Class ;
+    rdfs:label "OCRe Superiority" ;
+    obo:IAO_0000115 """Superiority is a type of comparative intent. 
+When the aim of the study is to show that an experimental (E) treatment is superior to a control (C) treatment, the RCT is called a superiority trial and the associated statistical test is a superiority test. With a significant result, one concludes in a superiority trial that E is different in effect from C, and when the observed result is in favor of E, we conclude that E is statistically, significantly better performing than C."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Bull NYU Hosp Jt Dis. 2008;66(2):150-4."^^xsd:string ;
+    rdfs:subClassOf :OCRE100072 ;
+    owl:disjointWith :OCRE100012,
+        :OCRE100076 ;
+    skos:prefLabel "Superiority"^^xsd:string .
+
+:OCRE100015 a owl:Class ;
+    rdfs:label "OCRe Case-crossover study design" ;
+    obo:IAO_0000115 """A case-crossover study is an observational study that aims to answer the question, "Was this event triggered by something unusual that happened just before?" The key feature of the design is that each case serves as its own control. The method is analogous to a crossover experiment viewed retrospectively, except that the investigator does not control when an experimental unit starts and stops being exposed to the potential trigger. Also, the exposure frequency is typically measured in only a sample of the total time when the experimental unit  was at risk of the injury or disease onset. Thus it usually resembles a case-control study more than a retrospective cohort study. 
+The simplest case-crossover design is closely analogous to a traditional matched-pair case-control design. In both designs, each case has a matched control. In a traditional matched-pair case-control study, the control is a different experimental unit  at a similar time. In the matched-pair case-crossover design, the control is the same experimental unit at a different time."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Annu Rev Public Health. 2000;21:193-221."^^xsd:string ;
+    owl:disjointWith :OCRE100018,
+        :OCRE100039,
+        :OCRE100078 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100055 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100001 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100079 ] ) ] ;
+    skos:prefLabel "Case-crossover study design"^^xsd:string .
+
+:OCRE100016 a owl:Class ;
+    rdfs:label "OCRe Phase not applicable" ;
+    obo:IAO_0000115 "The concept of phase is not applicable to trials studying certain interventions (e.g., device, procedure, behavioral)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100038 ;
+    owl:disjointWith :OCRE100066,
+        :OCRE100067,
+        :OCRE100068,
+        :OCRE100069,
+        :OCRE100070 ;
+    skos:prefLabel "Phase not applicable"^^xsd:string .
+
+:OCRE100020 a owl:Class ;
+    rdfs:label "OCRe Crossover study design" ;
+    obo:IAO_0000115 """A crossover study is an interventional study where the population is a more than a single experimental unit, in which at least two regimens of interventions are given alternatingly. Upon completion of one regimen, experimental units are switched to the other. For example, for a comparison of regimens A and B, the experimental units are randomly allocated to receive them in either the order A, B or the order B, A. 
+Regimens are assigned to and data are analyzed within more than one experimental unit at a time."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:disjointWith :OCRE100024,
+        :OCRE100027,
+        :OCRE100052 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100007 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100029 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100035 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100063 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100081 ] ) ] ;
+    skos:prefLabel "Crossover study design"^^xsd:string .
+
+:OCRE100023 a owl:Class ;
+    rdfs:label "OCRe Prospective" ;
+    obo:IAO_0000115 "A cohort study in which outcomes occurred after the start of the study."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100060 ;
+    owl:disjointWith :OCRE100087 ;
+    skos:prefLabel "Prospective"^^xsd:string .
+
+:OCRE100025 a owl:Class ;
+    rdfs:label "OCRe Stratified randomization" ;
+    obo:IAO_0000115 "Stratified randomization is restricted randomization used to ensure that equal numbers of participants with a characteristic thought to affect prognosis or response to the intervention will be allocated to each comparison group. For example, in a trial of women with breast cancer, it may be important to have similar numbers of pre-menopausal and postmenopausal women in each comparison group. Stratified randomisation could be used to allocate equal numbers of pre- and post-menopausal women to each treatment group. Stratified randomisation is performed by performing separate randomisation (often using random permuted blocks) for each strata."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100030 ;
+    skos:prefLabel "Stratified randomization"^^xsd:string .
+
+:OCRE100040 a owl:Class ;
+    rdfs:label "OCRe Block randomization" ;
+    obo:IAO_0000115 "Block randomization (or Random permuted blocks) is a restricted randomisation that ensures that, at any point in a trial, roughly equal numbers of participants have been allocated to all the comparison groups. Permuted blocks should be used in trials using stratified randomisation."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100030 ;
+    skos:prefLabel "Block randomization"^^xsd:string .
+
+:OCRE100043 a owl:Class ;
+    rdfs:label "OCRe Cluster as unit of allocation" ;
+    obo:IAO_0000115 "The unit that is assigned to the alternative regimens of interventions being investigated in a trial. In a cluster randomised trial, groups of experimental units will be assigned together to one or the other of the regimens of interventions."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100041 ;
+    owl:disjointWith :OCRE100071 ;
+    skos:prefLabel "Cluster as unit of allocation"^^xsd:string .
+
+:OCRE100065 a owl:Class ;
+    rdfs:label "OCRe Single-factor" ;
+    obo:IAO_0000115 "In a single-factor design, an intervention is compared with one or more alternatives, or a placebo."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    owl:disjointWith :OCRE100089 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100003 [ a owl:Class ;
+                        owl:complementOf :OCRE100089 ] ) ] ;
+    skos:prefLabel "Single-factor"^^xsd:string .
+
+:OCRE100074 a owl:Class ;
+    rdfs:label "OCRe Minimization" ;
+    obo:IAO_0000115 "A method of allocation used to provide comparison groups that are closely similar for several variables. The next participant is assessed with regard to several characteristics, and assigned to the treatment group that has so far had fewer such people assigned to it. It can be done with a component of randomisation, where the chance of allocation to the group with fewer similar participants is less than one. Minimisation is best performed centrally with the aid of a computer program to ensure concealment of allocation."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100030 ;
+    skos:prefLabel "Minimization"^^xsd:string .
+
+:OCRE475000 a owl:Class ;
+    rdfs:label "OCRe Allocation concealment method" ;
+    skos:prefLabel "Allocation concealment method" .
+
+:OCRE606000 a owl:Class ;
+    rdfs:label "OCRe Natural history study design" ;
+    obo:IAO_0000115 "Natural history study design is a kind of cohort study design, where the inclusion criteria consists almost entirely of having some condition (usually a new one, e.g., SARS) or being at risk of developing a condition. A natural history study collects health information in order to understand how the medical condition or disease develops and how to treat it. (Such studies are usually prospectively, but could be a historical cohort study.)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100078 ;
+    skos:prefLabel "Natural history study design" .
+
+:OCRE866187 a owl:Class ;
+    rdfs:label "OCRe Case-only study design" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf ( :OCRE100078 :OCRE629000 ) ],
+        :OCRE100056 ;
+    skos:prefLabel "Case-only study design"^^xsd:string .
+
+:OCRE900003 a owl:ObjectProperty ;
+    rdfs:label "OCRe has allocation concealment method" ;
+    skos:prefLabel "has allocation concealment method" .
+
+:OCRE900005 a owl:DatatypeProperty ;
+    rdfs:label "OCRe has matching" ;
+    obo:IAO_0000115 """[In a case-control study:] Choosing one or more controls with particular matching attributes for each case. Researchers match cases and controls according to particular variables that are thought to be important, such as age and sex.
+
+In cohort and cross-sectional studies, matching is done for analysis."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf :OCRE900002 ;
+    skos:prefLabel "has matching"^^xsd:string .
+
+:OCRE900006 a owl:DatatypeProperty ;
+    rdfs:label "OCRe has pooled data" ;
+    obo:IAO_0000115 "In a pooled data study, the analysis is performed on subject-level results collected in two or more studies, with their own protocol(s). A study can include both original (de novo) data collection and the use of data pooled from one or more other studies. This is different from meta-analysis, where summary results from different studies are combined."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    study_protocol:develop_comment "Simona: used to be a class."^^xsd:string ;
+    rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf :OCRE900002 ;
+    skos:prefLabel "has pooled data"^^xsd:string .
+
+study_protocol:develop_comment a owl:AnnotationProperty .
+
+rdfs:comment a owl:AnnotationProperty .
+
+rdfs:label a owl:AnnotationProperty .
+
+owl:Thing a owl:Class .
+
+:Non-standard_allocation_concealment_method a owl:Class ;
+    rdfs:label "OCRe Non-standard allocation concealment method" ;
+    rdfs:subClassOf :OCRE710000 ;
+    skos:prefLabel "Non-standard allocation concealment method" .
+
+:OCRE100004 a owl:Class ;
+    rdfs:label "OCRe Nested" ;
+    obo:IAO_0000115 "Cases and controls (or exposed and unexposed) are drawn from the same study cohort/sample."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100022 ;
+    owl:disjointWith :OCRE100062 ;
+    skos:prefLabel "Nested"^^xsd:string .
+
+:OCRE100006 a owl:Class ;
+    rdfs:label "OCRe Probability sampling" ;
+    obo:IAO_0000115 "Probability sampling is an exclusively random process to guarantee that each participant or population has specified chance of selection, such as simple random sampling, systematic sampling, stratified random sampling, cluster sampling, and consecutive patient sampling"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100049 ;
+    owl:disjointWith :OCRE100019 ;
+    skos:prefLabel "Probability sampling"^^xsd:string .
+
+:OCRE100009 a owl:Class ;
+    rdfs:label "OCRe Investigator assigns no intervention" ;
+    obo:IAO_0000115 "The investigator does not actively assign study experimental units to regimens of interventions."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:disjointWith :OCRE100026 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100058 [ a owl:Class ;
+                        owl:complementOf :OCRE100026 ] ) ] ;
+    skos:prefLabel "Investigator assigns no intervention"^^xsd:string .
+
+:OCRE100012 a owl:Class ;
+    rdfs:label "OCRe Equivalence" ;
+    obo:IAO_0000115 """Equivalence is a type of comparative intent. 
+An equivalence trial is designed to determine whether the response to two or more treatments differs by an amount that is clinically unimportant. This is usually demonstrated by showing that the true treatment difference is likely to lie between a lower and an upper equivalence level of clinically acceptable differences. """^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100072 ;
+    owl:disjointWith :OCRE100076 ;
+    skos:prefLabel "Equivalence"^^xsd:string .
+
+:OCRE100014 a owl:Class ;
+    rdfs:label "OCRe Outcome assessor blinded" ;
+    obo:IAO_0000115 "The outcome assessor does not know to which treatment group a particular participant belongs "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100045 ;
+    skos:prefLabel "Outcome assessor blinded"^^xsd:string .
+
+:OCRE100018 a owl:Class ;
+    rdfs:label "OCRe Case-control study design" ;
+    obo:IAO_0000115 "A case control study is an observational study that compares people with a specific disease or outcome of interest (cases) to people from the same population without that disease or outcome (controls), and which seeks to find associations between the outcome and prior exposure to particular risk factors. [Glossary of Terms in The Cochrane Collaboration]"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:disjointWith :OCRE100039,
+        :OCRE100078 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100055 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100079 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100088 ] ) ] ;
+    skos:prefLabel "Case-control study design"^^xsd:string .
+
+:OCRE100019 a owl:Class ;
+    rdfs:label "OCRe Non-probability sampling" ;
+    obo:IAO_0000115 "Non-probability sampling is any one of a variety of non random sampling processes, such as convenience sampling or invitation to volunteer"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100049 [ a owl:Class ;
+                        owl:complementOf :OCRE100006 ] ) ] ;
+    skos:prefLabel "Non-probability sampling"^^xsd:string .
+
+:OCRE100024 a owl:Class ;
+    rdfs:label "OCRe N-of-1 crossover study design" ;
+    obo:IAO_0000115 "An N-of-1 crossover study is an interventional study where the population is a single human subject and in which at least two regimens of interventions are given alternatingly. Regimens are assigned to and data are analyzed within one participant at a time."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000232 "Simona: to be reviewed"^^xsd:string ;
+    owl:disjointWith :OCRE100027,
+        :OCRE100052 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100007 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100035 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100075 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100081 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100085 ] ) ] ;
+    skos:prefLabel "N-of-1 crossover study design"^^xsd:string .
+
+:OCRE100029 a owl:Class ;
+    rdfs:label "OCRe Multiple experimental unit allocation group" ;
+    obo:IAO_0000115 "In the context of a study where the main comparison is within experimental units, investigator assigns regimen of interventions to an allocation group made up of more than one experimental unit."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100002 ;
+    owl:disjointWith :OCRE100075 ;
+    skos:prefLabel "Multiple experimental unit allocation group"^^xsd:string .
+
+:OCRE100031 a owl:Class ;
+    rdfs:label "OCRe Quantitative inquiry mode" ;
+    obo:IAO_0000115 "A quantitative research method is a deductive research process that uses statistical techniques to test a specific claim or statement about a phenomenon (a hypothesis) by collecting and analyzing data to decide whether the claim is true (i.e., accept or reject the null or alternative hypothesis)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "http://www.utexas.edu/academic/ctl/assessment/iar/research/plan/types.php"^^xsd:string ;
+    rdfs:subClassOf :OCRE100028 ;
+    owl:disjointWith :OCRE100057 ;
+    skos:prefLabel "Quantitative inquiry mode"^^xsd:string .
+
+:OCRE100032 a owl:Class ;
+    rdfs:label "OCRe Quasi-random allocation" ;
+    obo:IAO_0000115 "Quasi-random allocation is an allocation scheme that is not random, but is intended to produce similar groups when used to allocate experimental units. Quasi-random methods include: allocation by the person's date of birth, by the day of the week or month of the year, by a person's medical record number, or just allocating every alternate person. In practice, these methods of allocation are relatively easy to manipulate, introducing selection bias."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100021 ;
+    owl:disjointWith :OCRE100033,
+        :OCRE100077 ;
+    skos:prefLabel "Quasi-random allocation"^^xsd:string .
+
+:OCRE100034 a owl:Class ;
+    rdfs:label "OCRe Genetically related non-cases" ;
+    obo:IAO_0000115 "Non-cases were selected based on genetic relation"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100082 ;
+    owl:disjointWith :OCRE100086 ;
+    skos:prefLabel "Genetically related non-cases"^^xsd:string .
+
+:OCRE100036 a owl:Class ;
+    rdfs:label "OCRe Caregiver blinded" ;
+    obo:IAO_0000115 "The caregiver does not know to which treatment group a particular participant belongs "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100045 ;
+    skos:prefLabel "Caregiver blinded"^^xsd:string .
+
+:OCRE100053 a owl:Class ;
+    rdfs:label "OCRe Care provider blinded" ;
+    obo:IAO_0000115 "The care provider does not know to which treatment group a particular participant belongs"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100045 ;
+    skos:prefLabel "Care provider blinded"^^xsd:string .
+
+:OCRE100061 a owl:Class ;
+    rdfs:label "OCRe Main comparison across experimental units" ;
+    obo:IAO_0000115 "The main comparison is across study experimental units."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100073 ;
+    owl:disjointWith :OCRE100081 ;
+    skos:prefLabel "Main comparison across experimental units"^^xsd:string .
+
+:OCRE100062 a owl:Class ;
+    rdfs:label "OCRe Non-nested" ;
+    obo:IAO_0000115 """Cases and controls (or exposed and unexposed) are not drawn from the same cohort/sample.
+ [aka double cohort for cohort studies]"""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100022 [ a owl:Class ;
+                        owl:complementOf :OCRE100004 ] ) ] ;
+    skos:prefLabel "Non-nested"^^xsd:string .
+
+:OCRE100063 a owl:Class ;
+    rdfs:label "OCRe Data analyzed within multiple experimental units" ;
+    obo:IAO_0000115 "Data is analyzed within multiple study experimental units."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100046 ;
+    owl:disjointWith :OCRE100085 ;
+    skos:prefLabel "Data analyzed within multiple experimental units"^^xsd:string .
+
+:OCRE100066 a owl:Class ;
+    rdfs:label "OCRe Phase 4" ;
+    obo:IAO_0000115 "A Phase 4 study monitors FDA-approved drug to delineate additional information including the drug's risks, benefits, and optimal use. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100038 ;
+    skos:prefLabel "Phase 4"^^xsd:string .
+
+:OCRE100067 a owl:Class ;
+    rdfs:label "OCRe Phase 1" ;
+    obo:IAO_0000115 "A Phase 1 trial includes initial studies to determine the metabolism and pharmacologic actions of drugs in humans, the side effects associated with increasing doses, and to gain early evidence of effectiveness; may include healthy participants and/or patients."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100038 ;
+    skos:prefLabel "Phase 1"^^xsd:string .
+
+:OCRE100068 a owl:Class ;
+    rdfs:label "OCRe Phase 0" ;
+    obo:IAO_0000115 "A Phase 0 trial is an exploratory trial involving very limited human exposure, with no therapeutic or diagnostic intent (e.g., screening study, microdose study)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100038 ;
+    skos:prefLabel "Phase 0"^^xsd:string .
+
+:OCRE100069 a owl:Class ;
+    rdfs:label "OCRe Phase 3" ;
+    obo:IAO_0000115 "A Phase 3 trial includes expanded controlled and uncontrolled trials after preliminary evidence suggesting effectiveness of the drug has been obtained, and are intended to gather additional information to evaluate the overall benefit-risk relationship of the drug and provide an adequate basis for physician labeling."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100038 ;
+    skos:prefLabel "Phase 3"^^xsd:string .
+
+:OCRE100070 a owl:Class ;
+    rdfs:label "OCRe Phase 2" ;
+    obo:IAO_0000115 "A Phase 2 trial includes controlled clinical studies conducted to evaluate the effectiveness of the drug for a particular indication or indications in patients with the disease or condition under study and to determine the common short-term side effects and risks."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions (DRAFT). Available at  http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100038 ;
+    skos:prefLabel "Phase 2"^^xsd:string .
+
+:OCRE100071 a owl:Class ;
+    rdfs:label "OCRe Individual as unit of allocation" ;
+    obo:IAO_0000115 "The unit that is assigned to the alternative regimens of interventions being investigated in a trial. Most commonly, the unit will be an individual person. In some other trials, different parts of a person (such as the left or right eye) might be assigned to receive different regimens of interventions."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100041 ;
+    skos:prefLabel "Individual as unit of allocation"^^xsd:string .
+
+:OCRE100080 a owl:Class ;
+    rdfs:label "OCRe Statistician blinded" ;
+    obo:IAO_0000115 "The statistician does not know to which treatment group a particular participant belongs "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100045 ;
+    skos:prefLabel "Statistician blinded"^^xsd:string .
+
+:OCRE100083 a owl:Class ;
+    rdfs:label "OCRe Simple randomization" ;
+    obo:IAO_0000115 "Simple randomization is a random allocation scheme that has no restriction, i.e. a single sequence of random assignment. When the sample size is relatively large, simple randomization is expected to produce equal sized treatment groups."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "http://mahmoodsaghaei.tripod.com/Softwares/randalloc.html"^^xsd:string ;
+    rdfs:subClassOf :OCRE100033 ;
+    skos:prefLabel "Simple randomization"^^xsd:string .
+
+:OCRE100086 a owl:Class ;
+    rdfs:label "OCRe Genetically unrelated non-cases" ;
+    obo:IAO_0000115 "Non-cases were not selected based on genetic relation"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100082 [ a owl:Class ;
+                        owl:complementOf :OCRE100034 ] ) ] ;
+    skos:prefLabel "Genetically unrelated non-cases"^^xsd:string .
+
+:OCRE100087 a owl:Class ;
+    rdfs:label "OCRe Historical" ;
+    obo:IAO_0000115 "A cohort study in which outcomes occurred before the start of the study."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100060 ;
+    skos:prefLabel "Historical"^^xsd:string .
+
+:OCRE101000 a owl:Class ;
+    rdfs:label "OCRe Sequentially numbered opaque sealed envelopes" ;
+    rdfs:subClassOf :OCRE710000 ;
+    skos:prefLabel "Sequentially numbered opaque sealed envelopes"@en .
+
+:OCRE260000 a owl:Class ;
+    rdfs:label "OCRe Central randomization" ;
+    rdfs:subClassOf :OCRE710000 ;
+    skos:prefLabel "Central randomization"@en .
+
+:OCRE297000 a owl:Class ;
+    rdfs:label "OCRe Sequentially numbered drug containers" ;
+    rdfs:subClassOf :OCRE710000 ;
+    skos:prefLabel "Sequentially numbered drug containers"@en .
+
+:OCRE629000 a owl:Class ;
+    rdfs:label "OCRe Case series study design" ;
+    obo:IAO_0000115 "Case series study design is a collection of stories about cases, with narrative outcomes" ;
+    rdfs:subClassOf :OCRE100047 ;
+    skos:prefLabel "Case series study design" .
+
+:OCRE100001 a owl:Class ;
+    rdfs:label "OCRe Case and control in same experimental unit" ;
+    obo:IAO_0000115 "Each case serves as its own control"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100059 ;
+    owl:disjointWith :OCRE100088 ;
+    skos:prefLabel "Case and control in same experimental unit"^^xsd:string .
+
+:OCRE100002 a owl:Class ;
+    rdfs:label "OCRe Allocation group cardinality" ;
+    obo:IAO_0000115 "In the context of a study where the main comparison is within experimental units, investigator assigns regimen of interventions to an allocation group made up of one (single) or of more than one (multiple) experimental unit."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100048 ;
+    skos:prefLabel "Allocation group cardinality"^^xsd:string .
+
+:OCRE100003 a owl:Class ;
+    rdfs:label "OCRe Intervention assignment scheme" ;
+    obo:IAO_0000115 "The scheme used to assign regimens of interventions: single factor or factorial."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100048 ;
+    skos:prefLabel "Intervention assignment scheme"^^xsd:string .
+
+:OCRE100013 a owl:Class ;
+    rdfs:label "OCRe Experimental unit selection based on predictor variable" ;
+    obo:IAO_0000115 """In an observational study, the main variable on which the selection of experimental units is based is a predictor variable. 
+In this study, prospective inference occurs, i.e., from exposure to outcome."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE942000 ;
+    owl:disjointWith :OCRE100079,
+        :OCRE498000 ;
+    skos:prefLabel "Experimental unit selection based on predictor variable"^^xsd:string .
+
+:OCRE100022 a owl:Class ;
+    rdfs:label "OCRe Control group type" ;
+    obo:IAO_0000115 """Whether cases and controls (or exposed and unexposed) are drawn from the same study cohort/sample.
+Not applicable to case-crossover studies."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Control group type"^^xsd:string .
+
+:OCRE100027 a owl:Class ;
+    rdfs:label "OCRe Parallel group study design" ;
+    obo:IAO_0000115 "A parallel group study is an interventional study that compares across at least two allocation groups concurrently, each receiving a regimen of interventions (which can be \"no intervention\")."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000232 "Simona: to be reviewed."^^xsd:string ;
+    owl:disjointWith :OCRE100052 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100007 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100035 ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100061 ] ) ] ;
+    skos:prefLabel "Parallel group study design"^^xsd:string .
+
+:OCRE100028 a owl:Class ;
+    rdfs:label "OCRe Mode of inquiry" ;
+    obo:IAO_0000115 "Mode of inquiry refers to the research method used in a study"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Mode of inquiry"^^xsd:string .
+
+:OCRE100037 a owl:Class ;
+    rdfs:label "OCRe Single regimen" ;
+    obo:IAO_0000115 "A single regimen of intervention, which includes one or more individual interventions (treatments), is assigned to one allocation group. This means the study has no contemporaneous comparison group."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100042 ;
+    skos:prefLabel "Single regimen"^^xsd:string .
+
+:OCRE100039 a owl:Class ;
+    rdfs:label "OCRe Cross-sectional study design" ;
+    obo:IAO_0000115 "A cross-sectional study is an observational study measuring the distribution of some characteristic(s) in a population at a particular point in time. (Also called survey.)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at: http://www.cochrane.org/glossary"^^xsd:string ;
+    owl:disjointWith :OCRE100078 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100055 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE498000 ] ) ] ;
+    skos:prefLabel "Cross-sectional study design"^^xsd:string .
+
+:OCRE100041 a owl:Class ;
+    rdfs:label "OCRe Unit of allocation" ;
+    obo:IAO_0000115 "The unit that is assigned to the alternative regimens of interventions being investigated in a trial. Most commonly, the unit will be an individual person, but in a cluster randomised trial, groups of people will be assigned together to one or the other of the regimens of interventions. In some other trials, different parts of a person (such as the left or right eye) might be assigned to receive different regimens of interventions. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Unit of allocation"^^xsd:string .
+
+:OCRE100042 a owl:Class ;
+    rdfs:label "OCRe Regimen cardinality" ;
+    obo:IAO_0000115 "The number of regimens of interventions in a study. Each regimen includes one or more individual interventions (treatments) or no intervention."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000232 "Simona: to be reviewed"^^xsd:string ;
+    rdfs:subClassOf :OCRE100048 ;
+    skos:prefLabel "Regimen cardinality"^^xsd:string .
+
+:OCRE100044 a owl:Class ;
+    rdfs:label "OCRe Quantitative study design" ;
+    obo:IAO_0000115 "A quantitative study is an individual-human study whose primary mode of inquiry is quantitative."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:disjointWith :OCRE100047 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100056 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100031 ] ) ] ;
+    skos:prefLabel "Quantitative study design"^^xsd:string .
+
+:OCRE100046 a owl:Class ;
+    rdfs:label "OCRe Data analysis within experimental units" ;
+    obo:IAO_0000115 "In the context of a study where the main comparison is within experimental units, whether data is analyzed within a single study experimental unit or within multiple experimental units."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Data analysis within experimental units"^^xsd:string .
+
+:OCRE100047 a owl:Class ;
+    rdfs:label "OCRe Qualitative study design" ;
+    obo:IAO_0000115 "A qualitative study is an individual-human study whose primary mode of inquiry is qualitative."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100056 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100057 ] ) ] ;
+    skos:prefLabel "Qualitative study design"^^xsd:string .
+
+:OCRE100049 a owl:Class ;
+    rdfs:label "OCRe Sampling method" ;
+    obo:IAO_0000115 "Method of sampling in observational studies."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Sampling method"^^xsd:string .
+
+:OCRE100057 a owl:Class ;
+    rdfs:label "OCRe Qualitative inquiry mode" ;
+    obo:IAO_0000115 "A qualitative research method is an inductive research process that involves the collection and analysis of qualitative (i.e., non-numerical) data to search for patterns, themes, and holistic features. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 """http://www.utexas.edu/academic/ctl/assessment/iar/research/plan/types.php
+For other definitions, see http://www.google.com/search?hl=en&client=safari&rls=en&defl=en&q=define:Qualitative+research """^^xsd:string ;
+    rdfs:subClassOf :OCRE100028 ;
+    skos:prefLabel "Qualitative inquiry mode"^^xsd:string .
+
+:OCRE100058 a owl:Class ;
+    rdfs:label "OCRe Investigator assignment role" ;
+    obo:IAO_0000115 "The role the investigator plays in the assignment of study experimental units to one or more regimens of interventions (each including one or more interventions, or no intervention)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100048 ;
+    skos:prefLabel "Investigator assignment role"^^xsd:string .
+
+:OCRE100059 a owl:Class ;
+    rdfs:label "OCRe Comparison of experimental units with the main outcome" ;
+    obo:IAO_0000115 "In a retrospective observational study (i.e., an observational study where the main variable on which experimental units selection is based is an outcome variable), experimental units with the same outcome (cases) can be compared to themselves or to other experimental units (controls). "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Comparison of experimental units with the main outcome"^^xsd:string .
+
+:OCRE100060 a owl:Class ;
+    rdfs:label "OCRe Outcomes occurred before or after study start" ;
+    obo:IAO_0000115 "Have outcomes occurred before the study start? If yes, the cohort study is historical; if no, the cohort study is prospective."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Outcomes occurred before or after study start"^^xsd:string .
+
+:OCRE100064 a owl:Class ;
+    rdfs:label "OCRe Subject blinded" ;
+    obo:IAO_0000115 "The subject or individual participant does not know to which treatment group he or she or each experimental unit on him/her belongs."^^xsd:string,
+        "or Individual participant blinded"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100045 ;
+    skos:prefLabel "Subject blinded"^^xsd:string .
+
+:OCRE100073 a owl:Class ;
+    rdfs:label "OCRe Main comparison and experimental units" ;
+    obo:IAO_0000115 "Whether the main comparison is across or within study experimental units"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Main comparison and experimental units"^^xsd:string .
+
+:OCRE100075 a owl:Class ;
+    rdfs:label "OCRe Single experimental unit allocation group" ;
+    obo:IAO_0000115 "In the context of a study where the main comparison is within experimental units, investigator assigns regimen of interventions to an allocation group made up of a single experimental unit."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100002 ;
+    skos:prefLabel "Single experimental unit allocation group"^^xsd:string .
+
+:OCRE100076 a owl:Class ;
+    rdfs:label "OCRe Non-inferiority" ;
+    obo:IAO_0000115 "A non-inferiority trial is designed to determine whether the effect of a new treatment is not worse than a standard treatment by more than a pre-specified amount. A one-sided version of an equivalence trial. [Glossary of Terms in The Cochrane Collaboration]"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100072 ;
+    skos:prefLabel "Non-inferiority"^^xsd:string .
+
+:OCRE100077 a owl:Class ;
+    rdfs:label "OCRe Non-random allocation" ;
+    obo:IAO_0000115 "Non-random (or Deterministic) allocation is an allocation scheme that follows a non-random rule (e.g., sequential allocation)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100021 [ a owl:Class ;
+                        owl:complementOf :OCRE100032 ] [ a owl:Class ;
+                        owl:complementOf :OCRE100033 ] ) ] ;
+    skos:prefLabel "Non-random allocation"^^xsd:string .
+
+:OCRE100082 a owl:Class ;
+    rdfs:label "OCRe Relation between cases and non-cases" ;
+    obo:IAO_0000115 "Relation between cases and non-cases"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Relation between cases and non-cases"^^xsd:string .
+
+:OCRE100084 a owl:Class ;
+    rdfs:label "OCRe Investigator blinded" ;
+    obo:IAO_0000115 "The investigator does not know to which treatment group a particular participant belongs "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100045 ;
+    skos:prefLabel "Investigator blinded"^^xsd:string .
+
+:OCRE100085 a owl:Class ;
+    rdfs:label "OCRe Data analyzed within single experimental unit" ;
+    obo:IAO_0000115 "Data is analyzed within a single study experimental unit."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100046 ;
+    skos:prefLabel "Data analyzed within single experimental unit"^^xsd:string .
+
+:OCRE100088 a owl:Class ;
+    rdfs:label "OCRe Case and control not in same experimental unit" ;
+    obo:IAO_0000115 "A case does not serve as its own control"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100059 [ a owl:Class ;
+                        owl:complementOf :OCRE100001 ] ) ] ;
+    skos:prefLabel "Case and control not in same experimental unit"^^xsd:string .
+
+:OCRE100089 a owl:Class ;
+    rdfs:label "OCRe Factorial" ;
+    obo:IAO_0000115 """Factorial design is a trial design used to assess the individual contribution of treatments given in combination, as well as any interactive effect they may have... In a trial using a 2x2 factorial design, participants are allocated to one of four possible combinations... This type of study is usually carried out in circumstances where no interaction is likely. 
+
+Example: in a factorial-design study where regimens of interventions A and B are tested, the 4 possible combinations are: A, B, A and B, neither  A nor B (placebo)."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100003 ;
+    skos:prefLabel "Factorial"^^xsd:string .
+
+:OCRE900002 a owl:DatatypeProperty ;
+    rdfs:label "OCRe study design data property" ;
+    skos:prefLabel "study design data property"^^xsd:string .
+
+:OCRE100021 a owl:Class ;
+    rdfs:label "OCRe Allocation scheme" ;
+    obo:IAO_0000115 "Allocation scheme describes the way in which each experimental unit in an interventional trial is allocated to a treatment group."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Allocation scheme"^^xsd:string .
+
+:OCRE100026 a owl:Class ;
+    rdfs:label "OCRe Investigator assigns intervention" ;
+    obo:IAO_0000115 "The investigator actively assigns the study experimental units to one or more regimens of interventions (each including one or more interventions, or no intervention)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100058 ;
+    skos:prefLabel "Investigator assigns intervention"^^xsd:string .
+
+:OCRE100030 a owl:Class ;
+    rdfs:label "OCRe Restricted randomization" ;
+    obo:IAO_0000115 """Restricted randomization is a random allocation scheme used to control the randomization to achieve balance between groups in size (or other characteristics). 
+Different types of restricted randomization are as follows:
+- Blocking: Blocking is used to ensure close balance of the numbers in each group at any time during the study. After every block the number of participants in each group would be equal. Of course blocking tends to reduce the unpredictability of randomization. Therefore it is recommended to use random block sizes when using block randomization.
+- Stratification: Stratification ensures that the numbers of participants receiving each intervention are closely balanced within each stratum. Stratified randomization is achieved by performing a separate randomization procedure within each of two or more subsets of participants
+- Minimization: Minimization is not a method of randomization. Indeed it is the only non-random method which is an acceptable alternative to randomization. Minimization ensures balance between intervention groups for several patient factors. Randomization lists are not set up in advance. The first patient is truly randomly allocated; for each subsequent patient, the treatment allocation is identified, which minimizes the imbalance between groups at that time. """^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "http://mahmoodsaghaei.tripod.com/Softwares/randalloc.html"^^xsd:string ;
+    obo:IAO_0000232 "Simona: should we put the 3 schemes elsewhere?"^^xsd:string ;
+    rdfs:subClassOf :OCRE100033 ;
+    owl:disjointWith :OCRE100083 ;
+    skos:prefLabel "Restricted randomization"^^xsd:string .
+
+:OCRE100035 a owl:Class ;
+    rdfs:label "OCRe Multiple regimen" ;
+    obo:IAO_0000115 "Multiple regimens of intervention, each including one or more individual interventions (treatments) or no treatment, each assigned to one allocation group. This means the study has at least one contemporaneous comparison group."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100042 ;
+    owl:disjointWith :OCRE100037 ;
+    skos:prefLabel "Multiple regimen"^^xsd:string .
+
+:OCRE100052 a owl:Class ;
+    rdfs:label "OCRe Single group study design" ;
+    obo:IAO_0000115 """A single group study is an interventional study that has only a single allocation group and no contemporaneuos comparison group.
+
+A study in which an individual acts has his/her own comparison does not fall into this category, since an individual is not a group."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000232 "Simona: to be reviewed"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100007 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100037 ] ) ] ;
+    skos:prefLabel "Single group study design"^^xsd:string .
+
+:OCRE100056 a owl:Class ;
+    rdfs:label "OCRe Study design" ;
+    obo:IAO_0000115 "A study design is a common pattern of relationships  (in time and causation) among various study elements (e.g., time of intervention to outcomes assessment in which participants)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    skos:prefLabel "Study design"^^xsd:string .
+
+:OCRE100072 a owl:Class ;
+    rdfs:label "OCRe Comparative intent" ;
+    obo:IAO_0000115 "Comparative intent is an additional descriptor: Intent of comparison made in a study with two or more arms."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Comparative intent"^^xsd:string .
+
+:OCRE100081 a owl:Class ;
+    rdfs:label "OCRe Main comparison within experimental units" ;
+    obo:IAO_0000115 "The main comparison is within study experimental units."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100073 ;
+    skos:prefLabel "Main comparison within experimental units"^^xsd:string .
+
+:OCRE498000 a owl:Class ;
+    rdfs:label "OCRe Experimental unit selection based on neither outcome nor predictor variable" ;
+    obo:IAO_0000115 "In an observational study, the main varibale on which the selection of experimental units is based is neither an outcome nor an exposure variable. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE942000 [ a owl:Class ;
+                        owl:complementOf [ a owl:Class ;
+                                owl:unionOf ( :OCRE100013 :OCRE100079 ) ] ] ) ] ;
+    skos:prefLabel "Experimental unit selection based on neither outcome nor predictor variable"^^xsd:string .
+
+:OCRE942000 a owl:Class ;
+    rdfs:label "OCRe Main variable on which experimental unit selection is based" ;
+    obo:IAO_0000115 "In an observational study, the main variable on which the selection of experimental units is based can be an outcome variable, a predictor variable, or a variable that is neither an outcome nor a predictor one."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Main variable on which experimental unit selection is based"^^xsd:string .
+
+:OCRE100007 a owl:Class ;
+    rdfs:label "OCRe Interventional study design" ;
+    obo:IAO_0000115 "An interventional study is a quantitative study that prospectively assigns experimental units (human participants or groups of humans or part of human participants) to one or more health-related interventions to evaluate the effects on health outcomes. Interventions include but are not restricted to drugs, cells and other biological products, surgical procedures, radiologic procedures, devices, behavioural treatments, process-of-care changes, preventive care, etc. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "WHO Available at: http://www.who.int/ictrp/en/"^^xsd:string ;
+    obo:IAO_0000232 "Simona: to be reviewed"^^xsd:string ;
+    owl:disjointWith :OCRE100055 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100044 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100026 ] ) ] ;
+    skos:prefLabel "Interventional study design"^^xsd:string .
+
+:OCRE100033 a owl:Class ;
+    rdfs:label "OCRe Random allocation" ;
+    obo:IAO_0000115 "Random allocation is an allocation scheme that uses the play of chance to assign participants to comparison groups in a trial, e.g. by using a random numbers table or a computer-generated random sequence. Random allocation implies that each individual or unit being entered into a trial has the same chance of receiving each of the possible interventions. It also implies that the probability that an individual will receive a particular intervention is independent of the probability that any other individual will receive the same intervention. "^^xsd:string ;
+    obo:IAO_0000116 "Randomization is the process of randomly allocating experimental units into one of the arms of a controlled trial. There are two components to randomisation: the generation of a random sequence [allocation scheme], and its implementation [allocation concealment method], ideally in a way so that those entering participants into a study are not aware of the sequence (concealment of allocation). "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100021 ;
+    owl:disjointWith :OCRE100077 ;
+    skos:prefLabel "Random allocation"^^xsd:string .
+
+:OCRE100048 a owl:Class ;
+    rdfs:label "OCRe Assignment characteristics" ;
+    obo:IAO_0000115 "Characteristics of the assignment experimental units (e.g., participant, eye) to a regimen of interventions"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Assignment characteristics"^^xsd:string .
+
+:OCRE100079 a owl:Class ;
+    rdfs:label "OCRe Experimental unit selection based on outcome variable" ;
+    obo:IAO_0000115 """In an observational study, the main variable on which the selection of experimental units is based is an outcome variable. 
+In this study, retrospectie inference occurs, i.e., from outcome to exposure."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE942000 ;
+    owl:disjointWith :OCRE498000 ;
+    skos:prefLabel "Experimental unit selection based on outcome variable"^^xsd:string .
+
+:OCRE710000 a owl:Class ;
+    rdfs:label "OCRe Allocation concealment method value" ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Allocation concealment method value" .
+
+:OCRE100055 a owl:Class ;
+    rdfs:label "OCRe Observational study design" ;
+    obo:IAO_0000115 "An observational study is a quantitative study in which the investigators do not seek to intervene, and simply observe the course of events."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100044 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100009 ] ) ] ;
+    skos:prefLabel "Observational study design"^^xsd:string .
+
+:OCRE100078 a owl:Class ;
+    rdfs:label "OCRe Cohort study design" ;
+    obo:IAO_0000115 "A cohort study is an observational study in which a defined group of people (the cohort) is followed over time. The outcomes of people in subsets of this cohort are compared, to examine people who were exposed or not exposed (or exposed at different levels) to a particular intervention or other factor of interest. A prospective cohort study assembles participants and follows them into the future. A retrospective (or historical) cohort study identifies subjects from past records and follows them from the time of those records to the present. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at: http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:comment """The DL definiition of cohort study design says that a cohort study design has the characteristics "Main control group defined by exposure status" and "outcome measured after measurement of predictors."
+
+A study design involves identification of factor variables and outcome variables. Factor variables are measured before the measurement of outcome variables. 
+
+Let C be a member of the control groups of a study S
+Let SA be the set of statistical analysis of S
+Let F(sa) be the independent variables of a statistical analysis sa in SA
+Let O(sa) be the set of dependent variables of sa
+S has 'cohort study design" if and only if
+
+For all sa in SA, 
+There exists times t1 < t2 such that
+there exists f in F(sa) such that for all c in C, f is measured at time t1 and f(c) = constant AND for all o in O(sa), o is measured at t2""" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE100055 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900001 ;
+                        owl:someValuesFrom :OCRE100013 ] ) ] ;
+    skos:prefLabel "Cohort study design"^^xsd:string .
+
+:OCRE100038 a owl:Class ;
+    rdfs:label "OCRe Phase" ;
+    obo:IAO_0000115 """Phase describes the level of a trial required of drugs before (and after) they are routinely used in clinical practice: 
+- Phase 1 trials assess toxic effects on humans (not many people participate in them, and usually without controls); 
+- Phase 2 trials assess therapeutic benefit (usually involving a few hundred people, usually with controls, but not always); 
+- Phase 3 trials compare the new treatment against standard (or placebo) treatment (usually a full randomised controlled trial). At this point, a drug can be approved for community use. 
+- Phase 4 monitors a new treatment in the community, often to evaluate longterm safety and effectiveness. [Glossary of Terms in The Cochrane Collaboration]
+
+A trial can be of a combination phase (e.g., 1/2).
+The concept of phase is not applicable to trials studying certain interventions (e.g., device, procedure, behavioral)"""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Phase"^^xsd:string .
+
+:OCRE100045 a owl:Class ;
+    rdfs:label "OCRe Blinding type" ;
+    obo:IAO_0000115 "[In a controlled trial:] Blinding is the process of preventing those involved in a trial from knowing to which comparison group a particular participant belongs. The risk of bias is minimised when as few people as possible know who is receiving the experimental intervention and who the control intervention. Participants, caregivers, outcome assessors, and analysts are all candidates for being blinded. Blinding of certain groups is not always possible, for example surgeons in surgical trials. The terms single blind, double blind and triple blind are in common use, but are not used consistently and so are ambiguous unless the specific people who are blinded are listed. (Also called masking)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+    rdfs:subClassOf :OCRE100005 ;
+    skos:prefLabel "Blinding type"^^xsd:string .
+
+:OCRE100005 a owl:Class ;
+    rdfs:label "OCRe Study design characteristic" ;
+    obo:IAO_0000115 "A meta-level characterization of the design of a study"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    skos:prefLabel "Study design characteristic"^^xsd:string .
+
+:OCRE900001 a owl:ObjectProperty ;
+    rdfs:label "OCRe has design characteristic" ;
+    skos:prefLabel "has design characteristic"^^xsd:string .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Non-standard_allocation_concealment_method :OCRE101000 :OCRE260000 :OCRE297000 ) .
+

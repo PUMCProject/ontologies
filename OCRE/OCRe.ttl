@@ -1,0 +1,5279 @@
+@prefix : <http://purl.org/net/OCRe/OCRe#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix p1: <http://purl.obolibrary.org/obo/iao/dev/ontology-metadata#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix fma3: <http://sig.biostr.washington.edu/fma3.0#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl2: <http://www.w3.org/2006/12/owl2#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/Image> .
+@prefix owlapi: <http://www.semanticweb.org/owlapi#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix OCRe_ext: <http://purl.org/net/OCRe/OCRe_ext#> .
+@prefix ontologies: <http://purl.org/net/OCRe/> .
+@prefix statistics: <http://purl.org/net/OCRe/statistics#> .
+@prefix study_design: <http://purl.org/net/OCRe/study_design#> .
+@prefix study_protocol: <http://purl.org/net/OCRe/study_protocol#> .
+
+ontologies:OCRe a owl:Ontology ;
+	owl:imports ontologies:statistics , ontologies:study_design , ontologies:study_protocol ;
+	owl:versionInfo "Revision 315"^^xsd:string ;
+	rdfs:comment "An ontology for the planning, execution and analysis of clinical research including logitudinal studies and clinical trials. This is designed to be used in conjunction with domain specific models of diseases and measurements which conform to the shared ontology of clinical concepts to provide specific models of studies and trials."^^xsd:string .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/IAO_0000114
+
+obo:IAO_0000114 a owl:AnnotationProperty .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000115
+
+obo:IAO_0000115 a owl:AnnotationProperty ;
+	obo:IAO_0000114 obo:IAO_0000122 .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000116
+
+obo:IAO_0000116 a owl:AnnotationProperty ;
+	obo:IAO_0000114 obo:IAO_0000122 .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000117
+
+obo:IAO_0000117 a owl:AnnotationProperty ;
+	obo:IAO_0000114 obo:IAO_0000122 .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000119
+
+obo:IAO_0000119 obo:IAO_0000114 obo:IAO_0000122 .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000232
+
+obo:IAO_0000232 a owl:AnnotationProperty ;
+	obo:IAO_0000114 obo:IAO_0000122 .
+# 
+# http://purl.org/net/OCRe/OCRe#has_code
+
+:has_code a owl:AnnotationProperty .
+# 
+# http://purl.org/net/OCRe/statistics#curator
+
+statistics:curator a owl:AnnotationProperty .
+# 
+# http://purl.org/net/OCRe/statistics#definition
+
+statistics:definition a owl:AnnotationProperty .
+# 
+# http://purl.org/net/OCRe/study_protocol#develop_comment
+
+study_protocol:develop_comment a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/owlapi#nodeID
+
+owlapi:nodeID a owl:AnnotationProperty .
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+
+rdfs:comment a owl:AnnotationProperty .
+# 
+# http://www.w3.org/2000/01/rdf-schema#label
+
+rdfs:label a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+
+xsd:date a rdfs:Datatype .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/net/OCRe/OCRE500036
+
+ontologies:OCRE500036 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE588776 ;
+	rdfs:label "OCRe is administrative relation of" ;
+	skos:prefLabel "is administrative relation of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000003
+
+:OCRE000003 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	a owl:FunctionalProperty ;
+	rdfs:range :OCRE314540 ;
+	rdfs:comment "Modeling constraints based on the freqency of events" ;
+	rdfs:label "OCRe has operator" ;
+	skos:prefLabel "has operator"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000004
+
+:OCRE000004 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:label "OCRe has argument" ;
+	skos:prefLabel "has argument"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000005
+
+:OCRE000005 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:range :OCRE400078 ;
+	rdfs:label "OCRe has upper bound" ;
+	skos:prefLabel "has upper bound"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000016
+
+:OCRE000016 a owl:ObjectProperty ;
+	rdfs:label "OCRe obsolete" ;
+	skos:prefLabel "obsolete"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000021
+
+:OCRE000021 a owl:ObjectProperty ;
+	rdfs:comment "start, stop, time of" ;
+	rdfs:label "OCRe has time point extractor" ;
+	skos:prefLabel "has time point extractor"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000027
+
+:OCRE000027 a owl:ObjectProperty ;
+	rdfs:range :OCRE400031 ;
+	rdfs:label "OCRe has upper bound" ;
+	skos:prefLabel "has upper bound"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000028
+
+:OCRE000028 a owl:ObjectProperty ;
+	rdfs:range :OCRE400031 ;
+	rdfs:label "OCRe has lower bound" ;
+	skos:prefLabel "has lower bound"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000031
+
+:OCRE000031 a owl:ObjectProperty ;
+	rdfs:range :OCRE000024 ;
+	rdfs:label "OCRe has permitted value range" ;
+	skos:prefLabel "has permitted value range"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000032
+
+:OCRE000032 a owl:ObjectProperty ;
+	rdfs:range :OCRE400010 ;
+	rdfs:label "OCRe has permitted values" ;
+	skos:prefLabel "has permitted values"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000033
+
+:OCRE000033 a owl:ObjectProperty ;
+	rdfs:label "OCRe has lower bound" ;
+	skos:prefLabel "has lower bound"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000035
+
+:OCRE000035 a owl:ObjectProperty ;
+	rdfs:label "OCRe has value" ;
+	skos:prefLabel "has value" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000039
+
+:OCRE000039 a owl:ObjectProperty ;
+	rdfs:label "OCRe has constraint" ;
+	skos:prefLabel "has constraint"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000044
+
+:OCRE000044 a owl:ObjectProperty ;
+	rdfs:label "OCRe has context modifier" ;
+	skos:prefLabel "has context modifier"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE058000
+
+:OCRE058000 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE582000 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE793000 ;
+	obo:IAO_0000115 "An  encompassing statement of what the investigator's objectives are. The main objective o a study may be  to compare drug A and B, and other objectives may be to evaluate the compliance to treatment and the side effects."^^xsd:string ;
+	rdfs:label "OCRe has study objective" ;
+	skos:prefLabel "has study objective"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE140896
+
+:OCRE140896 a owl:ObjectProperty ;
+	rdfs:label "OCRe is related to" ;
+	skos:prefLabel "is related to"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE282000
+
+:OCRE282000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	rdfs:range study_design:OCRE100049 ;
+	rdfs:label "OCRe has sampling method" ;
+	skos:prefLabel "has sampling method"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE358000
+
+:OCRE358000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE100003 ;
+	rdfs:label "OCRe has intervention assignment scheme" ;
+	skos:prefLabel "has intervention assignment scheme"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE406000
+
+:OCRE406000 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE400047 ;
+	rdfs:label "OCRe has study characteristic" ;
+	skos:prefLabel "has study characteristic" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE436000
+
+:OCRE436000 a owl:ObjectProperty ;
+	rdfs:label "OCRe has temporal constraint" ;
+	skos:prefLabel "has temporal constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE500004
+
+:OCRE500004 a owl:ObjectProperty ;
+	rdfs:label "OCRe has participant" ;
+	skos:prefLabel "has participant"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE500006
+
+:OCRE500006 a owl:ObjectProperty ;
+	rdfs:label "OCRe administrative property" ;
+	skos:prefLabel "administrative property"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE509666
+
+:OCRE509666 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE525938 ;
+	owl:inverseOf :OCRE528412 ;
+	rdfs:range :OCRE591890 ;
+	rdfs:label "OCRe has laboratory agreement" ;
+	skos:prefLabel "has laboratory agreement"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE518308
+
+:OCRE518308 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE553335 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is study assessment/intervention agreement of" ;
+	skos:prefLabel "is study assessment/intervention agreement of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE525938
+
+:OCRE525938 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE588776 ;
+	owl:inverseOf :OCRE583480 ;
+	rdfs:range :OCRE513134 ;
+	rdfs:label "OCRe has study performance agreement" ;
+	skos:prefLabel "has study performance agreement"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE528412
+
+:OCRE528412 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is laboratory agreement of" ;
+	skos:prefLabel "is laboratory agreement of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE529106
+
+:OCRE529106 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE588776 ;
+	owl:inverseOf :OCRE576287 ;
+	rdfs:range :OCRE50034 ;
+	rdfs:label "OCRe has funding relation" ;
+	skos:prefLabel "has funding relation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE533511
+
+:OCRE533511 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE564154 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is IRB process of" ;
+	skos:prefLabel "is IRB process of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE535519
+
+:OCRE535519 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE588776 ;
+	owl:inverseOf :OCRE547004 ;
+	rdfs:range :OCRE581634 ;
+	rdfs:label "OCRe has sponsoring relation" ;
+	skos:prefLabel "has sponsoring relation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE544646
+
+:OCRE544646 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE525938 ;
+	owl:inverseOf :OCRE557377 ;
+	rdfs:range :OCRE535847 ;
+	rdfs:label "OCRe has oversight agreement" ;
+	skos:prefLabel "has oversight agreement"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE547004
+
+:OCRE547004 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is sponsoring relation of" ;
+	skos:prefLabel "is sponsoring relation of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE549929
+
+:OCRE549929 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE562807 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is recruitment agreement of" ;
+	skos:prefLabel "is recruitment agreement of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE551318
+
+:OCRE551318 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE585289 ;
+	rdfs:domain :OCRE50048 ;
+	rdfs:label "OCRe has actor" ;
+	skos:prefLabel "has actor"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE553335
+
+:OCRE553335 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE525938 ;
+	rdfs:range :OCRE590011 ;
+	rdfs:label "OCRe has study assessment/intervention agreement" ;
+	skos:prefLabel "has study assessment/intervention agreement"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE557377
+
+:OCRE557377 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is oversight agreement of" ;
+	skos:prefLabel "is oversight agreement of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE562783
+
+:OCRE562783 a owl:ObjectProperty ;
+	rdfs:label "OCRe has variable" ;
+	skos:prefLabel "has variable"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE562807
+
+:OCRE562807 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE525938 ;
+	rdfs:range :OCRE595405 ;
+	rdfs:label "OCRe has recruitment agreement" ;
+	skos:prefLabel "has recruitment agreement"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE564154
+
+:OCRE564154 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE588776 ;
+	rdfs:range :OCRE568687 ;
+	rdfs:label "OCRe has IRB process" ;
+	skos:prefLabel "has IRB process"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE574000
+
+:OCRE574000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	rdfs:range study_design:OCRE100045 ;
+	rdfs:label "OCRe has blinding type" ;
+	skos:prefLabel "has blinding type"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE576287
+
+:OCRE576287 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is funding relation of" ;
+	skos:prefLabel "is funding relation of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE582000
+
+:OCRE582000 a owl:ObjectProperty ;
+	rdfs:label "OCRe is study objective of" ;
+	skos:prefLabel "is study objective of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE583480
+
+:OCRE583480 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	a owl:FunctionalProperty ;
+	rdfs:label "OCRe is study performance agreement of" ;
+	skos:prefLabel "is study performance agreement of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE585289
+
+:OCRE585289 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:label "OCRe is an actor of" ;
+	skos:prefLabel "is an actor of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE588776
+
+:OCRE588776 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE50048 ;
+	rdfs:label "OCRe has administrative relation" ;
+	skos:prefLabel "has administrative relation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE688000
+
+:OCRE688000 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE801000 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE882000 ;
+	study_protocol:develop_comment "Old definition to be updated: The hypothesis of a study pertains the result of primary outcome (also used to calculate sample size)"^^xsd:string ;
+	rdfs:label "OCRe has study hypothesis" ;
+	skos:prefLabel "has study hypothesis"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE693000
+
+:OCRE693000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	rdfs:range study_design:OCRE100082 ;
+	rdfs:label "OCRe has relation between cases and non-cases" ;
+	skos:prefLabel "has relation between cases and non-cases"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE721000
+
+:OCRE721000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	rdfs:range study_design:OCRE100022 ;
+	rdfs:label "OCRe has control group type" ;
+	skos:prefLabel "has control group type"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE738000
+
+:OCRE738000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE100060 ;
+	rdfs:label "OCRe has outcomes occurred before or after study start" ;
+	skos:prefLabel "has outcomes occurred before or after study start"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE741000
+
+:OCRE741000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	rdfs:range study_design:OCRE100038 ;
+	rdfs:label "OCRe has phase" ;
+	skos:prefLabel "has phase"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE747000
+
+:OCRE747000 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first :OCRE50034 ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :OCRE581634 ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first :OCRE793000 ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :OCRE850429 ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :OCRE882000 ;
+	rdf:rest rdf:nil .
+
+:OCRE747000 rdfs:range :OCRE364000 ;
+	rdfs:label "OCRe has priority" ;
+	skos:prefLabel "has priority"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE801000
+
+:OCRE801000 a owl:ObjectProperty ;
+	rdfs:label "OCRe is study hypothesis of" ;
+	skos:prefLabel "is study hypothesis of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE811090
+
+:OCRE811090 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900056 ;
+	rdfs:label "OCRe is predictor variable of" ;
+	skos:prefLabel "is predictor variable of" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE818327
+
+:OCRE818327 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900098 ;
+	rdfs:label "OCRe is outcome variable of" ;
+	skos:prefLabel "is outcome variable of" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE820850
+
+:OCRE820850 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE100056 ;
+	rdfs:label "OCRe has study design" ;
+	skos:prefLabel "has study design"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE825000
+
+:OCRE825000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	rdfs:range study_design:OCRE710000 ;
+	rdfs:label "OCRe has allocation concealment method value" ;
+	skos:prefLabel "has allocation concealment method value"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE834820
+
+:OCRE834820 a owl:ObjectProperty ;
+	rdfs:label "OCRe is defined by value of" ;
+	skos:prefLabel "is defined by value of" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE837311
+
+:OCRE837311 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE100072 ;
+	rdfs:label "OCRe has comparative intent" ;
+	skos:prefLabel "has comparative intent" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE837473
+
+:OCRE837473 a owl:ObjectProperty ;
+	rdfs:subPropertyOf statistics:OCRE900007 ;
+	owl:inverseOf statistics:OCRE900010 ;
+	rdfs:domain :OCRE400050 ;
+	rdfs:label "OCRe is dependent variable of" ;
+	skos:prefLabel "is dependent variable of" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE837984
+
+:OCRE837984 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE100021 ;
+	rdfs:label "OCRe has allocation type" ;
+	skos:prefLabel "has allocation type" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE850000
+
+:OCRE850000 a owl:ObjectProperty ;
+	rdfs:label "OCRe has non-temporal constraint" ;
+	skos:prefLabel "has non-temporal constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE855955
+
+:OCRE855955 a owl:ObjectProperty ;
+	rdfs:label "OCRe has target subject" ;
+	skos:prefLabel "has target subject"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE859845
+
+:OCRE859845 a owl:ObjectProperty ;
+	rdfs:subPropertyOf statistics:OCRE900007 ;
+	owl:inverseOf statistics:OCRE900011 ;
+	rdfs:domain :OCRE400050 ;
+	rdfs:label "OCRe is independent variable of" ;
+	skos:prefLabel "is independent variable of" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE886736
+
+:OCRE886736 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE406000 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE100005 ;
+	owl:propertyChainAxiom _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first :OCRE820850 ;
+	rdf:rest _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first study_design:OCRE900001 ;
+	rdf:rest rdf:nil .
+
+:OCRE886736 study_protocol:develop_comment "\"has study design characteristics\" is a superproperty of \"has study design\" and \"has design characteristics\". Therefore, if a study has design X, and X has design characteristics Y, then the study has study design characteristics Y."^^xsd:string ;
+	rdfs:label "OCRe has study design characteristic" ;
+	skos:prefLabel "has study design characteristic"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE886865
+
+:OCRE886865 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	rdfs:range study_protocol:OCRE300001 ;
+	rdfs:label "OCRe has individuals assigned to" ;
+	skos:prefLabel "has individuals assigned to"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE890531
+
+:OCRE890531 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE400074 ;
+	rdfs:label "OCRe has study status" ;
+	skos:prefLabel "has study status"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE899177
+
+:OCRE899177 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	rdfs:label "OCRe defines group" ;
+	skos:prefLabel "defines group" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900040
+
+:OCRE900040 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain :OCRE400012 ;
+	rdfs:range :OCRE400024 ;
+	statistics:definition "The reference time point against which a relative time is defined (e.g., the \"enrollment\" time in \"3 weeks after enrollment\")."^^xsd:string ;
+	rdfs:label "OCRe has anchor time" ;
+	skos:prefLabel "has anchor time"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900041
+
+:OCRE900041 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE000016 ;
+	rdfs:label "OCRe annotation" ;
+	skos:prefLabel "annotation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900042
+
+:OCRE900042 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400065 ;
+	rdfs:range :OCRE400013 ;
+	rdfs:label "OCRe has biospecimen availability" ;
+	skos:prefLabel "has biospecimen availability"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900043
+
+:OCRE900043 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :OCRE400065 ;
+	rdfs:range :OCRE400020 ;
+	rdfs:label "OCRe has biospecimen preservation method" ;
+	skos:prefLabel "has biospecimen preservation method"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900044
+
+:OCRE900044 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :OCRE400065 ;
+	rdfs:range fma3:OCRE9000027 ;
+	rdfs:label "OCRe has biospecimen tissue source" ;
+	skos:prefLabel "has biospecimen tissue source"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900045
+
+:OCRE900045 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400065 ;
+	rdfs:range :OCRE400080 ;
+	rdfs:label "OCRe has biospecimen type" ;
+	skos:prefLabel "has biospecimen type"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900046
+
+:OCRE900046 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE000016 ;
+	a owl:FunctionalProperty ;
+	rdfs:range :OCRE400002 ;
+	statistics:definition "A code is the terminology code of a concept"^^xsd:string ;
+	rdfs:label "OCRe code for" ;
+	skos:prefLabel "code for"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900047
+
+:OCRE900047 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid10 .
+
+_:genid10 a owl:Class ;
+	owl:unionOf _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first :OCRE400012 ;
+	rdf:rest _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first :OCRE400038 ;
+	rdf:rest rdf:nil .
+
+:OCRE900047 rdfs:range :OCRE400057 ;
+	statistics:definition "The duration of an interval or the offset from an anchor time point."^^xsd:string ;
+	rdfs:label "OCRe has duration" ;
+	skos:prefLabel "has duration"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900053
+
+:OCRE900053 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400070 ;
+	statistics:definition "The finding associated with a clinical event"^^xsd:string ;
+	rdfs:label "OCRe has finding" ;
+	skos:prefLabel "has finding"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900055
+
+:OCRE900055 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	owl:inverseOf :OCRE900063 ;
+	rdfs:domain :OCRE400044 ;
+	rdfs:range owl:Thing ;
+	statistics:definition "\"elements\" denotes members in the sense of a collection (i.e., object aggregate) containing its elements. It is distinguished from \"members\" in the sense of social relationship between an organization and its members."^^xsd:string ;
+	rdfs:label "OCRe has element" ;
+	skos:prefLabel "has element"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900056
+
+:OCRE900056 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE562783 ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:range :OCRE400050 ;
+	rdfs:label "OCRe has predictor variable" ;
+	skos:prefLabel "has predictor variable"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900057
+
+:OCRE900057 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900064 ;
+	rdfs:domain :OCRE400079 ;
+	rdfs:range :OCRE400076 ;
+	statistics:definition "The population is composed of the indicated study subjects."^^xsd:string ;
+	rdfs:label "OCRe has member" ;
+	skos:prefLabel "has member"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900058
+
+:OCRE900058 a owl:ObjectProperty ;
+	rdfs:label "OCRe has variable characteristic" ;
+	skos:prefLabel "has variable characteristic"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900059
+
+:OCRE900059 a owl:ObjectProperty ;
+	statistics:definition "A single research event (a clinical situation itself) has multiple clinical situations as part of its definition."^^xsd:string ;
+	rdfs:label "OCRe includes situation" ;
+	skos:prefLabel "includes situation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900060
+
+:OCRE900060 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:label "OCRe is defined by" ;
+	skos:prefLabel "is defined by"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900061
+
+:OCRE900061 a owl:ObjectProperty ;
+	rdfs:label "OCRe is code for" ;
+	skos:prefLabel "is code for"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900063
+
+:OCRE900063 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain :OCRE400015 ;
+	rdfs:range :OCRE400044 ;
+	rdfs:label "OCRe is element of" ;
+	skos:prefLabel "is element of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900064
+
+:OCRE900064 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400076 ;
+	rdfs:range :OCRE400079 ;
+	rdfs:label "OCRe is member of" ;
+	skos:prefLabel "is member of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900065
+
+:OCRE900065 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400012 ;
+	rdfs:range :OCRE400057 ;
+	rdfs:label "OCRe has offset" ;
+	skos:prefLabel "has offset"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900066
+
+:OCRE900066 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900067 ;
+	statistics:definition "A performed activity operationalize a planned activity"^^xsd:string ;
+	rdfs:label "OCRe operationalize" ;
+	skos:prefLabel "operationalize"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900067
+
+:OCRE900067 a owl:ObjectProperty ;
+	rdfs:label "OCRe operationalized_by" ;
+	skos:prefLabel "operationalized_by"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900068
+
+:OCRE900068 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900069 ;
+	rdfs:domain _:genid1 .
+
+_:genid1 owl:unionOf _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first :OCRE400004 ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first :OCRE400032 ;
+	rdf:rest rdf:nil .
+
+:OCRE900068 rdfs:range _:genid2 .
+
+_:genid2 a owl:Class ;
+	owl:unionOf _:genid15 .
+
+:OCRE900068 statistics:definition "If C and C' are entities or events, C has_part C' if C' is in \"part of\" relationship with C"^^xsd:string ;
+	rdfs:label "OCRe has part" ;
+	skos:prefLabel "has part"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900069
+
+:OCRE900069 a owl:ObjectProperty ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Class ;
+	owl:unionOf _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first :OCRE400004 ;
+	rdf:rest _:genid17 .
+
+_:genid17 a rdf:List ;
+	rdf:first :OCRE400032 ;
+	rdf:rest rdf:nil .
+
+:OCRE900069 rdfs:range _:genid3 .
+
+_:genid3 a owl:Class ;
+	owl:unionOf _:genid18 .
+
+:OCRE900069 statistics:definition "A component of is a \"part-whole\" relationship with another component. The component can either be an entity or an event."^^xsd:string ;
+	rdfs:label "OCRe part of" ;
+	skos:prefLabel "part of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900070
+
+:OCRE900070 a owl:ObjectProperty ;
+	statistics:definition "The first event occurs before the second event in time."^^xsd:string ;
+	rdfs:label "OCRe precedes" ;
+	skos:prefLabel "precedes"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900071
+
+:OCRE900071 a owl:ObjectProperty ;
+	statistics:definition "The procedured performed in a Performed procedure clinical event"^^xsd:string ;
+	rdfs:label "OCRe procedure" ;
+	skos:prefLabel "procedure"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900072
+
+:OCRE900072 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400042 ;
+	rdfs:range _:genid19 .
+
+_:genid19 a owl:Class ;
+	owl:unionOf _:genid21 .
+
+_:genid21 a rdf:List ;
+	rdf:first :OCRE400004 ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first :OCRE400032 ;
+	rdf:rest rdf:nil .
+
+:OCRE900072 statistics:definition "has_semantic_constraint links syntactic criterion (e.g., eligibility criteria) to a class expression involving other entities and events that describes the things that satisfy the meaning of the criterion"^^xsd:string ;
+	rdfs:label "OCRe has semantic constraint" ;
+	skos:prefLabel "has semantic constraint"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900073
+
+:OCRE900073 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE000028 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400038 ;
+	rdfs:range :OCRE400024 ;
+	statistics:definition "The start time (lower bound) of a time interval"^^xsd:string ;
+	rdfs:label "OCRe has start time" ;
+	skos:prefLabel "has start time"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900074
+
+:OCRE900074 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE000027 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400038 ;
+	rdfs:range :OCRE400024 ;
+	statistics:definition "The stop time (upper bound) of a time interval"^^xsd:string ;
+	rdfs:label "OCRe has stop time" ;
+	skos:prefLabel "has stop time"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900076
+
+:OCRE900076 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900070 ;
+	statistics:definition "The first event is the last event occuring immediately before the second event in time."^^xsd:string ;
+	rdfs:label "OCRe immediately_precedes" ;
+	skos:prefLabel "immediately_precedes"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900077
+
+:OCRE900077 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900091 ;
+	rdfs:domain :OCRE400050 ;
+	rdfs:range :OCRE400050 ;
+	rdfs:label "OCRe derives" ;
+	skos:prefLabel "derives"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900079
+
+:OCRE900079 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400072 ;
+	rdfs:range statistics:OCRE200061 ;
+	statistics:definition "An outcome is_analyzied_using some statistical method"^^xsd:string ;
+	rdfs:label "OCRe has analysis method" ;
+	skos:prefLabel "has analysis method"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900080
+
+:OCRE900080 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400072 ;
+	rdfs:range statistics:OCRE200053 ;
+	rdfs:label "OCRe has analysis type" ;
+	skos:prefLabel "has analysis type"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900081
+
+:OCRE900081 a owl:ObjectProperty ;
+	rdfs:label "OCRe has assessment method" ;
+	skos:prefLabel "has assessment method"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900082
+
+:OCRE900082 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain _:genid22 .
+
+_:genid22 a owl:Class ;
+	owl:unionOf _:genid24 .
+
+_:genid24 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first study_protocol:OCRE300011 ;
+	rdf:rest rdf:nil .
+
+:OCRE900082 rdfs:range :OCRE400024 ;
+	obo:IAO_0000119 "HL7 RIM"^^xsd:string ;
+	rdfs:label "OCRe has effective time" ;
+	skos:prefLabel "has effective time"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900083
+
+:OCRE900083 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE400065 ;
+	rdfs:label "OCRe has biospecimen collected" ;
+	skos:prefLabel "has biospecimen collected"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900085
+
+:OCRE900085 a owl:ObjectProperty ;
+	statistics:definition "A statistical analysis is performed on the outcome variables of designated groups of subjects"^^xsd:string ;
+	rdfs:label "OCRe has group" ;
+	skos:prefLabel "has group"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900086
+
+:OCRE900086 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900092 ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:label "OCRe has health condition studied" ;
+	skos:prefLabel "has health condition studied"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900087
+
+:OCRE900087 a owl:ObjectProperty ;
+	rdfs:label "OCRe has population" ;
+	skos:prefLabel "has population"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900088
+
+:OCRE900088 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900094 ;
+	rdfs:domain :OCRE400050 ;
+	rdfs:range :OCRE400041 ;
+	statistics:definition "ocre:is_derived_from o ocre:has_outcome_phenomenon"^^xsd:string ;
+	rdfs:label "OCRe has study phenomenon" ;
+	skos:prefLabel "has study phenomenon"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900089
+
+:OCRE900089 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range study_protocol:OCRE300012 ;
+	rdfs:label "OCRe has study protocol" ;
+	skos:prefLabel "has study protocol"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900091
+
+:OCRE900091 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400050 ;
+	rdfs:range :OCRE400050 ;
+	obo:IAO_0000115 "A relationship between instances Variable specification signifying that the domain variable specification is derived from the range variable specification through some function involving the range variable specification"^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	rdfs:label "OCRe is derived from" ;
+	skos:prefLabel "is derived from"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900092
+
+:OCRE900092 a owl:ObjectProperty ;
+	rdfs:label "OCRe is studied in trial" ;
+	skos:prefLabel "is studied in trial"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900093
+
+:OCRE900093 a owl:ObjectProperty ;
+	rdfs:domain study_design:OCRE100005 ;
+	rdfs:range study_design:OCRE100056 ;
+	rdfs:label "OCRe is design characteristic of" ;
+	skos:prefLabel "is design characteristic of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900094
+
+:OCRE900094 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400041 ;
+	rdfs:range :OCRE400050 ;
+	rdfs:label "OCRe is study phenomenon of" ;
+	skos:prefLabel "is study phenomenon of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900096
+
+:OCRE900096 a owl:ObjectProperty ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:range :OCRE400072 ;
+	rdfs:label "OCRe has outcome analysis" ;
+	skos:prefLabel "has outcome analysis"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900097
+
+:OCRE900097 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:comment "The property chain \"outcome phenomenon o term code => outcome code, causes Pellet to complain about subproperty chain being unsupported feature."^^xsd:string ;
+	rdfs:label "OCRe has outcome code" ;
+	skos:prefLabel "has outcome code"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900098
+
+:OCRE900098 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE562783 ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:label "OCRe has outcome variable" ;
+	skos:prefLabel "has outcome variable"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900106
+
+:OCRE900106 a owl:ObjectProperty ;
+	statistics:definition "The study has the identified events."^^xsd:string ;
+	rdfs:label "OCRe has study event" ;
+	skos:prefLabel "has study event"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900107
+
+:OCRE900107 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE400061 ;
+	statistics:definition "The study has the identified populations."^^xsd:string ;
+	rdfs:label "OCRe has study population" ;
+	skos:prefLabel "has study population"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900108
+
+:OCRE900108 a owl:ObjectProperty ;
+	rdfs:range :OCRE850429 ;
+	rdfs:label "OCRe study population property" ;
+	skos:prefLabel "study population property"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900109
+
+:OCRE900109 a owl:ObjectProperty ;
+	statistics:definition "The study has the identified subjects."^^xsd:string ;
+	rdfs:label "OCRe has study subject" ;
+	skos:prefLabel "has study subject"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900110
+
+:OCRE900110 a owl:ObjectProperty ;
+	owl:inverseOf :OCRE900119 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400070 ;
+	statistics:definition "The identified clinical situation has the identified clinical subject as its sole or primary subject."^^xsd:string ;
+	rdfs:label "OCRe has subject" ;
+	skos:prefLabel "has subject"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900111
+
+:OCRE900111 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	rdfs:label "OCRe has age restriction" ;
+	skos:prefLabel "has age restriction"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900112
+
+:OCRE900112 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	owl:inverseOf :OCRE900113 ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:range :OCRE400042 ;
+	rdfs:label "OCRe has eligibility criterion" ;
+	skos:prefLabel "has eligibility criterion"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900113
+
+:OCRE900113 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	rdfs:domain :OCRE400042 ;
+	rdfs:label "OCRe is eligibility criterion of" ;
+	skos:prefLabel "is eligibility criterion of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900114
+
+:OCRE900114 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	rdfs:label "OCRe has gender restriction" ;
+	skos:prefLabel "has gender restriction"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900116
+
+:OCRE900116 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE900108 ;
+	statistics:definition "The substrance administered in a Substance Administration event"^^xsd:string ;
+	rdfs:label "OCRe has substance administered" ;
+	skos:prefLabel "has substance administered"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900118
+
+:OCRE900118 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain :OCRE400115 ;
+	statistics:definition "The unit component of a Quantity"^^xsd:string ;
+	rdfs:label "OCRe has unit" ;
+	skos:prefLabel "has unit"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900119
+
+:OCRE900119 a owl:ObjectProperty , owl:InverseFunctionalProperty ;
+	rdfs:range :OCRE400070 ;
+	statistics:definition "The identified clinical subject is the sole or primary subject of the identified clinical situation."^^xsd:string ;
+	rdfs:label "OCRe is subject of" ;
+	skos:prefLabel "is subject of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901000
+
+:OCRE901000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:range _:genid25 .
+
+_:genid25 owl:intersectionOf _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first :OCRE541581 ;
+	rdf:rest _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first _:genid27 .
+
+_:genid27 a owl:Restriction ;
+	owl:onProperty :OCRE585289 ;
+	owl:someValuesFrom :OCRE513134 .
+
+_:genid26 rdf:rest rdf:nil .
+
+_:genid25 a owl:Class .
+
+:OCRE901000 rdfs:label "OCRe executed at" ;
+	skos:prefLabel "executed at"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901001
+
+:OCRE901001 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:domain _:genid29 .
+
+_:genid29 owl:intersectionOf _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first :OCRE541581 ;
+	rdf:rest _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first _:genid31 .
+
+_:genid31 a owl:Restriction ;
+	owl:onProperty :OCRE585289 ;
+	owl:someValuesFrom :OCRE513134 .
+
+_:genid30 rdf:rest rdf:nil .
+
+_:genid29 a owl:Class .
+
+:OCRE901001 rdfs:range study_protocol:OCRE300012 ;
+	statistics:definition "A StudySite executes some Study Protocol (from BRIDG 1.1.1)"^^xsd:string ;
+	rdfs:label "OCRe executes" ;
+	skos:prefLabel "executes"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901002
+
+:OCRE901002 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE000016 ;
+	statistics:definition "A healthcare organization functions as a study site (from BRIDG 1).1.1"^^xsd:string ;
+	rdfs:label "OCRe function as" ;
+	skos:prefLabel "function as"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901003
+
+:OCRE901003 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE901009 ;
+	rdfs:domain _:genid33 .
+
+_:genid33 a owl:Class ;
+	owl:unionOf _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first :OCRE400076 ;
+	rdf:rest _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first :OCRE541581 ;
+	rdf:rest rdf:nil .
+
+:OCRE901003 rdfs:range :OCRE400040 ;
+	rdfs:label "OCRe has address" ;
+	skos:prefLabel "has address"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901004
+
+:OCRE901004 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range _:genid36 .
+
+_:genid36 a owl:Class ;
+	owl:unionOf _:genid38 .
+
+_:genid38 a rdf:List ;
+	rdf:first :OCRE400076 ;
+	rdf:rest _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first :OCRE400079 ;
+	rdf:rest rdf:nil .
+
+:OCRE901004 rdfs:label "OCRe has contact for public queries" ;
+	skos:prefLabel "has contact for public queries"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901005
+
+:OCRE901005 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:domain _:genid39 .
+
+_:genid39 a owl:Class ;
+	owl:unionOf _:genid43 .
+
+_:genid43 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid42 .
+
+_:genid42 a rdf:List ;
+	rdf:first :OCRE400076 ;
+	rdf:rest _:genid41 .
+
+_:genid41 a rdf:List ;
+	rdf:first :OCRE400079 ;
+	rdf:rest _:genid40 .
+
+_:genid40 a rdf:List ;
+	rdf:first :OCRE50034 ;
+	rdf:rest rdf:nil .
+
+:OCRE901005 rdfs:range :OCRE400001 ;
+	rdfs:label "OCRe has identifier" ;
+	skos:prefLabel "has identifier"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901006
+
+:OCRE901006 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	owl:inverseOf :OCRE901011 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range :OCRE400076 ;
+	rdfs:label "OCRe has principal investigator" ;
+	skos:prefLabel "has principal investigator"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901007
+
+:OCRE901007 a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:range :OCRE400003 ;
+	rdfs:label "OCRe has recruitment status" ;
+	skos:prefLabel "has recruitment status"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901008
+
+:OCRE901008 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:domain :OCRE400014 ;
+	rdfs:range :OCRE400005 ;
+	rdfs:label "OCRe has scheme" ;
+	skos:prefLabel "has scheme"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901009
+
+:OCRE901009 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:label "OCRe is address of" ;
+	skos:prefLabel "is address of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE901011
+
+:OCRE901011 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE500006 ;
+	rdfs:label "OCRe is principal investigator of" ;
+	skos:prefLabel "is principal investigator of"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE913000
+
+:OCRE913000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf :OCRE886736 ;
+	a owl:FunctionalProperty ;
+	rdfs:range study_design:OCRE100041 ;
+	rdfs:label "OCRe has unit of allocation" ;
+	skos:prefLabel "has unit of allocation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE935000
+
+:OCRE935000 a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:label "OCRe has noun phrase" ;
+	skos:prefLabel "has noun phrase" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE967500
+
+:OCRE967500 a owl:ObjectProperty , owl:FunctionalProperty ;
+	obo:IAO_0000115 "Some 'Variable specification' has data generated from  'Planned activity'" ;
+	rdfs:label "OCRe has data generated from" ;
+	skos:prefLabel "has data generated from"@en .
+# 
+# http://purl.org/net/OCRe/statistics#OCRE900010
+
+statistics:OCRE900010 a owl:ObjectProperty ;
+	rdfs:range :OCRE400050 .
+# 
+# http://purl.org/net/OCRe/statistics#OCRE900011
+
+statistics:OCRE900011 a owl:ObjectProperty ;
+	rdfs:range :OCRE400050 ;
+	statistics:definition "Specifies that a Variable specification is an independent variable of an Outcome analysis specification"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/statistics#OCRE900026
+
+statistics:OCRE900026 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400050 .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900003
+
+study_design:OCRE900003 rdfs:domain :OCRE400029 ;
+	rdfs:range study_design:OCRE475000 .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900048
+
+study_design:OCRE900048 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range owl:Thing ;
+	rdfs:label "OCRe entity conclusions are about" ;
+	skos:prefLabel "entity conclusions are about"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900049
+
+study_design:OCRE900049 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range owl:Thing ;
+	rdfs:label "OCRe entity directly observed" ;
+	skos:prefLabel "entity directly observed"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900050
+
+study_design:OCRE900050 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range owl:Thing ;
+	rdfs:label "OCRe entity assigned" ;
+	skos:prefLabel "entity assigned"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900051
+
+study_design:OCRE900051 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range owl:Thing ;
+	rdfs:label "OCRe entity recruited or selected" ;
+	skos:prefLabel "entity recruited or selected"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900052
+
+study_design:OCRE900052 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range owl:Thing ;
+	rdfs:label "OCRe entity subject to intervention or exposure" ;
+	skos:prefLabel "entity subject to intervention or exposure"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900054
+
+study_design:OCRE900054 a owl:ObjectProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range owl:Thing ;
+	rdfs:label "OCRe finest-grained entity available for analysis" ;
+	skos:prefLabel "finest-grained entity available for analysis"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE827668
+
+study_protocol:OCRE827668 a owl:FunctionalProperty ;
+	rdfs:range :OCRE400078 .
+# 
+# http://www.w3.org/2002/07/owl#topObjectProperty
+
+owl:topObjectProperty a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000025
+
+:OCRE000025 a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:boolean ;
+	rdfs:label "OCRe is upper bound closed" ;
+	skos:prefLabel "is upper bound closed"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000026
+
+:OCRE000026 a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:boolean ;
+	rdfs:label "OCRe is lower bound closed" ;
+	skos:prefLabel "is lower bound closed"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000034
+
+:OCRE000034 a owl:DatatypeProperty ;
+	rdfs:label "OCRe has original text" ;
+	skos:prefLabel "has original text" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000043
+
+:OCRE000043 a owl:DatatypeProperty ;
+	rdfs:label "OCRe has context modifier" ;
+	skos:prefLabel "has context modifier"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE189000
+
+:OCRE189000 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has public description" ;
+	skos:prefLabel "has public description"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE205000
+
+:OCRE205000 a owl:DatatypeProperty ;
+	rdfs:range owl:real ;
+	rdfs:label "OCRe has value" ;
+	skos:prefLabel "has value"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE413000
+
+:OCRE413000 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has scientific description" ;
+	skos:prefLabel "has scientific description"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE744000
+
+:OCRE744000 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400039 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has country" ;
+	skos:prefLabel "has country"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE850077
+
+:OCRE850077 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE50034 ;
+	rdfs:label "OCRe has funding number" ;
+	skos:prefLabel "has funding number"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE885000
+
+:OCRE885000 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400039 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "A postal code designating a region defined by the postal service."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe has zip" ;
+	skos:prefLabel "has zip"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE898003
+
+:OCRE898003 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:boolean ;
+	rdfs:label "OCRe has recruitment in the past" ;
+	skos:prefLabel "has recruitment in the past"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900200
+
+:OCRE900200 a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:integer ;
+	rdfs:label "OCRe has actual sample size" ;
+	skos:prefLabel "has actual sample size"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900201
+
+:OCRE900201 a owl:DatatypeProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has case definition" ;
+	skos:prefLabel "has case definition"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900203
+
+:OCRE900203 a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:integer ;
+	rdfs:label "OCRe has planned sample size" ;
+	skos:prefLabel "has planned sample size"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900204
+
+:OCRE900204 a owl:DatatypeProperty ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has power calculation" ;
+	skos:prefLabel "has power calculation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900205
+
+:OCRE900205 a owl:DatatypeProperty ;
+	rdfs:domain study_protocol:OCRE300012 ;
+	rdfs:range xsd:string ;
+	statistics:definition "Source of participants and method of recruitment"^^xsd:string ;
+	rdfs:label "OCRe has recruitment" ;
+	skos:prefLabel "has recruitment"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900208
+
+:OCRE900208 a owl:DatatypeProperty ;
+	rdfs:label "OCRe administrative data property" ;
+	skos:prefLabel "administrative data property"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900209
+
+:OCRE900209 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400040 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has address string" ;
+	skos:prefLabel "has address string"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900210
+
+:OCRE900210 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:date ;
+	rdfs:label "OCRe has date of first enrollment" ;
+	skos:prefLabel "has date of first enrollment"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900211
+
+:OCRE900211 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:date ;
+	rdfs:label "OCRe has date of last enrollment" ;
+	skos:prefLabel "has date of last enrollment"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900212
+
+:OCRE900212 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has public title" ;
+	skos:prefLabel "has public title"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900213
+
+:OCRE900213 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has scientific title" ;
+	skos:prefLabel "has scientific title"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900214
+
+:OCRE900214 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:date ;
+	rdfs:label "OCRe has description date" ;
+	skos:prefLabel "has description date"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900216
+
+:OCRE900216 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:boolean ;
+	rdfs:label "OCRe has recruitment in the present" ;
+	skos:prefLabel "has recruitment in the present"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900217
+
+:OCRE900217 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900208 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:boolean ;
+	rdfs:label "OCRe has recruitment in the future" ;
+	skos:prefLabel "has recruitment in the future"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900218
+
+:OCRE900218 a owl:DatatypeProperty ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe concept descriptor property" ;
+	skos:prefLabel "concept descriptor property"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900219
+
+:OCRE900219 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900218 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400055 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "The plain code symbol defined by the code system, or an expression in a syntax defined by the code system which describes the concept. The unique code of a term in a controlled vocabulary."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Abstract Data Type specification Release 2"^^xsd:string ;
+	rdfs:label "OCRe has concept id" ;
+	skos:prefLabel "has concept id"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900220
+
+:OCRE900220 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900218 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400055 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 """The common name of the coding system.
+The code system name has no computational value. 
+Note: The purpose of a code system name is to assist an unaided human interpreter of a code value to interpret code system."""^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Abstract Data Type specification Release 2"^^xsd:string ;
+	rdfs:label "OCRe has code system name" ;
+	skos:prefLabel "has code system name"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900221
+
+:OCRE900221 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900218 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400055 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "If applicable, a version descriptor defined specifically for the given code system."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Abstract Data Type specification Release 2"^^xsd:string ;
+	rdfs:label "OCRe has code system version" ;
+	skos:prefLabel "has code system version"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900222
+
+:OCRE900222 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900218 ;
+	a owl:FunctionalProperty ;
+	rdfs:domain :OCRE400055 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 """A name, title, or representation for the code or expression as it exists in the code system.
+
+The preferred name of a term in a coding system"""^^xsd:string ;
+	obo:IAO_0000116 "Was: has preferred name"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Abstract Data Type specification Release 2"^^xsd:string ;
+	rdfs:label "OCRe has display name" ;
+	skos:prefLabel "has display name"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900223
+
+:OCRE900223 a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "Textual description"^^xsd:string ;
+	rdfs:label "OCRe has description" ;
+	skos:prefLabel "has description"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900224
+
+:OCRE900224 a owl:DatatypeProperty ;
+	rdfs:range xsd:string ;
+	rdfs:label "OCRe has name" ;
+	skos:prefLabel "has name"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900225
+
+:OCRE900225 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900224 ;
+	rdfs:domain :OCRE400076 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "first name of a person"^^xsd:string ;
+	rdfs:label "OCRe has first name" ;
+	skos:prefLabel "has first name"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900226
+
+:OCRE900226 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900224 ;
+	rdfs:domain :OCRE400076 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "last name of a person"^^xsd:string ;
+	rdfs:label "OCRe has last name" ;
+	skos:prefLabel "has last name"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900230
+
+:OCRE900230 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900237 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of subjects expected to be included in the given population, either for statistical power calculations or based on demographic prediction."^^xsd:string ;
+	rdfs:label "OCRe has target number" ;
+	skos:prefLabel "has target number"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900231
+
+:OCRE900231 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900234 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of individuals who failed to complete the process, procedure or assessment specified because the subject died during the events."^^xsd:string ;
+	rdfs:label "OCRe has number lost because of death" ;
+	skos:prefLabel "has number lost because of death"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900232
+
+:OCRE900232 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900234 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of individuals who failed to complete the process, procedure or assessment specified because the subject chose not to complete."^^xsd:string ;
+	rdfs:label "OCRe has number lost because of refusal" ;
+	skos:prefLabel "has number lost because of refusal"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900233
+
+:OCRE900233 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900234 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of individuals who failed to complete the process, procedure or assessment specified because the clinician chose not to complete."^^xsd:string ;
+	rdfs:label "OCRe has number lost because of rejection" ;
+	skos:prefLabel "has number lost because of rejection"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900234
+
+:OCRE900234 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900237 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of individuals who failed to completed the process, procedure or assessment specified for whatever reason. N(considered) = N(completed) + N(lost)"^^xsd:string ;
+	rdfs:label "OCRe has number lost" ;
+	skos:prefLabel "has number lost"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900235
+
+:OCRE900235 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900237 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of individuals who successfully completed the process, procedure or assessment specified. N(considered) = N(completed) + N(lost)"^^xsd:string ;
+	rdfs:label "OCRe has completed population number" ;
+	skos:prefLabel "has completed population number"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900236
+
+:OCRE900236 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900237 ;
+	a owl:FunctionalProperty ;
+	rdfs:range xsd:int ;
+	statistics:definition "The number of individuals who started the process, procedure or assessment specified. N(considered) = N(completed) + N(lost)"^^xsd:string ;
+	rdfs:label "OCRe has considered population number" ;
+	skos:prefLabel "has considered population number"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900237
+
+:OCRE900237 a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain :OCRE400029 ;
+	rdfs:range xsd:int ;
+	rdfs:label "OCRe has study population number" ;
+	skos:prefLabel "has study population number"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900239
+
+:OCRE900239 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900242 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "A unique identifier that guarantees the global uniqueness of the instance identifier. The root alone may be the entire instance identifier."^^xsd:string ;
+	rdfs:label "OCRe has root" ;
+	skos:prefLabel "has root"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900240
+
+:OCRE900240 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900242 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "A character string as a unique identifier within the scope of the identifier root."^^xsd:string ;
+	rdfs:label "OCRe has extension" ;
+	skos:prefLabel "has extension"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900241
+
+:OCRE900241 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :OCRE900242 ;
+	rdfs:range xsd:string ;
+	obo:IAO_0000115 "This is a human-readable name for the namespace represented in the root. It is a descriptive name for the actual namespace. e.g. \"California, U.S. Driver's License Number, 1970-\"."^^xsd:string ;
+	rdfs:label "OCRe has identifier name" ;
+	skos:prefLabel "has identifier name"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE900242
+
+:OCRE900242 a owl:DatatypeProperty ;
+	rdfs:domain :OCRE400001 ;
+	rdfs:label "OCRe instance identifier property" ;
+	skos:prefLabel "instance identifier property"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900005
+
+study_design:OCRE900005 a owl:DatatypeProperty ;
+	rdfs:domain :OCRE400029 .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900006
+
+study_design:OCRE900006 a owl:DatatypeProperty ;
+	rdfs:domain :OCRE400029 .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000000
+
+:OCRE000000 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Aggregation operator" ;
+	skos:prefLabel "Aggregation operator" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000006
+
+:OCRE000006 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Comparison operator" ;
+	skos:prefLabel "Comparison operator"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000012
+
+:OCRE000012 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Semantic relation" ;
+	skos:prefLabel "Semantic relation"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000013
+
+:OCRE000013 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Time point extractor" ;
+	skos:prefLabel "Time point extractor"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000018
+
+:OCRE000018 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Time interval comparison operator" ;
+	skos:prefLabel "Time interval comparison operator"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000019
+
+:OCRE000019 a owl:Class ;
+	rdfs:subClassOf :OCRE400024 , _:genid44 .
+
+_:genid44 a owl:Restriction ;
+	owl:onProperty :OCRE205000 ;
+	owl:someValuesFrom xsd:dateTime .
+
+:OCRE000019 rdfs:label "OCRe Time literal" ;
+	skos:prefLabel "Time literal"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000020
+
+:OCRE000020 a owl:Class ;
+	rdfs:subClassOf :OCRE400024 , _:genid45 .
+
+_:genid45 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:someValuesFrom :OCRE000013 .
+
+:OCRE000020 rdfs:subClassOf _:genid46 .
+
+_:genid46 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom :OCRE722000 .
+
+:OCRE000020 rdfs:label "OCRe Time point reference" ;
+	skos:prefLabel "Time point reference"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000022
+
+:OCRE000022 a owl:Class ;
+	rdfs:subClassOf :OCRE400023 ;
+	rdfs:label "OCRe Integer" ;
+	skos:prefLabel "Integer"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000023
+
+:OCRE000023 a owl:Class ;
+	rdfs:subClassOf :OCRE400023 ;
+	rdfs:label "OCRe Real" ;
+	skos:prefLabel "Real"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000024
+
+:OCRE000024 a owl:Class ;
+	rdfs:subClassOf :OCRE400031 ;
+	rdfs:label "OCRe Interval" ;
+	skos:prefLabel "Interval"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000029
+
+:OCRE000029 a owl:Class ;
+	rdfs:subClassOf :OCRE693433 , _:genid47 .
+
+_:genid47 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:allValuesFrom :OCRE000000 .
+
+:OCRE000029 rdfs:subClassOf _:genid48 .
+
+_:genid48 a owl:Restriction ;
+	owl:onProperty :OCRE000027 ;
+	owl:allValuesFrom _:genid6 .
+
+_:genid6 a owl:Class ;
+	owl:unionOf _:genid51 .
+
+_:genid51 a rdf:List ;
+	rdf:first :OCRE400023 ;
+	rdf:rest _:genid50 .
+
+_:genid50 a rdf:List ;
+	rdf:first :OCRE722000 ;
+	rdf:rest rdf:nil .
+
+:OCRE000029 rdfs:subClassOf _:genid52 .
+
+_:genid52 a owl:Restriction ;
+	owl:onProperty :OCRE000028 ;
+	owl:allValuesFrom _:genid5 .
+
+_:genid5 a owl:Class ;
+	owl:unionOf _:genid51 .
+
+:OCRE000029 rdfs:subClassOf _:genid53 .
+
+_:genid53 a owl:Restriction ;
+	owl:onProperty :OCRE000025 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:boolean .
+
+:OCRE000029 rdfs:subClassOf _:genid54 .
+
+_:genid54 a owl:Restriction ;
+	owl:onProperty :OCRE000026 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:boolean .
+
+:OCRE000029 rdfs:comment "If 'has operator' is used, then only lower or upper bound but not both is specified." ;
+	rdfs:label "OCRe Numeric value constraint" ;
+	skos:prefLabel "Numeric value constraint"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000030
+
+:OCRE000030 a owl:Class ;
+	rdfs:subClassOf :OCRE693433 , _:genid55 .
+
+_:genid55 a owl:Restriction ;
+	owl:onProperty :OCRE000035 ;
+	owl:someValuesFrom _:genid56 .
+
+_:genid56 a owl:Class ;
+	owl:unionOf _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first :OCRE400010 ;
+	rdf:rest _:genid57 .
+
+_:genid57 a rdf:List ;
+	rdf:first :OCRE400055 ;
+	rdf:rest rdf:nil .
+
+:OCRE000030 rdfs:label "OCRe Value set constraint" ;
+	skos:prefLabel "Value set constraint"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000036
+
+:OCRE000036 a owl:Class ;
+	rdfs:subClassOf :OCRE400078 ;
+	rdfs:label "OCRe Constraint on variable" ;
+	skos:prefLabel "Constraint on variable"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000037
+
+:OCRE000037 a owl:Class ;
+	rdfs:subClassOf :OCRE000036 , _:genid59 .
+
+_:genid59 a owl:Restriction ;
+	owl:onProperty :OCRE000039 ;
+	owl:allValuesFrom :OCRE400042 .
+
+:OCRE000037 rdfs:subClassOf _:genid60 .
+
+_:genid60 a owl:Restriction ;
+	owl:onProperty :OCRE562783 ;
+	owl:allValuesFrom :OCRE400050 .
+
+:OCRE000037 rdfs:subClassOf _:genid61 .
+
+_:genid61 a owl:Restriction ;
+	owl:onProperty :OCRE000039 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE400042 .
+
+:OCRE000037 rdfs:subClassOf _:genid62 .
+
+_:genid62 a owl:Restriction ;
+	owl:onProperty :OCRE562783 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE400050 .
+
+:OCRE000037 rdfs:label "OCRe Simple constraint on variable" ;
+	skos:prefLabel "Simple constraint on variable"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000038
+
+:OCRE000038 a owl:Class ;
+	rdfs:subClassOf :OCRE000036 , _:genid63 .
+
+_:genid63 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom :OCRE000036 .
+
+:OCRE000038 rdfs:subClassOf _:genid64 .
+
+_:genid64 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:allValuesFrom :OCRE000036 .
+
+:OCRE000038 rdfs:subClassOf _:genid65 .
+
+_:genid65 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE314540 .
+
+:OCRE000038 rdfs:label "OCRe Boolean combination of constrained variables" ;
+	skos:prefLabel "Boolean combination of constrained variables"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000040
+
+:OCRE000040 a owl:Class ;
+	rdfs:subClassOf :OCRE400031 ;
+	rdfs:label "OCRe Augmented noun phrase" ;
+	skos:prefLabel "Augmented noun phrase"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000041
+
+:OCRE000041 a owl:Class ;
+	rdfs:subClassOf :OCRE000040 , _:genid66 .
+
+_:genid66 a owl:Restriction ;
+	owl:onProperty :OCRE000044 ;
+	owl:someValuesFrom :OCRE400055 .
+
+:OCRE000041 rdfs:subClassOf _:genid67 .
+
+_:genid67 a owl:Restriction ;
+	owl:onProperty :OCRE935000 ;
+	owl:someValuesFrom :OCRE000040 .
+
+:OCRE000041 rdfs:comment "This class is used to encode, in simple way, SNOMED finding with context such as \"clinical finding absent with associated-finding noun_phrase\" or \"family history of noun phrase)" ;
+	rdfs:label "OCRe Context-dependent noun phrase" ;
+	skos:prefLabel "Context-dependent noun phrase" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000042
+
+:OCRE000042 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Context term" ;
+	skos:prefLabel "Context term"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000146
+
+:OCRE000146 a owl:Class ;
+	rdfs:subClassOf :OCRE400078 , _:genid68 .
+
+_:genid68 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:someValuesFrom :OCRE314540 .
+
+:OCRE000146 rdfs:subClassOf _:genid69 .
+
+_:genid69 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom _:genid8 .
+
+_:genid8 a owl:Class ;
+	owl:unionOf _:genid72 .
+
+_:genid72 a rdf:List ;
+	rdf:first :OCRE000146 ;
+	rdf:rest _:genid71 .
+
+_:genid71 a rdf:List ;
+	rdf:first :OCRE722000 ;
+	rdf:rest rdf:nil .
+
+:OCRE000146 rdfs:subClassOf _:genid73 .
+
+_:genid73 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:allValuesFrom _:genid7 .
+
+_:genid7 a owl:Class ;
+	owl:unionOf _:genid72 .
+
+:OCRE000146 rdfs:label "OCRe Boolean combination of generalized ERGO annotation" ;
+	skos:prefLabel "Boolean combination of generalized ERGO annotation"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE001000
+
+:OCRE001000 a owl:Class ;
+	rdfs:subClassOf :OCRE400074 ;
+	owl:disjointWith :OCRE400000 , :OCRE400006 , :OCRE400053 , :OCRE824000 , :OCRE908000 ;
+	obo:IAO_0000115 "A study status applied to a study that has been approved by the relevant regulatory agency (if applicable) and for which protocol-dictated activities are occurring."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Study active" ;
+	skos:prefLabel "Study active"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE085000
+
+:OCRE085000 a owl:Class ;
+	owl:equivalentClass _:genid74 .
+
+_:genid74 owl:intersectionOf _:genid77 .
+
+_:genid77 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid75 .
+
+_:genid75 a rdf:List ;
+	rdf:first _:genid76 .
+
+_:genid76 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400073 .
+
+_:genid75 rdf:rest rdf:nil .
+
+_:genid74 a owl:Class .
+
+:OCRE085000 rdfs:subClassOf _:genid78 .
+
+_:genid78 owl:intersectionOf _:genid83 .
+
+_:genid83 a rdf:List ;
+	rdf:first _:genid84 .
+
+_:genid84 a owl:Restriction ;
+	owl:onProperty :OCRE898003 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid83 rdf:rest _:genid81 .
+
+_:genid81 a rdf:List ;
+	rdf:first _:genid82 .
+
+_:genid82 a owl:Restriction ;
+	owl:onProperty :OCRE900216 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid81 rdf:rest _:genid79 .
+
+_:genid79 a rdf:List ;
+	rdf:first _:genid80 .
+
+_:genid80 a owl:Restriction ;
+	owl:onProperty :OCRE900217 ;
+	owl:hasValue "true"^^xsd:boolean .
+
+_:genid79 rdf:rest rdf:nil .
+
+_:genid78 a owl:Class .
+
+:OCRE085000 owl:disjointWith :OCRE400009 , :OCRE400052 , :OCRE400069 , :OCRE400071 , :OCRE992000 ;
+	obo:IAO_0000115 "A \"recruitment not yet started study\" is a study for which participants are not yet being recruited. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment not yet started study" ;
+	skos:prefLabel "Recruitment not yet started study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE099000
+
+:OCRE099000 a owl:Class ;
+	rdfs:subClassOf :OCRE920000 , _:genid85 .
+
+_:genid85 a owl:Restriction ;
+	owl:onProperty :OCRE900072 ;
+	owl:someValuesFrom :OCRE000146 .
+
+:OCRE099000 rdfs:comment "a logical combination (and, or, not) of Clinical statements" ;
+	rdfs:label "OCRe Boolean combination statement" ;
+	skos:prefLabel "Boolean combination statement" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE174569
+
+:OCRE174569 a owl:Class ;
+	rdfs:subClassOf :OCRE596000 , _:genid86 .
+
+_:genid86 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom :OCRE596000 .
+
+:OCRE174569 rdfs:subClassOf _:genid87 .
+
+_:genid87 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:allValuesFrom :OCRE596000 .
+
+:OCRE174569 rdfs:subClassOf _:genid88 .
+
+_:genid88 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE314540 .
+
+:OCRE174569 rdfs:label "OCRe Boolean combination of non-temporal constraints" ;
+	skos:prefLabel "Boolean combination of non-temporal constraints"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE182000
+
+:OCRE182000 a owl:Class ;
+	rdfs:subClassOf :OCRE850429 , _:genid89 .
+
+_:genid89 a owl:Restriction ;
+	owl:onProperty :OCRE886865 ;
+	owl:someValuesFrom study_protocol:OCRE300001 .
+
+:OCRE182000 rdfs:subClassOf _:genid90 .
+
+_:genid90 a owl:Restriction ;
+	owl:onProperty :OCRE747000 ;
+	owl:hasValue :OCRE641000 .
+
+:OCRE182000 obo:IAO_0000115 """A cohort population whose members share the same assigned intervention.
+
+Note: arm population is defined only within the context of an interventional study."""^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:comment "An arm population is an intention-to-treat group" ;
+	rdfs:label "OCRe Arm population" ;
+	skos:prefLabel "Arm population"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE224000
+
+:OCRE224000 a owl:Class ;
+	rdfs:subClassOf :OCRE400042 ;
+	rdfs:label "OCRe Periodic event constraint" ;
+	skos:prefLabel "Periodic event constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE261000
+
+:OCRE261000 a owl:Class ;
+	rdfs:subClassOf :OCRE400003 ;
+	owl:disjointWith :OCRE400016 , :OCRE400030 , :OCRE400068 , :OCRE400073 , :OCRE400075 ;
+	obo:IAO_0000115 "A recruitment status applied to a study for which participants will not be recruited, because the study is withdrawn."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment will not start" ;
+	skos:prefLabel "Recruitment will not start"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE314540
+
+:OCRE314540 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Boolean operator" ;
+	skos:prefLabel "Boolean operator"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE316000
+
+:OCRE316000 a owl:Class ;
+	owl:equivalentClass _:genid91 .
+
+_:genid91 owl:intersectionOf _:genid94 .
+
+_:genid94 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid92 .
+
+_:genid92 a rdf:List ;
+	rdf:first _:genid93 .
+
+_:genid93 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE908000 .
+
+_:genid92 rdf:rest rdf:nil .
+
+_:genid91 a owl:Class .
+
+:OCRE316000 owl:disjointWith :OCRE386000 , :OCRE400048 , :OCRE449000 , :OCRE584000 , :OCRE740000 ;
+	obo:IAO_0000115 "A \"terminated study\" is a study that was halted prematurely and will not resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Terminated study" ;
+	skos:prefLabel "Terminated study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE317000
+
+:OCRE317000 a owl:Class ;
+	rdfs:subClassOf :OCRE920000 , _:genid95 .
+
+_:genid95 a owl:Restriction ;
+	owl:onProperty :OCRE900072 ;
+	owl:someValuesFrom :OCRE722000 .
+
+:OCRE317000 rdfs:comment "Simple statements are statements about Assessments made about a person, Interventions done to him, or his Behaviors. All Simple statements have noun phrases (e.g., LDL_cholesterol) as the core of the statements, an effective time, and a mood. The effective time property specifies the time during which the statement is valid. For example, the effective time of a blood test result may be the time when the sample is taken. Similar to HL7 RIM mood codes, a mood modifies the simple clinical statement to specify whether the statement indicates an event that happened, an intent, or an order." ;
+	rdfs:label "OCRe Simple statement" ;
+	skos:prefLabel "Simple statement" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE364000
+
+:OCRE364000 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	rdfs:label "OCRe Priority" ;
+	skos:prefLabel "Priority"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE386000
+
+:OCRE386000 a owl:Class ;
+	owl:equivalentClass _:genid96 .
+
+_:genid96 owl:intersectionOf _:genid99 .
+
+_:genid99 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid97 .
+
+_:genid97 a rdf:List ;
+	rdf:first _:genid98 .
+
+_:genid98 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE824000 .
+
+_:genid97 rdf:rest rdf:nil .
+
+_:genid96 a owl:Class .
+
+:OCRE386000 owl:disjointWith :OCRE400048 , :OCRE449000 , :OCRE584000 , :OCRE740000 ;
+	obo:IAO_0000115 "A \"suspended study\" is a study for which protocol-dictated activities have halted prematurely but potentially will resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Suspended study" ;
+	skos:prefLabel "Suspended study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400000
+
+:OCRE400000 a owl:Class ;
+	rdfs:subClassOf :OCRE400074 ;
+	owl:disjointWith :OCRE400006 , :OCRE400053 , :OCRE824000 , :OCRE908000 ;
+	obo:IAO_0000115 "A study status applied to a study in the planning stage: protocol is being developed and has not yet been submitted for regulatory approval (if applicable)."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Study planned" ;
+	skos:prefLabel "Study planned"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400001
+
+:OCRE400001 a owl:Class ;
+	rdfs:subClassOf :OCRE400031 ;
+	obo:IAO_0000115 "An instance identifier is an identifier that uniquely identifies a thing or object. Examples are object identifier for HL7 RIM objects, medical record number, order id, service catalog item id, Vehicle Identification Number (VIN), etc. Instance identifiers are defined based on ISO object identifiers."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Data Types Abstract specification. Available at http://healthinfo.med.dal.ca/hl7intro/CDA_R2_NormativeWebEdition/infrastructure/datatypes/datatypes.htm"^^xsd:string ;
+	rdfs:label "OCRe Instance identifier" ;
+	skos:prefLabel "Instance identifier"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400002
+
+:OCRE400002 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "A term imported from some external standard terminology"^^xsd:string ;
+	rdfs:label "OCRe Domain term" ;
+	skos:prefLabel "Domain term"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400003
+
+:OCRE400003 a owl:Class ;
+	owl:equivalentClass _:genid100 .
+
+_:genid100 a owl:Class ;
+	owl:unionOf _:genid106 .
+
+_:genid106 a rdf:List ;
+	rdf:first :OCRE261000 ;
+	rdf:rest _:genid105 .
+
+_:genid105 a rdf:List ;
+	rdf:first :OCRE400016 ;
+	rdf:rest _:genid104 .
+
+_:genid104 a rdf:List ;
+	rdf:first :OCRE400030 ;
+	rdf:rest _:genid103 .
+
+_:genid103 a rdf:List ;
+	rdf:first :OCRE400068 ;
+	rdf:rest _:genid102 .
+
+_:genid102 a rdf:List ;
+	rdf:first :OCRE400073 ;
+	rdf:rest _:genid101 .
+
+_:genid101 a rdf:List ;
+	rdf:first :OCRE400075 ;
+	rdf:rest rdf:nil .
+
+:OCRE400003 rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "The recruitment status describes the overall accrual (enrollment) activity for the study."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment status" ;
+	skos:prefLabel "Recruitment status"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400004
+
+:OCRE400004 a owl:Class ;
+	obo:IAO_0000115 """An event is a processual entity [span:ProcessualEntity] that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities.
+
+Examples: the life of an organism, the process of sleeping, the process of cell-division"""^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "BFO"^^xsd:string ;
+	statistics:synonym "Process"^^xsd:string ;
+	rdfs:label "OCRe Event" ;
+	skos:prefLabel "Event"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400005
+
+:OCRE400005 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "The scheme used to describe the telecommunication address (e.g., ftp, http, etc.)"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Telecommunication scheme" ;
+	skos:prefLabel "Telecommunication scheme"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400006
+
+:OCRE400006 a owl:Class ;
+	rdfs:subClassOf :OCRE400074 ;
+	owl:disjointWith :OCRE400053 , :OCRE824000 , :OCRE908000 ;
+	obo:IAO_0000115 "A study status applied to a study halted prematurely, prior to enrollment of first participant."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definitions for Overall recruitment status Withdrawn. Available at http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+	rdfs:label "OCRe Study withdrawn" ;
+	skos:prefLabel "Study withdrawn"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400009
+
+:OCRE400009 a owl:Class ;
+	owl:equivalentClass _:genid107 .
+
+_:genid107 owl:intersectionOf _:genid110 .
+
+_:genid110 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid108 .
+
+_:genid108 a rdf:List ;
+	rdf:first _:genid109 .
+
+_:genid109 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400075 .
+
+_:genid108 rdf:rest rdf:nil .
+
+_:genid107 a owl:Class .
+
+:OCRE400009 rdfs:subClassOf _:genid111 .
+
+_:genid111 owl:intersectionOf _:genid116 .
+
+_:genid116 a rdf:List ;
+	rdf:first _:genid117 .
+
+_:genid117 a owl:Restriction ;
+	owl:onProperty :OCRE898003 ;
+	owl:hasValue "true"^^xsd:boolean .
+
+_:genid116 rdf:rest _:genid114 .
+
+_:genid114 a rdf:List ;
+	rdf:first _:genid115 .
+
+_:genid115 a owl:Restriction ;
+	owl:onProperty :OCRE900216 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid114 rdf:rest _:genid112 .
+
+_:genid112 a rdf:List ;
+	rdf:first _:genid113 .
+
+_:genid113 a owl:Restriction ;
+	owl:onProperty :OCRE900217 ;
+	owl:hasValue "true"^^xsd:boolean .
+
+_:genid112 rdf:rest rdf:nil .
+
+_:genid111 a owl:Class .
+
+:OCRE400009 owl:disjointWith :OCRE400052 , :OCRE400069 , :OCRE400071 , :OCRE992000 ;
+	obo:IAO_0000115 "A \"recruitment suspended study\" is a study for which recruiting or enrolling participants has halted prematurely but potentially will resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment suspended study" ;
+	skos:prefLabel "Recruitment suspended study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400010
+
+:OCRE400010 a owl:Class ;
+	obo:IAO_0000115 "Classes that define sets of permissible values."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Value set" ;
+	skos:prefLabel "Value set"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400012
+
+:OCRE400012 a owl:Class ;
+	rdfs:subClassOf :OCRE400024 , _:genid118 .
+
+_:genid118 a owl:Restriction ;
+	owl:onProperty :OCRE900040 ;
+	owl:someValuesFrom :OCRE400024 .
+
+:OCRE400012 rdfs:subClassOf _:genid119 .
+
+_:genid119 a owl:Restriction ;
+	owl:onProperty :OCRE900047 ;
+	owl:someValuesFrom :OCRE400057 .
+
+:OCRE400012 obo:IAO_0000115 "A relative time point is a time point defined in terms of an offset duration before or after a reference or anchor time point (e.g., 2 months after the start of treatment)."^^xsd:string ;
+	rdfs:label "OCRe Relative time point" ;
+	skos:prefLabel "Relative time point"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400013
+
+:OCRE400013 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "Biospecimen availability describes whether, for a study, biospecimens are available."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Biospecimen availability" ;
+	skos:prefLabel "Biospecimen availability"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400014
+
+:OCRE400014 a owl:Class ;
+	rdfs:subClassOf :OCRE400040 ;
+	obo:IAO_0000115 "A telecommunications address specified according to Internet standard RFC 2396 [http://www.ietf.org/rfc/rfc2396.txt]. The URI specifies the protocol and the contact point defined by that protocol for the resource. Notable uses of the telecommunication address data type are for telephone and telefax numbers, e-mail addresses, Hypertext references, FTP references, etc. "^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Data Types Abstract specification. Available at http://healthinfo.med.dal.ca/hl7intro/CDA_R2_NormativeWebEdition/infrastructure/datatypes/datatypes.htm"^^xsd:string ;
+	rdfs:label "OCRe Telecommunication address" ;
+	skos:prefLabel "Telecommunication address"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400015
+
+:OCRE400015 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 ;
+	obo:IAO_0000115 "A physical entity is an entity that has existence in time and space. An entity is that which is perceived or known or inferred to have its own distinct existence (living or nonliving)"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	statistics:synonym "bfo:material entity"^^xsd:string ;
+	rdfs:label "OCRe Physical entity" ;
+	skos:prefLabel "Physical entity"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400016
+
+:OCRE400016 a owl:Class ;
+	rdfs:subClassOf :OCRE400003 ;
+	owl:disjointWith :OCRE400030 , :OCRE400068 , :OCRE400073 , :OCRE400075 ;
+	obo:IAO_0000115 "A recruitment status applied to a study for which participants are currently being recruited. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definition for Overall recruitment status Recruiting. Available at http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+	rdfs:label "OCRe Recruitment active" ;
+	skos:prefLabel "Recruitment active"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400018
+
+:OCRE400018 a owl:Class ;
+	rdfs:subClassOf :OCRE400020 ;
+	obo:IAO_0000115 "OTC media is a biospecimen preservation method whereby a fresh specimen is frozen onto a sectioning planchet using OCT (Optimum Cutting Temperature) and then stored frozen"^^xsd:string ;
+	obo:IAO_0000117 "Herb"^^xsd:string ;
+	rdfs:label "OCRe OCT media" ;
+	skos:prefLabel "OCT media"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400019
+
+:OCRE400019 a owl:Class ;
+	rdfs:subClassOf :OCRE400020 ;
+	obo:IAO_0000115 "Fast freeze is a biospecimen preservation method whereby the specimen is placed into typically liquid nitrogen or dry ice so the specimen is frozen in seconds then stored colder than (-160° C)"^^xsd:string ;
+	obo:IAO_0000117 "Herb"^^xsd:string ;
+	rdfs:label "OCRe Fast freeze" ;
+	skos:prefLabel "Fast freeze"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400020
+
+:OCRE400020 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "Biospecimen preservation method describes the method used to preserve a biospecimen."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Biospecimen preservation method" ;
+	skos:prefLabel "Biospecimen preservation method"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400021
+
+:OCRE400021 a owl:Class ;
+	rdfs:subClassOf :OCRE400015 ;
+	obo:IAO_0000115 "A physical substance. For example, drug, device, specimen"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "BRIDG 3.0 Available at http://bridgmodel.nci.nih.gov/"^^xsd:string ;
+	rdfs:label "OCRe Material" ;
+	skos:prefLabel "Material"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400022
+
+:OCRE400022 a owl:Class ;
+	rdfs:subClassOf :OCRE400020 ;
+	obo:IAO_0000115 "Formalin fixation is a biospecimen preservation method whereby the specimen is typically fixed overnight in buffered formalin and then embedded in paraffin and stored at room temperature"^^xsd:string ;
+	obo:IAO_0000117 "Herb"^^xsd:string ;
+	rdfs:label "OCRe Formalin fixation" ;
+	skos:prefLabel "Formalin fixation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400023
+
+:OCRE400023 a owl:Class ;
+	rdfs:subClassOf :OCRE400031 ;
+	obo:IAO_0000115 "The quantity data type is an abstract generalization for all data types (1) whose value set has an order relation (less-or-equal) and (2) where difference is defined in all of the data type's totally ordered value subsets"^^xsd:string ;
+	rdfs:label "OCRe Quantity" ;
+	skos:prefLabel "Quantity"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400024
+
+:OCRE400024 a owl:Class ;
+	rdfs:subClassOf :OCRE400031 ;
+	obo:IAO_0000115 "A point on the time axis of a coordinate system."^^xsd:string ;
+	rdfs:label "OCRe Time point" ;
+	skos:prefLabel "Time point"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400025
+
+:OCRE400025 a owl:Class ;
+	rdfs:subClassOf :OCRE400080 ;
+	obo:IAO_0000115 "An anatomical structure consisting of similarly specialized cells and intercellular matrix, aggregated according to genetically determined spatial relationships, performing a specific function."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "NCI thesaurus entry for Tissue. Available at  http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C12801"^^xsd:string ;
+	rdfs:label "OCRe Tissue" ;
+	skos:prefLabel "Tissue"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400026
+
+:OCRE400026 a owl:Class ;
+	rdfs:subClassOf :OCRE400078 ;
+	obo:IAO_0000115 "A variable is a placeholder for one or a set of data values"^^xsd:string ;
+	rdfs:label "OCRe Variable" ;
+	skos:prefLabel "Variable"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400027
+
+:OCRE400027 a owl:Class ;
+	obo:IAO_0000115 "The function played by entity in some process. When applied to person it implies a set of behavior, rights, and obligations."^^xsd:string ;
+	rdfs:label "OCRe Role" ;
+	skos:prefLabel "Role"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400028
+
+:OCRE400028 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 , _:genid120 .
+
+_:genid120 a owl:Restriction ;
+	owl:onProperty :OCRE900068 ;
+	owl:someValuesFrom :OCRE400050 .
+
+:OCRE400028 rdfs:subClassOf _:genid121 .
+
+_:genid121 a owl:Restriction ;
+	owl:onProperty :OCRE900069 ;
+	owl:someValuesFrom study_protocol:OCRE300012 .
+
+:OCRE400028 obo:IAO_0000115 "A description of the variables whose data are collected in the study."^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	rdfs:label "OCRe Study data specification" ;
+	skos:prefLabel "Study data specification"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400029
+
+:OCRE400029 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 ;
+	obo:IAO_0000115 "A study is a program of data collection and of analysis of the data collected to answer a particular question, to reach conclusions about subject(s) or situation(s)."^^xsd:string ;
+	rdfs:label "OCRe Study" ;
+	skos:prefLabel "Study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400030
+
+:OCRE400030 a owl:Class ;
+	rdfs:subClassOf :OCRE400003 ;
+	owl:disjointWith :OCRE400068 , :OCRE400073 , :OCRE400075 ;
+	obo:IAO_0000115 "A recruitment status applied to a study that has concluded recruitment as planned (i.e., last patient in has occurred)"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment completed" ;
+	skos:prefLabel "Recruitment completed"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400031
+
+:OCRE400031 a owl:Class ;
+	rdfs:subClassOf :OCRE400078 ;
+	obo:IAO_0000115 "An abstract data type that is the generalization of all concrete data types"^^xsd:string ;
+	rdfs:label "OCRe Data value" ;
+	skos:prefLabel "Data value"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400032
+
+:OCRE400032 a owl:Class ;
+	obo:IAO_0000115 "A physical thing, group of physical things, an organization or information content that can exist in multiple forms."^^xsd:string ;
+	rdfs:label "OCRe Entity" ;
+	skos:prefLabel "Entity"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400033
+
+:OCRE400033 a owl:Class ;
+	owl:equivalentClass _:genid122 .
+
+_:genid122 owl:intersectionOf _:genid125 .
+
+_:genid125 a rdf:List ;
+	rdf:first :OCRE400044 ;
+	rdf:rest _:genid123 .
+
+_:genid123 a rdf:List ;
+	rdf:first _:genid124 .
+
+_:genid124 a owl:Restriction ;
+	owl:onProperty :OCRE900055 ;
+	owl:allValuesFrom :OCRE400064 .
+
+_:genid123 rdf:rest rdf:nil .
+
+_:genid122 a owl:Class .
+
+:OCRE400033 obo:IAO_0000115 "A collection of organisms."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Organism collection" ;
+	skos:prefLabel "Organism collection"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400034
+
+:OCRE400034 a owl:Class ;
+	rdfs:subClassOf :OCRE400080 ;
+	obo:IAO_0000115 "A tissue with red blood cells, white blood cells, platelets, and other substances suspended in fluid called plasma. Blood takes oxygen and nutrients to the tissues, and carries away wastes."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "NCI Glossary"^^xsd:string ;
+	rdfs:label "OCRe Blood" ;
+	skos:prefLabel "Blood"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400035
+
+:OCRE400035 a owl:Class ;
+	rdfs:subClassOf :OCRE400080 ;
+	obo:IAO_0000115 "One or more of the smallest units of living structure capable of independent existence, composed of a membrane-enclosed mass of protoplasm and containing a nucleus or nucleoid."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "NCI Thesaurus entry for Cell. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C12508"^^xsd:string ;
+	rdfs:label "OCRe Cells" ;
+	skos:prefLabel "Cells"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400038
+
+:OCRE400038 a owl:Class ;
+	rdfs:subClassOf :OCRE000024 , _:genid126 .
+
+_:genid126 a owl:Restriction ;
+	owl:onProperty :OCRE900073 ;
+	owl:someValuesFrom :OCRE400024 .
+
+:OCRE400038 rdfs:subClassOf _:genid127 .
+
+_:genid127 a owl:Restriction ;
+	owl:onProperty :OCRE900074 ;
+	owl:someValuesFrom :OCRE400024 .
+
+:OCRE400038 obo:IAO_0000115 "An interval on the time axis of a coordinate system"^^xsd:string ;
+	rdfs:label "OCRe Time interval" ;
+	skos:prefLabel "Time interval"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400039
+
+:OCRE400039 a owl:Class ;
+	rdfs:subClassOf :OCRE400040 ;
+	obo:IAO_0000115 "A postal address is a mailing and home or office address. A sequence of address parts, such as street or post office Box, city, postal code, country, etc."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Data Types Abstract specification. Available at http://healthinfo.med.dal.ca/hl7intro/CDA_R2_NormativeWebEdition/infrastructure/datatypes/datatypes.htm"^^xsd:string ;
+	rdfs:label "OCRe Postal address" ;
+	skos:prefLabel "Postal address"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400040
+
+:OCRE400040 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 ;
+	obo:IAO_0000115 "An address includes the particulars of where a person or organization has the mail delivered (postal address) or can be reached with means other than mail (telecommunication address)."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Address" ;
+	skos:prefLabel "Address"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400041
+
+:OCRE400041 a owl:Class ;
+	rdfs:subClassOf :OCRE400027 , _:genid128 .
+
+_:genid128 a owl:Restriction ;
+	owl:onProperty :OCRE140896 ;
+	owl:allValuesFrom :OCRE400041 .
+
+:OCRE400041 rdfs:subClassOf _:genid129 .
+
+_:genid129 a owl:Restriction ;
+	owl:onProperty study_protocol:OCRE827668 ;
+	owl:allValuesFrom :OCRE400055 .
+
+:OCRE400041 rdfs:subClassOf _:genid130 .
+
+_:genid130 a owl:Restriction ;
+	owl:onProperty :OCRE900223 ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger .
+
+:OCRE400041 rdfs:subClassOf _:genid131 .
+
+_:genid131 a owl:Restriction ;
+	owl:onProperty :OCRE900224 ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger .
+
+:OCRE400041 obo:IAO_0000115 "A phenomenon is a fact or event of interest susceptible to scientific description and explanation"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "Merriam-Webster's Dictionary entry for phenomenon. Available at http://www.merriam-webster.com/dictionary/phenomenon"^^xsd:string ;
+	rdfs:label "OCRe Study phenomenon" ;
+	skos:prefLabel "Study phenomenon"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400042
+
+:OCRE400042 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 ;
+	obo:IAO_0000115 "Criterion is a placeholder class that represent a Boolean expression (e.g., an eligibility criterion)"^^xsd:string ;
+	rdfs:label "OCRe Constraint" ;
+	skos:prefLabel "Constraint"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400044
+
+:OCRE400044 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 ;
+	obo:IAO_0000115 "A collection is a group of things or people."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "New Oxford American Dictionary"^^xsd:string ;
+	rdfs:label "OCRe Collection" ;
+	skos:prefLabel "Collection"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400047
+
+:OCRE400047 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "A meta-level characterization of a study"^^xsd:string ;
+	rdfs:label "OCRe Study characteristic" ;
+	skos:prefLabel "Study characteristic"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400048
+
+:OCRE400048 a owl:Class ;
+	owl:equivalentClass _:genid132 .
+
+_:genid132 owl:intersectionOf _:genid135 .
+
+_:genid135 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid133 .
+
+_:genid133 a rdf:List ;
+	rdf:first _:genid134 .
+
+_:genid134 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400006 .
+
+_:genid133 rdf:rest rdf:nil .
+
+_:genid132 a owl:Class .
+
+:OCRE400048 owl:disjointWith :OCRE449000 , :OCRE584000 , :OCRE740000 ;
+	obo:IAO_0000115 "A \"withdrawn study\" is a study halted prematurely, prior to enrollment of first participant."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Withdrawn study" ;
+	skos:prefLabel "Withdrawn study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400049
+
+:OCRE400049 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 , _:genid136 .
+
+_:genid136 a owl:Restriction ;
+	owl:onProperty :OCRE900041 ;
+	owl:someValuesFrom :OCRE400002 .
+
+:OCRE400049 rdfs:subClassOf _:genid137 .
+
+_:genid137 a owl:Restriction ;
+	owl:onProperty :OCRE900223 ;
+	owl:allValuesFrom rdfs:Literal .
+
+:OCRE400049 obo:IAO_0000115 "Method for assessing an outcome, such as a questionnaire or laboratory test."^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	rdfs:label "OCRe Assessment method specification" ;
+	skos:prefLabel "Assessment method specification"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400050
+
+:OCRE400050 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 , _:genid138 .
+
+_:genid138 a owl:Restriction ;
+	owl:onProperty :OCRE900081 ;
+	owl:someValuesFrom :OCRE400049 .
+
+:OCRE400050 rdfs:subClassOf _:genid139 .
+
+_:genid139 a owl:Restriction ;
+	owl:onProperty :OCRE900088 ;
+	owl:someValuesFrom :OCRE400041 .
+
+:OCRE400050 rdfs:subClassOf _:genid140 .
+
+_:genid140 a owl:Restriction ;
+	owl:onProperty :OCRE900060 ;
+	owl:allValuesFrom :OCRE400078 .
+
+:OCRE400050 rdfs:subClassOf _:genid141 .
+
+_:genid141 a owl:Restriction ;
+	owl:onProperty :OCRE747000 ;
+	owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE364000 .
+
+:OCRE400050 rdfs:subClassOf _:genid142 .
+
+_:genid142 a owl:Restriction ;
+	owl:onProperty :OCRE900223 ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger .
+
+:OCRE400050 rdfs:subClassOf _:genid143 .
+
+_:genid143 a owl:Restriction ;
+	owl:onProperty :OCRE900224 ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger .
+
+:OCRE400050 obo:IAO_0000115 "A description of the variable whose values are the quantitative or enumerable data collected in a study"^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	rdfs:label "OCRe Variable specification" ;
+	skos:prefLabel "Variable specification"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400052
+
+:OCRE400052 a owl:Class ;
+	owl:equivalentClass _:genid144 .
+
+_:genid144 owl:intersectionOf _:genid147 .
+
+_:genid147 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid145 .
+
+_:genid145 a rdf:List ;
+	rdf:first _:genid146 .
+
+_:genid146 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400068 .
+
+_:genid145 rdf:rest rdf:nil .
+
+_:genid144 a owl:Class .
+
+:OCRE400052 rdfs:subClassOf _:genid148 .
+
+_:genid148 owl:intersectionOf _:genid153 .
+
+_:genid153 a rdf:List ;
+	rdf:first _:genid154 .
+
+_:genid154 a owl:Restriction ;
+	owl:onProperty :OCRE898003 ;
+	owl:hasValue "true"^^xsd:boolean .
+
+_:genid153 rdf:rest _:genid151 .
+
+_:genid151 a rdf:List ;
+	rdf:first _:genid152 .
+
+_:genid152 a owl:Restriction ;
+	owl:onProperty :OCRE900216 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid151 rdf:rest _:genid149 .
+
+_:genid149 a rdf:List ;
+	rdf:first _:genid150 .
+
+_:genid150 a owl:Restriction ;
+	owl:onProperty :OCRE900217 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid149 rdf:rest rdf:nil .
+
+_:genid148 a owl:Class .
+
+:OCRE400052 owl:disjointWith :OCRE400069 , :OCRE400071 , :OCRE992000 ;
+	obo:IAO_0000115 "A \"recruitment terminated study\" is a study for which recruiting or enrolling participants has halted prematurely and will not resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment terminated study" ;
+	skos:prefLabel "Recruitment terminated study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400053
+
+:OCRE400053 a owl:Class ;
+	rdfs:subClassOf :OCRE400074 ;
+	owl:disjointWith :OCRE824000 , :OCRE908000 ;
+	obo:IAO_0000115 "A study status applied to a study in which all data has been collected (last patient's last visit has occurred) and the analysis performed. Results may or may not have been published."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Study completed" ;
+	skos:prefLabel "Study completed"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400054
+
+:OCRE400054 a owl:Class ;
+	rdfs:subClassOf :OCRE400080 ;
+	obo:IAO_0000115 "Any fluid in the body including blood, urine, saliva, sputum, tears, semen, milk, or vaginal secretions"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Bodily fluid" ;
+	skos:prefLabel "Bodily fluid"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400055
+
+:OCRE400055 a owl:Class ;
+	rdfs:subClassOf :OCRE000040 , _:genid155 .
+
+_:genid155 a owl:Restriction ;
+	owl:onProperty :OCRE000034 ;
+	owl:someValuesFrom xsd:string .
+
+:OCRE400055 rdfs:subClassOf _:genid156 .
+
+_:genid156 a owl:Restriction ;
+	owl:onProperty :OCRE900219 ;
+	owl:allValuesFrom xsd:string .
+
+:OCRE400055 rdfs:subClassOf _:genid157 .
+
+_:genid157 a owl:Restriction ;
+	owl:onProperty :OCRE900220 ;
+	owl:allValuesFrom xsd:string .
+
+:OCRE400055 rdfs:subClassOf _:genid158 .
+
+_:genid158 a owl:Restriction ;
+	owl:onProperty :OCRE900222 ;
+	owl:allValuesFrom xsd:string .
+
+:OCRE400055 obo:IAO_0000115 "A CD (concept descriptor) represents any kind of concept usually by giving a code defined in a code system. A concept descriptor can contain the original text or phrase that served as the basis of the coding and one or more translations into different coding systems. A concept descriptor can also contain qualifiers to describe, e.g., the concept of a \"left foot\" as a postcoordinated term built from the primary code \"FOOT\" and the qualifier \"LEFT\". In cases of an exceptional value, the concept descriptor need not contain a code but only the original text describing that concept."^^xsd:string ;
+	obo:IAO_0000116 """CD (concept descriptor) is a more general form of Coded value (CV). 
+In HL7 datatype specification CV constrains CE so that there can be neither qualifiers not translations, and only a single concept is allowed."""^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Abstract Data Type specification Release 2"^^xsd:string ;
+	rdfs:label "OCRe CD" ;
+	skos:prefLabel "CD"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400056
+
+:OCRE400056 a owl:Class ;
+	rdfs:subClassOf study_design:OCRE9000030 ;
+	obo:IAO_0000115 "An ecologic study is a non individual-human study in which the unit of observation is a population or community."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "Adapted from: Epidemiology for the Uninitiated. Available at: http://www.bmj.com/epidem/epid.html"^^xsd:string ;
+	rdfs:label "OCRe Ecologic study" ;
+	skos:prefLabel "Ecologic study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400057
+
+:OCRE400057 a owl:Class ;
+	rdfs:subClassOf :OCRE400115 ;
+	obo:IAO_0000115 "The quantity of time as measured in some unit"^^xsd:string ;
+	rdfs:label "OCRe Duration" ;
+	skos:prefLabel "Duration"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400059
+
+:OCRE400059 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 ;
+	obo:IAO_0000115 "Information entity is a structure whose purpose is to hold information. The structure itself is not a model of world. For example, a terminology code has properties such as terminology system, the code for a term (e.g.,\"heart failure\"), but the code is not a representation of thing that the term designate."^^xsd:string ;
+	obo:IAO_0000117 "Samson Tu"^^xsd:string ;
+	rdfs:label "OCRe Information entity" ;
+	skos:prefLabel "Information entity"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400061
+
+:OCRE400061 a owl:Class ;
+	rdfs:subClassOf :OCRE400033 , _:genid159 .
+
+_:genid159 a owl:Restriction ;
+	owl:onProperty :OCRE900060 ;
+	owl:allValuesFrom :OCRE920000 .
+
+:OCRE400061 rdfs:subClassOf _:genid160 .
+
+_:genid160 a owl:Restriction ;
+	owl:onProperty study_protocol:OCRE885707 ;
+	owl:allValuesFrom :OCRE846075 .
+
+:OCRE400061 obo:IAO_0000115 "The collection of organisms that are formally enrolled in a study."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	statistics:synonym "Enrolled population"^^xsd:string ;
+	rdfs:label "OCRe Study population" ;
+	skos:prefLabel "Study population"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400064
+
+:OCRE400064 a owl:Class ;
+	rdfs:subClassOf :OCRE400015 ;
+	obo:IAO_0000115 """DEFINITION:
+Any individual living (or previously living) being."""^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "BRIDG 3.0.3 definition of BiologicEntity. Available at http://bridgmodel.nci.nih.gov/"^^xsd:string ;
+	rdfs:label "OCRe Organism" ;
+	skos:prefLabel "Organism"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400065
+
+:OCRE400065 a owl:Class ;
+	rdfs:subClassOf :OCRE400021 ;
+	obo:IAO_0000115 "Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "NCI Thesaurus entry for Biospecimen. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C70699"^^xsd:string ;
+	rdfs:label "OCRe Biospecimen" ;
+	skos:prefLabel "Biospecimen"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400066
+
+:OCRE400066 a owl:Class ;
+	rdfs:subClassOf :OCRE400020 ;
+	obo:IAO_0000115 "Slow freeze is a biospecimen preservation method whereby a specimen placed into environment (>or= -80° C) and allowed to freeze over minutes"^^xsd:string ;
+	obo:IAO_0000117 "Herb"^^xsd:string ;
+	rdfs:label "OCRe Slow freeze" ;
+	skos:prefLabel "Slow freeze"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400067
+
+:OCRE400067 a owl:Class ;
+	rdfs:subClassOf :OCRE400020 ;
+	obo:IAO_0000115 "Para-formaldehyde fixation is a biospecimen preservation method whereby a specimen is typically fixed in para-formaldehyde for hours to days and then embedded in plastic and stored at room temperature"^^xsd:string ;
+	obo:IAO_0000117 "Herb"^^xsd:string ;
+	rdfs:label "OCRe Para-formaldehyde fixation" ;
+	skos:prefLabel "Para-formaldehyde fixation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400068
+
+:OCRE400068 a owl:Class ;
+	rdfs:subClassOf :OCRE400003 ;
+	owl:disjointWith :OCRE400073 , :OCRE400075 ;
+	obo:IAO_0000115 "A recruitment status applied to a study for which recruiting or enrolling participants has halted prematurely and will not resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definition Overall recruitment status Terminated (only the part pertaining enrollment). Available at http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+	rdfs:label "OCRe Recruitment terminated" ;
+	skos:prefLabel "Recruitment terminated"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400069
+
+:OCRE400069 a owl:Class ;
+	owl:equivalentClass _:genid161 .
+
+_:genid161 owl:intersectionOf _:genid164 .
+
+_:genid164 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid162 .
+
+_:genid162 a rdf:List ;
+	rdf:first _:genid163 .
+
+_:genid163 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400016 .
+
+_:genid162 rdf:rest rdf:nil .
+
+_:genid161 a owl:Class .
+
+:OCRE400069 rdfs:subClassOf _:genid165 .
+
+_:genid165 a owl:Restriction ;
+	owl:onProperty :OCRE900216 ;
+	owl:hasValue "true"^^xsd:boolean .
+
+:OCRE400069 owl:disjointWith :OCRE400071 , :OCRE992000 ;
+	obo:IAO_0000115 "A \"recruitment active study\" is a study for which participants are currently being recruited. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment active study" ;
+	skos:prefLabel "Recruitment active study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400070
+
+:OCRE400070 a owl:Class ;
+	rdfs:subClassOf :OCRE400004 ;
+	obo:IAO_0000115 "A clinical event is an event during which an assessment of, or intervention on a study subject occurs."^^xsd:string ;
+	statistics:curator "Simona"^^xsd:string ;
+	rdfs:label "OCRe Clinical event" ;
+	skos:prefLabel "Clinical event"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400071
+
+:OCRE400071 a owl:Class ;
+	owl:equivalentClass _:genid166 .
+
+_:genid166 owl:intersectionOf _:genid169 .
+
+_:genid169 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid167 .
+
+_:genid167 a rdf:List ;
+	rdf:first _:genid168 .
+
+_:genid168 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400030 .
+
+_:genid167 rdf:rest rdf:nil .
+
+_:genid166 a owl:Class .
+
+:OCRE400071 rdfs:subClassOf _:genid170 .
+
+_:genid170 owl:intersectionOf _:genid175 .
+
+_:genid175 a rdf:List ;
+	rdf:first _:genid176 .
+
+_:genid176 a owl:Restriction ;
+	owl:onProperty :OCRE898003 ;
+	owl:hasValue "true"^^xsd:boolean .
+
+_:genid175 rdf:rest _:genid173 .
+
+_:genid173 a rdf:List ;
+	rdf:first _:genid174 .
+
+_:genid174 a owl:Restriction ;
+	owl:onProperty :OCRE900216 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid173 rdf:rest _:genid171 .
+
+_:genid171 a rdf:List ;
+	rdf:first _:genid172 .
+
+_:genid172 a owl:Restriction ;
+	owl:onProperty :OCRE900217 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid171 rdf:rest rdf:nil .
+
+_:genid170 a owl:Class .
+
+:OCRE400071 owl:disjointWith :OCRE992000 ;
+	obo:IAO_0000115 "A \"recruitment completed study\" is a study that has concluded recruitment (i.e., last patient in has occurred)."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment completed study" ;
+	skos:prefLabel "Recruitment completed study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400072
+
+:OCRE400072 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 , _:genid177 .
+
+_:genid177 a owl:Restriction ;
+	owl:onProperty :OCRE900079 ;
+	owl:someValuesFrom statistics:OCRE200061 .
+
+:OCRE400072 rdfs:subClassOf _:genid178 .
+
+_:genid178 a owl:Restriction ;
+	owl:onProperty :OCRE900080 ;
+	owl:someValuesFrom statistics:OCRE200053 .
+
+:OCRE400072 rdfs:subClassOf _:genid179 .
+
+_:genid179 a owl:Restriction ;
+	owl:onProperty statistics:OCRE900010 ;
+	owl:someValuesFrom :OCRE400050 .
+
+:OCRE400072 rdfs:subClassOf _:genid180 .
+
+_:genid180 a owl:Restriction ;
+	owl:onProperty statistics:OCRE900011 ;
+	owl:someValuesFrom :OCRE400050 .
+
+:OCRE400072 obo:IAO_0000115 "The specification of how an outcome of the study should be analyzed through the use of statistical methods. It includes the specification of the relevant outcome and predictor variables, the cohort groups, time of outcome assessments, and the statistical method to be used."^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	rdfs:label "OCRe Outcome analysis specification" ;
+	skos:prefLabel "Outcome analysis specification"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400073
+
+:OCRE400073 a owl:Class ;
+	rdfs:subClassOf :OCRE400003 ;
+	owl:disjointWith :OCRE400075 ;
+	obo:IAO_0000115 "A recruitment status applied to a study for which participants are not yet being recruited. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definition for Overall recruitment status Not yet recruiting. Available at http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+	rdfs:label "OCRe Recruitment not yet started" ;
+	skos:prefLabel "Recruitment not yet started"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400074
+
+:OCRE400074 a owl:Class ;
+	owl:equivalentClass _:genid181 .
+
+_:genid181 a owl:Class ;
+	owl:unionOf _:genid187 .
+
+_:genid187 a rdf:List ;
+	rdf:first :OCRE001000 ;
+	rdf:rest _:genid186 .
+
+_:genid186 a rdf:List ;
+	rdf:first :OCRE400000 ;
+	rdf:rest _:genid185 .
+
+_:genid185 a rdf:List ;
+	rdf:first :OCRE400006 ;
+	rdf:rest _:genid184 .
+
+_:genid184 a rdf:List ;
+	rdf:first :OCRE400053 ;
+	rdf:rest _:genid183 .
+
+_:genid183 a rdf:List ;
+	rdf:first :OCRE824000 ;
+	rdf:rest _:genid182 .
+
+_:genid182 a rdf:List ;
+	rdf:first :OCRE908000 ;
+	rdf:rest rdf:nil .
+
+:OCRE400074 rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "The study status describes where the study is in its life-cycle."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Study status" ;
+	skos:prefLabel "Study status"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400075
+
+:OCRE400075 a owl:Class ;
+	rdfs:subClassOf :OCRE400003 ;
+	obo:IAO_0000115 "A recruitment status applied to a study for which recruiting or enrolling participants has halted prematurely but potentially will resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "ClinicalTrials.gov Protocol Data Element Definition for Overall recruitment status Suspended. Available at http://prsinfo.clinicaltrials.gov/definitions.html"^^xsd:string ;
+	rdfs:label "OCRe Recruitment suspended" ;
+	skos:prefLabel "Recruitment suspended"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400076
+
+:OCRE400076 a owl:Class ;
+	rdfs:subClassOf :OCRE400064 ;
+	obo:IAO_0000115 "A human being"^^xsd:string ;
+	rdfs:label "OCRe Person" ;
+	skos:prefLabel "Person"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400078
+
+:OCRE400078 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 ;
+	obo:IAO_0000115 "Expression is an information entity that represent a data value or an entity that can be evaluated to yield a data value."^^xsd:string ;
+	rdfs:label "OCRe Expression" ;
+	skos:prefLabel "Expression"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400079
+
+:OCRE400079 a owl:Class ;
+	rdfs:subClassOf :OCRE541581 ;
+	obo:IAO_0000115 "A formalized group of persons or other organizations collected together for a common purpose (such as administrative, legal, political) and the infrastructure to carry out that purpose. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "BRIDG 3.0.3 Available at http://bridgmodel.nci.nih.gov/"^^xsd:string ;
+	rdfs:label "OCRe Organization" ;
+	skos:prefLabel "Organization"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400080
+
+:OCRE400080 a owl:Class ;
+	rdfs:subClassOf :OCRE400010 ;
+	obo:IAO_0000115 "The type of a material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes. This includes particular types of cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory substances."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "NCI Thesaurus entry for Biospecimen type. Available at: http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C70713"^^xsd:string ;
+	rdfs:label "OCRe Biospecimen type" ;
+	skos:prefLabel "Biospecimen type"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400115
+
+:OCRE400115 a owl:Class ;
+	rdfs:subClassOf :OCRE400023 , _:genid188 .
+
+_:genid188 a owl:Restriction ;
+	owl:onProperty :OCRE205000 ;
+	owl:someValuesFrom owl:real .
+
+:OCRE400115 rdfs:subClassOf _:genid189 .
+
+_:genid189 a owl:Restriction ;
+	owl:onProperty :OCRE205000 ;
+	owl:allValuesFrom owl:real .
+
+:OCRE400115 obo:IAO_0000115 "A physical quantity is a dimensioned quantity expressing the result of measuring."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "HL7 Data Types Abstract specification. Available at http://healthinfo.med.dal.ca/hl7intro/CDA_R2_NormativeWebEdition/infrastructure/datatypes/datatypes.htm"^^xsd:string ;
+	rdfs:label "OCRe Physical quantity" ;
+	skos:prefLabel "Physical quantity"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE414000
+
+:OCRE414000 a owl:Class ;
+	rdfs:subClassOf :OCRE400042 ;
+	rdfs:label "OCRe Simple time constraint" ;
+	skos:prefLabel "Simple time constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE434000
+
+:OCRE434000 a owl:Class ;
+	rdfs:subClassOf :OCRE596000 , _:genid190 .
+
+_:genid190 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom :OCRE722000 .
+
+:OCRE434000 rdfs:subClassOf _:genid191 .
+
+_:genid191 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE000012 .
+
+:OCRE434000 rdfs:label "OCRe Relational constraint" ;
+	skos:prefLabel "Relational constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE449000
+
+:OCRE449000 a owl:Class ;
+	owl:equivalentClass _:genid192 .
+
+_:genid192 owl:intersectionOf _:genid195 .
+
+_:genid195 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid193 .
+
+_:genid193 a rdf:List ;
+	rdf:first _:genid194 .
+
+_:genid194 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400053 .
+
+_:genid193 rdf:rest rdf:nil .
+
+_:genid192 a owl:Class .
+
+:OCRE449000 owl:disjointWith :OCRE584000 , :OCRE740000 ;
+	obo:IAO_0000115 "An \"completed study\" is a study in which all data has been collected (last patient's last visit has occurred) and the analysis performed. Results may or may not have been published."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Completed study" ;
+	skos:prefLabel "Completed study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE468000
+
+:OCRE468000 a owl:Class ;
+	rdfs:subClassOf :OCRE414000 , _:genid196 .
+
+_:genid196 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:someValuesFrom :OCRE000006 .
+
+:OCRE468000 rdfs:subClassOf _:genid197 .
+
+_:genid197 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom :OCRE400024 .
+
+:OCRE468000 rdfs:label "OCRe Time-point constraint" ;
+	skos:prefLabel "Time-point constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE492000
+
+:OCRE492000 a owl:Class ;
+	rdfs:subClassOf :OCRE414000 , _:genid198 .
+
+_:genid198 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:someValuesFrom :OCRE000006 .
+
+:OCRE492000 rdfs:subClassOf _:genid199 .
+
+_:genid199 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom _:genid200 .
+
+_:genid200 a owl:Class ;
+	owl:unionOf _:genid202 .
+
+_:genid202 a rdf:List ;
+	rdf:first :OCRE400057 ;
+	rdf:rest _:genid201 .
+
+_:genid201 a rdf:List ;
+	rdf:first :OCRE722000 ;
+	rdf:rest rdf:nil .
+
+:OCRE492000 rdfs:label "OCRe Duration constraint" ;
+	skos:prefLabel "Duration constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE50034
+
+:OCRE50034 a owl:Class ;
+	rdfs:subClassOf :OCRE50048 ;
+	obo:IAO_0000115 """DEFINITION:
+Fiscal support for research from industry, government, or non-commercial, non-governmental organizations.
+
+EXAMPLE(S):
+Funding from pharmaceutical, device or biotechnology companies, the US NIH or the Gates Foundation."""^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "BRIDG 3.0.3 Available at http://bridgmodel.nci.nih.gov/"^^xsd:string ;
+	rdfs:label "OCRe Funding" ;
+	skos:prefLabel "Funding"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE50048
+
+:OCRE50048 a owl:Class ;
+	rdfs:subClassOf :OCRE400004 ;
+	obo:IAO_0000115 "Study administrative relation is a kind of relationship that an entity enters into in the design, conduct, and analysis of a study. The relationship starts when the organization agrees to undertake the activity entailed by the relationship. \"Agreement to perform study activity\"doesn't mean performance of a specific study activity (e.g., administration of a drug) itself, but agreement to do so. An organization becomes a \"participating site\" once it agrees to perform activities specified in the study protocol. It doesn't have to perform any of activities yet.  "^^xsd:string ;
+	obo:IAO_0000117 "Samson"^^xsd:string ;
+	rdfs:label "OCRe Study administrative relation" ;
+	skos:prefLabel "Study administrative relation"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE513134
+
+:OCRE513134 a owl:Class ;
+	rdfs:subClassOf :OCRE50048 ;
+	obo:IAO_0000115 "\"Agreement to perform study activity\" is a study administrative relation. It doesn't mean performance of a specific study activity (e.g., administration of a drug) itself, but agreement to do so.   "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Agreement to perform study activity" ;
+	skos:prefLabel "Agreement to perform study activity"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE535847
+
+:OCRE535847 a owl:Class ;
+	rdfs:subClassOf :OCRE513134 ;
+	obo:IAO_0000115 "\"Agreement to perform overisight\" is a study administrative relation that entails agreement to perform some study activity. It doesn't mean performance of oversight per se (e.g., data safety monitoring), but agreement to do so.   "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Agreement to perform oversight" ;
+	skos:prefLabel "Agreement to perform oversight"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE541581
+
+:OCRE541581 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 ;
+	obo:IAO_0000115 "An established society, corporation, foundation or other organization founded and united for a specific purpose, e.g. for health-related research."^^xsd:string ;
+	obo:IAO_0000119 "NCI Thesaurus entry for Institution. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C41206"^^xsd:string ;
+	statistics:curator "Simona"^^xsd:string ;
+	rdfs:label "OCRe Social institution" ;
+	skos:prefLabel "Social institution"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE557116
+
+:OCRE557116 a owl:Class ;
+	rdfs:subClassOf :OCRE541581 ;
+	obo:IAO_0000115 "A person's permanent place of residence."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "NCI Thesaurus entry for Home. Available at: http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C18002"^^xsd:string ;
+	rdfs:label "OCRe Home" ;
+	skos:prefLabel "Home"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE568687
+
+:OCRE568687 a owl:Class ;
+	rdfs:subClassOf :OCRE50048 ;
+	obo:IAO_0000115 "The ethics approval process is a study administrative relation whereby a study is submitted to a committee that is formally designated to approve, monitor, and review biomedical and behavioral research involving humans with the aim to protect the rights and welfare of the research subjects."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Ethics approval process" ;
+	skos:prefLabel "Ethics approval process"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE581634
+
+:OCRE581634 a owl:Class ;
+	rdfs:subClassOf :OCRE50048 ;
+	obo:IAO_0000115 "Sponsoring is a study administrative relation whereby a person or organization takes responsibility for the initiation and management, and financing (or arranging the financing) of a clinical trial."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Sponsoring" ;
+	skos:prefLabel "Sponsoring"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE584000
+
+:OCRE584000 a owl:Class ;
+	owl:equivalentClass _:genid203 .
+
+_:genid203 owl:intersectionOf _:genid206 .
+
+_:genid206 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid204 .
+
+_:genid204 a rdf:List ;
+	rdf:first _:genid205 .
+
+_:genid205 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE001000 .
+
+_:genid204 rdf:rest rdf:nil .
+
+_:genid203 a owl:Class .
+
+:OCRE584000 owl:disjointWith :OCRE740000 ;
+	obo:IAO_0000115 "An \"active study\" is a study for which protocol-dictated activities are occurring."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Active study" ;
+	skos:prefLabel "Active study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE590011
+
+:OCRE590011 a owl:Class ;
+	rdfs:subClassOf :OCRE513134 ;
+	obo:IAO_0000115 "\"Agreement to perform study subject assessment\" is a study administrative relation that entails agreement to perform some study subject assessment. It doesn't mean performance of study subject assessment per se (e.g., neorologic evaluation), but agreement to do so.   "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Agreement to perform study subject assessment or intervention" ;
+	skos:prefLabel "Agreement to perform study subject assessment or intervention"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE591890
+
+:OCRE591890 a owl:Class ;
+	rdfs:subClassOf :OCRE513134 ;
+	obo:IAO_0000115 "\"Agreement to perform study laboratory processing\" is a study administrative relation that entails agreement to perform some study activity. It doesn't mean performance of study laboratory processing per se (e.g., blood or urine tests), but agreement to do so.   "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Agreement to perform study laboratory processing" ;
+	skos:prefLabel "Agreement to perform study laboratory processing"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE595405
+
+:OCRE595405 a owl:Class ;
+	rdfs:subClassOf :OCRE590011 ;
+	rdfs:label "OCRe Agreement to recruit" ;
+	skos:prefLabel "Agreement to recruit"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE596000
+
+:OCRE596000 a owl:Class ;
+	rdfs:subClassOf :OCRE400042 ;
+	rdfs:comment "Non-temporal constraints operate on the root noun phrase (code) or value of criterion statements" ;
+	rdfs:label "OCRe Non-temporal constraint" ;
+	skos:prefLabel "Non-temporal constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE693433
+
+:OCRE693433 a owl:Class ;
+	rdfs:subClassOf :OCRE596000 ;
+	rdfs:label "OCRe Value constraint" ;
+	skos:prefLabel "Value constraint"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE722000
+
+:OCRE722000 a owl:Class ;
+	rdfs:subClassOf :OCRE400078 , _:genid207 .
+
+_:genid207 a owl:Restriction ;
+	owl:onProperty :OCRE935000 ;
+	owl:someValuesFrom :OCRE000040 .
+
+:OCRE722000 rdfs:subClassOf _:genid208 .
+
+_:genid208 a owl:Restriction ;
+	owl:onProperty :OCRE000039 ;
+	owl:allValuesFrom _:genid209 .
+
+_:genid209 a owl:Class ;
+	owl:unionOf _:genid211 .
+
+_:genid211 a rdf:List ;
+	rdf:first :OCRE414000 ;
+	rdf:rest _:genid210 .
+
+_:genid210 a rdf:List ;
+	rdf:first :OCRE596000 ;
+	rdf:rest rdf:nil .
+
+:OCRE722000 rdfs:label "OCRe Generalized ERGO annotation" ;
+	skos:prefLabel "Generalized ERGO annotation" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE733000
+
+:OCRE733000 a owl:Class ;
+	rdfs:subClassOf :OCRE414000 , _:genid212 .
+
+_:genid212 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:someValuesFrom :OCRE000018 .
+
+:OCRE733000 rdfs:subClassOf _:genid213 .
+
+_:genid213 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom _:genid214 .
+
+_:genid214 a owl:Class ;
+	owl:unionOf _:genid216 .
+
+_:genid216 a rdf:List ;
+	rdf:first :OCRE400038 ;
+	rdf:rest _:genid215 .
+
+_:genid215 a rdf:List ;
+	rdf:first :OCRE722000 ;
+	rdf:rest rdf:nil .
+
+:OCRE733000 rdfs:label "OCRe Time-interval constraint" ;
+	skos:prefLabel "Time-interval constraint" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE740000
+
+:OCRE740000 a owl:Class ;
+	owl:equivalentClass _:genid217 .
+
+_:genid217 owl:intersectionOf _:genid220 .
+
+_:genid220 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid218 .
+
+_:genid218 a rdf:List ;
+	rdf:first _:genid219 .
+
+_:genid219 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400000 .
+
+_:genid218 rdf:rest rdf:nil .
+
+_:genid217 a owl:Class .
+
+:OCRE740000 obo:IAO_0000115 "A \"planned study\" is a study in the planning stage: protocol is being developed and has not yet been submitted for regulatory approval (if applicable)."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Planned study" ;
+	skos:prefLabel "Planned study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE763000
+
+:OCRE763000 a owl:Class ;
+	rdfs:subClassOf :OCRE414000 , _:genid221 .
+
+_:genid221 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:someValuesFrom :OCRE414000 .
+
+:OCRE763000 rdfs:subClassOf _:genid222 .
+
+_:genid222 a owl:Restriction ;
+	owl:onProperty :OCRE000004 ;
+	owl:allValuesFrom :OCRE414000 .
+
+:OCRE763000 rdfs:subClassOf _:genid223 .
+
+_:genid223 a owl:Restriction ;
+	owl:onProperty :OCRE000003 ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :OCRE314540 .
+
+:OCRE763000 rdfs:label "OCRe Boolean combination of simple time constraints" ;
+	skos:prefLabel "Boolean combination of simple time constraints" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE793000
+
+:OCRE793000 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 ;
+	rdfs:label "OCRe Objective" ;
+	skos:prefLabel "Objective"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE824000
+
+:OCRE824000 a owl:Class ;
+	rdfs:subClassOf :OCRE400074 ;
+	owl:disjointWith :OCRE908000 ;
+	obo:IAO_0000115 "A status applied to a study for which protocol-dictated activities have halted prematurely but potentially will resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Study suspended" ;
+	skos:prefLabel "Study suspended"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE826211
+
+:OCRE826211 a owl:Class ;
+	owl:equivalentClass _:genid224 .
+
+_:genid224 a owl:Restriction ;
+	owl:onProperty :OCRE406000 ;
+	owl:someValuesFrom study_design:OCRE100033 .
+
+:OCRE826211 rdfs:subClassOf :OCRE870591 ;
+	obo:IAO_0000115 "A study that has \"Ramdon\" allocation scheme" ;
+	obo:IAO_0000117 "Samson Tu" ;
+	rdfs:comment "Defined in order to assert that random allocation study must be a study with parallel or cross-over study design" ;
+	rdfs:label "OCRe Random allocation study" ;
+	skos:prefLabel "Random allocation study" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE831288
+
+:OCRE831288 a owl:Class ;
+	owl:equivalentClass _:genid225 .
+
+_:genid225 owl:intersectionOf _:genid228 .
+
+_:genid228 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid226 .
+
+_:genid226 a rdf:List ;
+	rdf:first _:genid227 .
+
+_:genid227 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400074 .
+
+_:genid226 rdf:rest rdf:nil .
+
+_:genid225 a owl:Class .
+
+:OCRE831288 rdfs:subClassOf :OCRE400029 ;
+	rdfs:label "OCRe Study classified by study status" ;
+	skos:prefLabel "Study classified by study status"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE832477
+
+:OCRE832477 a owl:Class ;
+	owl:equivalentClass _:genid229 .
+
+_:genid229 owl:intersectionOf _:genid232 .
+
+_:genid232 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid230 .
+
+_:genid230 a rdf:List ;
+	rdf:first _:genid231 .
+
+_:genid231 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400003 .
+
+_:genid230 rdf:rest rdf:nil .
+
+_:genid229 a owl:Class .
+
+:OCRE832477 rdfs:subClassOf :OCRE400029 ;
+	rdfs:label "OCRe Study that recruit study subjects" ;
+	skos:prefLabel "Study that recruit study subjects"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE834838
+
+:OCRE834838 a owl:Class ;
+	rdfs:subClassOf :OCRE846075 ;
+	rdfs:label "OCRe Post-hoc group" ;
+	skos:prefLabel "Post-hoc group" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE846075
+
+:OCRE846075 a owl:Class ;
+	rdfs:subClassOf :OCRE400033 ;
+	rdfs:label "OCRe Study subpopulation" ;
+	skos:prefLabel "Study subpopulation" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE850429
+
+:OCRE850429 a owl:Class ;
+	rdfs:subClassOf :OCRE846075 , _:genid233 .
+
+_:genid233 a owl:Restriction ;
+	owl:onProperty :OCRE747000 ;
+	owl:someValuesFrom :OCRE364000 .
+
+:OCRE850429 rdfs:subClassOf _:genid234 .
+
+_:genid234 a owl:Restriction ;
+	owl:onProperty :OCRE900060 ;
+	owl:someValuesFrom :OCRE000036 .
+
+:OCRE850429 rdfs:subClassOf _:genid235 .
+
+_:genid235 a owl:Restriction ;
+	owl:onProperty :OCRE900060 ;
+	owl:allValuesFrom :OCRE000036 .
+
+:OCRE850429 rdfs:label "OCRe Pre-defined group" ;
+	skos:prefLabel "Pre-defined group" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE870591
+
+:OCRE870591 a owl:Class ;
+	owl:equivalentClass _:genid236 .
+
+_:genid236 owl:intersectionOf _:genid243 .
+
+_:genid243 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid237 .
+
+_:genid237 a rdf:List ;
+	rdf:first _:genid238 .
+
+_:genid238 a owl:Class ;
+	owl:unionOf _:genid241 .
+
+_:genid241 a rdf:List ;
+	rdf:first _:genid242 .
+
+_:genid242 a owl:Restriction ;
+	owl:onProperty :OCRE820850 ;
+	owl:someValuesFrom study_design:OCRE100020 .
+
+_:genid241 rdf:rest _:genid239 .
+
+_:genid239 a rdf:List ;
+	rdf:first _:genid240 .
+
+_:genid240 a owl:Restriction ;
+	owl:onProperty :OCRE820850 ;
+	owl:someValuesFrom study_design:OCRE100027 .
+
+_:genid239 rdf:rest rdf:nil .
+
+_:genid237 rdf:rest rdf:nil .
+
+_:genid236 a owl:Class .
+
+:OCRE870591 rdfs:subClassOf _:genid244 .
+
+_:genid244 a owl:Restriction ;
+	owl:onProperty :OCRE900089 ;
+	owl:someValuesFrom _:genid245 .
+
+_:genid245 owl:intersectionOf _:genid248 .
+
+_:genid248 a rdf:List ;
+	rdf:first study_protocol:OCRE300012 ;
+	rdf:rest _:genid246 .
+
+_:genid246 a rdf:List ;
+	rdf:first _:genid247 .
+
+_:genid247 a owl:Restriction ;
+	owl:onProperty study_protocol:OCRE885707 ;
+	owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+	owl:onClass study_protocol:OCRE300001 .
+
+_:genid246 rdf:rest rdf:nil .
+
+_:genid245 a owl:Class .
+
+:OCRE870591 rdfs:comment "Created this class for the purpose of asserting \"if study is parallel group or cross-over, then should have more than 1 arm\"" ;
+	rdfs:label "OCRe Parallel or cross-over study" ;
+	skos:prefLabel "Parallel or cross-over study"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE873851
+
+:OCRE873851 a owl:Class ;
+	rdfs:subClassOf :OCRE400033 ;
+	obo:IAO_0000115 "The collection of screened organisms that satisfies all eligibility criteria for a study."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Eligible population" ;
+	skos:prefLabel "Eligible population"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE882000
+
+:OCRE882000 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 ;
+	rdfs:label "OCRe Hypothesis" ;
+	skos:prefLabel "Hypothesis"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE908000
+
+:OCRE908000 a owl:Class ;
+	rdfs:subClassOf :OCRE400074 ;
+	obo:IAO_0000115 "A status applied to a study for which protocol-dictated activities have halted prematurely and will not resume."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Study terminated" ;
+	skos:prefLabel "Study terminated"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE920000
+
+:OCRE920000 a owl:Class ;
+	rdfs:subClassOf :OCRE400078 , _:genid249 .
+
+_:genid249 a owl:Restriction ;
+	owl:onProperty :OCRE900223 ;
+	owl:someValuesFrom xsd:string .
+
+:OCRE920000 rdfs:comment "Clinical statements  have valid time/interval and may have \"value\" associated with them." ;
+	rdfs:label "OCRe Clinical statement" ;
+	skos:prefLabel "Clinical statement" .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE992000
+
+:OCRE992000 a owl:Class ;
+	owl:equivalentClass _:genid250 .
+
+_:genid250 owl:intersectionOf _:genid253 .
+
+_:genid253 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid251 .
+
+_:genid251 a rdf:List ;
+	rdf:first _:genid252 .
+
+_:genid252 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE261000 .
+
+_:genid251 rdf:rest rdf:nil .
+
+_:genid250 a owl:Class .
+
+:OCRE992000 rdfs:subClassOf _:genid254 .
+
+_:genid254 owl:intersectionOf _:genid259 .
+
+_:genid259 a rdf:List ;
+	rdf:first _:genid260 .
+
+_:genid260 a owl:Restriction ;
+	owl:onProperty :OCRE898003 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid259 rdf:rest _:genid257 .
+
+_:genid257 a rdf:List ;
+	rdf:first _:genid258 .
+
+_:genid258 a owl:Restriction ;
+	owl:onProperty :OCRE900216 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid257 rdf:rest _:genid255 .
+
+_:genid255 a rdf:List ;
+	rdf:first _:genid256 .
+
+_:genid256 a owl:Restriction ;
+	owl:onProperty :OCRE900217 ;
+	owl:hasValue "false"^^xsd:boolean .
+
+_:genid255 rdf:rest rdf:nil .
+
+_:genid254 a owl:Class .
+
+:OCRE992000 obo:IAO_0000115 "A \"recruitment will not start study\" is a study for which participants have not, are not, and will not be recruited. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Recruitment will not start study" ;
+	skos:prefLabel "Recruitment will not start study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/statistics#OCRE200053
+
+statistics:OCRE200053 a owl:Class .
+# 
+# http://purl.org/net/OCRe/statistics#OCRE200061
+
+statistics:OCRE200061 a owl:Class .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE100005
+
+study_design:OCRE100005 a owl:Class ;
+	rdfs:subClassOf :OCRE400047 .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE100056
+
+study_design:OCRE100056 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE475000
+
+study_design:OCRE475000 rdfs:subClassOf :OCRE400059 .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE9000030
+
+study_design:OCRE9000030 a owl:Class ;
+	owl:equivalentClass _:genid261 .
+
+_:genid261 owl:intersectionOf _:genid274 .
+
+_:genid274 a rdf:List ;
+	rdf:first study_design:OCRE900028 ;
+	rdf:rest _:genid262 .
+
+_:genid262 a rdf:List ;
+	rdf:first _:genid263 .
+
+_:genid263 a owl:Class ;
+	owl:unionOf _:genid272 .
+
+_:genid272 a rdf:List ;
+	rdf:first _:genid273 .
+
+_:genid273 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900049 ;
+	owl:allValuesFrom _:genid11 .
+
+_:genid11 owl:intersectionOf _:genid269 .
+
+_:genid269 a rdf:List ;
+	rdf:first :OCRE400033 ;
+	rdf:rest _:genid267 .
+
+_:genid267 a rdf:List ;
+	rdf:first _:genid268 .
+
+_:genid268 a owl:Restriction ;
+	owl:onProperty :OCRE900055 ;
+	owl:someValuesFrom :OCRE400076 .
+
+_:genid267 rdf:rest rdf:nil .
+
+_:genid11 a owl:Class .
+
+_:genid272 rdf:rest _:genid270 .
+
+_:genid270 a rdf:List ;
+	rdf:first _:genid271 .
+
+_:genid271 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900051 ;
+	owl:allValuesFrom _:genid9 .
+
+_:genid9 owl:intersectionOf _:genid269 ;
+	a owl:Class .
+
+_:genid270 rdf:rest _:genid264 .
+
+_:genid264 a rdf:List ;
+	rdf:first _:genid265 .
+
+_:genid265 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900052 ;
+	owl:allValuesFrom _:genid10 .
+
+_:genid10 owl:intersectionOf _:genid269 .
+
+_:genid264 rdf:rest rdf:nil .
+
+_:genid262 rdf:rest rdf:nil .
+
+_:genid261 a owl:Class .
+
+study_design:OCRE9000030 owl:disjointWith study_design:OCRE9000031 ;
+	obo:IAO_0000115 "An aggregated human study is a human study in which the entity observed, recruited or selected, or subject to intervention or exposure is a population that contains persons"^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Aggregated-human study" ;
+	skos:prefLabel "Aggregated-human study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE9000031
+
+study_design:OCRE9000031 a owl:Class ;
+	owl:equivalentClass _:genid275 .
+
+_:genid275 owl:intersectionOf _:genid288 .
+
+_:genid288 a rdf:List ;
+	rdf:first study_design:OCRE900028 ;
+	rdf:rest _:genid276 .
+
+_:genid276 a rdf:List ;
+	rdf:first _:genid277 .
+
+_:genid277 a owl:Class ;
+	owl:unionOf _:genid286 .
+
+_:genid286 a rdf:List ;
+	rdf:first _:genid287 .
+
+_:genid287 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900049 ;
+	owl:someValuesFrom _:genid13 .
+
+_:genid13 a owl:Class ;
+	owl:unionOf _:genid283 .
+
+_:genid283 a rdf:List ;
+	rdf:first :OCRE400076 ;
+	rdf:rest _:genid281 .
+
+_:genid281 a rdf:List ;
+	rdf:first _:genid282 .
+
+_:genid282 a owl:Restriction ;
+	owl:onProperty :OCRE900069 ;
+	owl:someValuesFrom :OCRE400076 .
+
+_:genid281 rdf:rest rdf:nil .
+
+_:genid286 rdf:rest _:genid284 .
+
+_:genid284 a rdf:List ;
+	rdf:first _:genid285 .
+
+_:genid285 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900051 ;
+	owl:someValuesFrom _:genid12 .
+
+_:genid12 a owl:Class ;
+	owl:unionOf _:genid283 .
+
+_:genid284 rdf:rest _:genid278 .
+
+_:genid278 a rdf:List ;
+	rdf:first _:genid279 .
+
+_:genid279 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900052 ;
+	owl:someValuesFrom _:genid14 .
+
+_:genid14 a owl:Class ;
+	owl:unionOf _:genid283 .
+
+_:genid278 rdf:rest rdf:nil .
+
+_:genid276 rdf:rest rdf:nil .
+
+_:genid275 a owl:Class .
+
+study_design:OCRE9000031 obo:IAO_0000115 "An individual-human study is a human study in which the entity observed, recruited or selected, or subject to intervention or exposure is a person, or a part of a person. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Individual-human study" ;
+	skos:prefLabel "Individual-human study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900028
+
+study_design:OCRE900028 a owl:Class ;
+	owl:equivalentClass _:genid289 .
+
+_:genid289 owl:intersectionOf _:genid307 .
+
+_:genid307 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid290 .
+
+_:genid290 a rdf:List ;
+	rdf:first _:genid291 .
+
+_:genid291 a owl:Class ;
+	owl:unionOf _:genid305 .
+
+_:genid305 a rdf:List ;
+	rdf:first _:genid306 .
+
+_:genid306 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900049 ;
+	owl:someValuesFrom _:genid17 .
+
+_:genid17 a owl:Class ;
+	owl:unionOf _:genid302 .
+
+_:genid302 a rdf:List ;
+	rdf:first :OCRE400076 ;
+	rdf:rest _:genid297 .
+
+_:genid297 a rdf:List ;
+	rdf:first _:genid298 .
+
+_:genid298 owl:intersectionOf _:genid301 .
+
+_:genid301 a rdf:List ;
+	rdf:first :OCRE400033 ;
+	rdf:rest _:genid299 .
+
+_:genid299 a rdf:List ;
+	rdf:first _:genid300 .
+
+_:genid300 a owl:Restriction ;
+	owl:onProperty :OCRE900055 ;
+	owl:someValuesFrom :OCRE400076 .
+
+_:genid299 rdf:rest rdf:nil .
+
+_:genid298 a owl:Class .
+
+_:genid297 rdf:rest _:genid295 .
+
+_:genid295 a rdf:List ;
+	rdf:first _:genid296 .
+
+_:genid296 a owl:Restriction ;
+	owl:onProperty :OCRE900069 ;
+	owl:someValuesFrom :OCRE400076 .
+
+_:genid295 rdf:rest rdf:nil .
+
+_:genid305 rdf:rest _:genid303 .
+
+_:genid303 a rdf:List ;
+	rdf:first _:genid304 .
+
+_:genid304 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900051 ;
+	owl:someValuesFrom _:genid15 .
+
+_:genid15 a owl:Class ;
+	owl:unionOf _:genid302 .
+
+_:genid303 rdf:rest _:genid292 .
+
+_:genid292 a rdf:List ;
+	rdf:first _:genid293 .
+
+_:genid293 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900052 ;
+	owl:someValuesFrom _:genid16 .
+
+_:genid16 a owl:Class ;
+	owl:unionOf _:genid302 .
+
+_:genid292 rdf:rest rdf:nil .
+
+_:genid290 rdf:rest rdf:nil .
+
+_:genid289 a owl:Class .
+
+study_design:OCRE900028 owl:disjointWith study_design:OCRE900037 ;
+	obo:IAO_0000115 "A human study is a study in which the entity observed, recruited or selected, or subject to intervention or exposure is a person, a population of persons, or a part of a person. "^^xsd:string ;
+	rdfs:label "OCRe Human study" ;
+	skos:prefLabel "Human study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900029
+
+study_design:OCRE900029 a owl:Class ;
+	owl:equivalentClass _:genid308 .
+
+_:genid308 owl:intersectionOf _:genid311 .
+
+_:genid311 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid309 .
+
+_:genid309 a rdf:List ;
+	rdf:first _:genid310 .
+
+_:genid310 a owl:Class ;
+	owl:complementOf study_design:OCRE900036 .
+
+_:genid309 rdf:rest rdf:nil .
+
+_:genid308 a owl:Class .
+
+study_design:OCRE900029 owl:disjointWith study_design:OCRE900036 ;
+	obo:IAO_0000115 "A non-organismal study is a study in which neither the entity observed, nor the entity recruited or selected, nor the entity subject to intervention or exposure is an organism, a population of organisms, or a part of an organism. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Non-organismal study" ;
+	skos:prefLabel "Non-organismal study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900032
+
+study_design:OCRE900032 a owl:Class ;
+	rdfs:subClassOf study_design:OCRE900029 ;
+	obo:IAO_0000115 """A decision analysis is a non-organismal study technique that formally identifies the options in a decision-making process, quantifies the probable outcomes (and costs) of each (and the uncertainty around them), determines the option that best meets the objectives of the decision-maker and assesses the robustness of this conclusion.
+Cost-benefit analysis, cost-effectiveness analysis and cost-utility analysis are special cases of decision analysis.
+Note that this type of analysis can also be applied to outcomes in a human study."""^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+	rdfs:label "OCRe Decision analysis" ;
+	skos:prefLabel "Decision analysis"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900033
+
+study_design:OCRE900033 a owl:Class ;
+	rdfs:subClassOf study_design:OCRE900029 ;
+	obo:IAO_0000115 "A policy analysis is a non-organismal study that can be defined as determining which of various alternative policies will most achieve a given set of goals in light of the relations between the policies and the goals. Policy analysis emphasizes systematic analytic methods that can be quantitative or qualitative."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "Nagel, Stuart S. (Ed.), 1999, Policy Analysis Methods. New Science Publishers, Inc., pages 3 and 4"^^xsd:string ;
+	rdfs:label "OCRe Policy analysis" ;
+	skos:prefLabel "Policy analysis"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900034
+
+study_design:OCRE900034 a owl:Class ;
+	rdfs:subClassOf study_design:OCRE900029 ;
+	obo:IAO_0000115 "A technology study is a non-organismal study that uses or collects measurements or assessments about a man-made object (e.g., a device) in terms of its technical/physical performance."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Technology study" ;
+	skos:prefLabel "Technology study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900036
+
+study_design:OCRE900036 a owl:Class ;
+	owl:equivalentClass _:genid312 .
+
+_:genid312 owl:intersectionOf _:genid326 .
+
+_:genid326 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid313 .
+
+_:genid313 a rdf:List ;
+	rdf:first _:genid314 .
+
+_:genid314 a owl:Class ;
+	owl:unionOf _:genid324 .
+
+_:genid324 a rdf:List ;
+	rdf:first _:genid325 .
+
+_:genid325 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900049 ;
+	owl:someValuesFrom _:genid20 .
+
+_:genid20 a owl:Class ;
+	owl:unionOf _:genid321 .
+
+_:genid321 a rdf:List ;
+	rdf:first :OCRE400033 ;
+	rdf:rest _:genid320 .
+
+_:genid320 a rdf:List ;
+	rdf:first :OCRE400064 ;
+	rdf:rest _:genid318 .
+
+_:genid318 a rdf:List ;
+	rdf:first _:genid319 .
+
+_:genid319 a owl:Restriction ;
+	owl:onProperty :OCRE900069 ;
+	owl:someValuesFrom :OCRE400064 .
+
+_:genid318 rdf:rest rdf:nil .
+
+_:genid324 rdf:rest _:genid322 .
+
+_:genid322 a rdf:List ;
+	rdf:first _:genid323 .
+
+_:genid323 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900051 ;
+	owl:someValuesFrom _:genid19 .
+
+_:genid19 owl:unionOf _:genid321 .
+
+_:genid322 rdf:rest _:genid315 .
+
+_:genid315 a rdf:List ;
+	rdf:first _:genid316 .
+
+_:genid316 a owl:Restriction ;
+	owl:onProperty study_design:OCRE900052 ;
+	owl:someValuesFrom _:genid18 .
+
+_:genid18 a owl:Class ;
+	owl:unionOf _:genid321 .
+
+_:genid315 rdf:rest rdf:nil .
+
+_:genid313 rdf:rest rdf:nil .
+
+_:genid312 a owl:Class .
+
+study_design:OCRE900036 obo:IAO_0000115 "An organismal study is a study in which the entity observed, recruited or selected, or subject to intervention or exposure is an organism, a population of organisms, or a part of an organism. "^^xsd:string ;
+	rdfs:label "OCRe Organismal study" ;
+	skos:prefLabel "Organismal study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900037
+
+study_design:OCRE900037 a owl:Class ;
+	owl:equivalentClass _:genid327 .
+
+_:genid327 owl:intersectionOf _:genid330 .
+
+_:genid330 a rdf:List ;
+	rdf:first study_design:OCRE900036 ;
+	rdf:rest _:genid328 .
+
+_:genid328 a rdf:List ;
+	rdf:first _:genid329 .
+
+_:genid329 a owl:Class ;
+	owl:complementOf study_design:OCRE900028 .
+
+_:genid328 rdf:rest rdf:nil .
+
+_:genid327 a owl:Class .
+
+study_design:OCRE900037 obo:IAO_0000115 "A non-human organism study is a study in which the entity observed, recruited or selected, and subject to intervention or exposure is non-human organism, a population of non-human organisms, or a part of a non-human organism. "^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	rdfs:label "OCRe Non-human organism study" ;
+	skos:prefLabel "Non-human organism study"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_design#OCRE900040
+
+study_design:OCRE900040 a owl:Class ;
+	rdfs:subClassOf :OCRE400029 ;
+	obo:IAO_0000115 """A systematic review is a meta study (i.e., a study in which observations are acquired from journal articles, abstracts, etc. reporting on other studies).
+
+A systematic review uses systematic and explicit methods to identify, select, and critically appraise relevant research, and to collect and analyse data from the studies that are included in the review. Statistical methods (meta-analysis) may or may not be used to analyse and summarise the results of the included studies.
+
+Meta-analysis is the use of statistical techniques in a systematic review to integrate the summary results of included studies. Sometimes misused as a synonym for systematic reviews, where the review includes a meta-analysis. """^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "Glossary in The Cochrane Collaboration. Available at http://www.cochrane.org/glossary"^^xsd:string ;
+	rdfs:label "OCRe Systematic review" ;
+	skos:prefLabel "Systematic review"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE300000
+
+study_protocol:OCRE300000 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE300001
+
+study_protocol:OCRE300001 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 , _:genid331 .
+
+_:genid331 a owl:Restriction ;
+	owl:onProperty study_protocol:OCRE861346 ;
+	owl:someValuesFrom study_protocol:OCRE300011 .
+
+study_protocol:OCRE300001 rdfs:subClassOf _:genid332 .
+
+_:genid332 a owl:Restriction ;
+	owl:onProperty study_protocol:OCRE861346 ;
+	owl:allValuesFrom study_protocol:OCRE300011 .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE300010
+
+study_protocol:OCRE300010 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE300011
+
+study_protocol:OCRE300011 a owl:Class ;
+	rdfs:subClassOf :OCRE400032 , _:genid333 .
+
+_:genid333 a owl:Restriction ;
+	owl:onProperty study_protocol:OCRE827668 ;
+	owl:someValuesFrom :OCRE400055 .
+
+study_protocol:OCRE300011 rdfs:subClassOf _:genid334 .
+
+_:genid334 a owl:Restriction ;
+	owl:onProperty :OCRE900224 ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE300012
+
+study_protocol:OCRE300012 a owl:Class ;
+	rdfs:subClassOf :OCRE400059 , _:genid335 .
+
+_:genid335 a owl:Restriction ;
+	owl:onProperty :OCRE562783 ;
+	owl:someValuesFrom :OCRE400050 .
+
+study_protocol:OCRE300012 rdfs:subClassOf _:genid336 .
+
+_:genid336 a owl:Restriction ;
+	owl:onProperty :OCRE899177 ;
+	owl:allValuesFrom :OCRE850429 .
+
+study_protocol:OCRE300012 rdfs:subClassOf _:genid337 .
+
+_:genid337 a owl:Restriction ;
+	owl:onProperty :OCRE900203 ;
+	owl:allValuesFrom xsd:integer .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE307000
+
+study_protocol:OCRE307000 rdfs:subClassOf :OCRE400027 .
+# 
+# http://purl.org/net/OCRe/study_protocol#OCRE892807
+
+study_protocol:OCRE892807 owl:equivalentClass _:genid338 .
+
+_:genid338 owl:intersectionOf _:genid346 .
+
+_:genid346 a rdf:List ;
+	rdf:first study_protocol:OCRE300012 ;
+	rdf:rest _:genid339 .
+
+_:genid339 a rdf:List ;
+	rdf:first _:genid340 .
+
+_:genid340 a owl:Restriction ;
+	owl:onProperty _:genid341 .
+
+_:genid341 owl:inverseOf :OCRE900089 .
+
+_:genid340 owl:someValuesFrom _:genid342 .
+
+_:genid342 owl:intersectionOf _:genid345 .
+
+_:genid345 a rdf:List ;
+	rdf:first :OCRE400029 ;
+	rdf:rest _:genid343 .
+
+_:genid343 a rdf:List ;
+	rdf:first _:genid344 .
+
+_:genid344 a owl:Restriction ;
+	owl:onProperty :OCRE820850 ;
+	owl:someValuesFrom study_design:OCRE100007 .
+
+_:genid343 rdf:rest rdf:nil .
+
+_:genid342 a owl:Class .
+
+_:genid339 rdf:rest rdf:nil .
+
+_:genid338 a owl:Class .
+# 
+# http://sig.biostr.washington.edu/fma3.0#OCRE9000027
+
+fma3:OCRE9000027 a owl:Class ;
+	rdfs:subClassOf :OCRE400002 ;
+	obo:IAO_0000115 "A material anatomical entity is a physical anatomical entity which has mass. Examples: hemoglobin molecule, mitochondrion, hepatocyte, erythrocyte, heart, head, blood, urine."^^xsd:string ;
+	obo:IAO_0000117 "Simona"^^xsd:string ;
+	obo:IAO_0000119 "Foundational Model of Anatomy (FMA) class definition of Material anatomical entity. Available at http://bioportal.bioontology.org/visualize/44507"^^xsd:string ;
+	rdfs:label "OCRe Material anatomical entity" ;
+	skos:prefLabel "Material anatomical entity"^^xsd:string .
+# 
+# http://www.w3.org/2002/07/owl#Thing
+
+owl:Thing a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000001
+
+:OCRE000001 a owl:NamedIndividual , :OCRE314540 ;
+	rdfs:label "OCRe NOT" ;
+	skos:prefLabel "NOT"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000002
+
+:OCRE000002 a owl:NamedIndividual , :OCRE000000 ;
+	rdfs:label "OCRe most recent" ;
+	skos:prefLabel "most recent"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000007
+
+:OCRE000007 a owl:NamedIndividual , :OCRE000006 ;
+	rdfs:label "OCRe Equals" ;
+	skos:prefLabel "Equals"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000008
+
+:OCRE000008 a owl:NamedIndividual , :OCRE000006 ;
+	rdfs:label "OCRe Greater than" ;
+	skos:prefLabel "Greater than"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000009
+
+:OCRE000009 a owl:NamedIndividual , :OCRE000006 ;
+	rdfs:label "OCRe Less than" ;
+	skos:prefLabel "Less than"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000010
+
+:OCRE000010 a owl:NamedIndividual , :OCRE000000 ;
+	rdfs:label "OCRe first" ;
+	skos:prefLabel "first"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000014
+
+:OCRE000014 a owl:NamedIndividual , :OCRE000013 ;
+	rdfs:label "OCRe start" ;
+	skos:prefLabel "start"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000015
+
+:OCRE000015 a owl:NamedIndividual , :OCRE000013 ;
+	rdfs:label "OCRe stop" ;
+	skos:prefLabel "stop"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE000017
+
+:OCRE000017 a owl:NamedIndividual , :OCRE000013 ;
+	rdfs:label "OCRe time of" ;
+	skos:prefLabel "time of"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE002000
+
+:OCRE002000 a owl:NamedIndividual , :OCRE364000 ;
+	rdfs:label "OCRe secondary" ;
+	skos:prefLabel "secondary"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400116
+
+:OCRE400116 a owl:NamedIndividual , :OCRE400005 , owl:Thing ;
+	rdfs:label "OCRe http" ;
+	skos:prefLabel "http"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400117
+
+:OCRE400117 a owl:NamedIndividual , :OCRE400005 , owl:Thing ;
+	rdfs:label "OCRe mailto" ;
+	skos:prefLabel "mailto"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400118
+
+:OCRE400118 a owl:NamedIndividual , :OCRE400005 , owl:Thing ;
+	rdfs:label "OCRe tel" ;
+	skos:prefLabel "tel"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400119
+
+:OCRE400119 a owl:NamedIndividual , :OCRE400005 , owl:Thing ;
+	rdfs:label "OCRe x-text-fax" ;
+	skos:prefLabel "x-text-fax"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400120
+
+:OCRE400120 a owl:NamedIndividual , :OCRE400013 ;
+	rdfs:label "OCRe Biospecimen availability NA" ;
+	skos:prefLabel "Biospecimen availability NA"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400121
+
+:OCRE400121 a owl:NamedIndividual , :OCRE400013 ;
+	rdfs:label "OCRe Biospecimen available" ;
+	skos:prefLabel "Biospecimen available"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE400122
+
+:OCRE400122 a owl:NamedIndividual , :OCRE400013 ;
+	rdfs:label "OCRe Biospecimen not available" ;
+	skos:prefLabel "Biospecimen not available"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE641000
+
+:OCRE641000 a owl:NamedIndividual , :OCRE364000 ;
+	rdfs:label "OCRe primary" ;
+	skos:prefLabel "primary"^^xsd:string .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE934203
+
+:OCRE934203 a owl:NamedIndividual , :OCRE314540 ;
+	rdfs:label "OCRe AND" ;
+	skos:prefLabel "AND"@en .
+# 
+# http://purl.org/net/OCRe/OCRe#OCRE983023
+
+:OCRE983023 a owl:NamedIndividual , :OCRE314540 ;
+	rdfs:label "OCRe OR" ;
+	skos:prefLabel "OR"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+
+obo:IAO_0000078 obo:IAO_0000114 obo:IAO_0000125 .
+# 
+
+obo:IAO_0000111 obo:IAO_0000114 obo:IAO_0000122 .
+# 
+
+obo:IAO_0000112 obo:IAO_0000114 obo:IAO_0000122 .
+# 
+
+obo:IAO_0000118 obo:IAO_0000114 obo:IAO_0000125 .
+# 
+
+obo:IAO_0000225 obo:IAO_0000114 obo:IAO_0000125 .
+# 
+
+obo:IAO_0000412 obo:IAO_0000114 obo:IAO_0000125 .
+# 
+
+obo:IAO_0000589 obo:IAO_0000114 obo:IAO_0000125 .
+# 
+
+obo:IAO_0100001 obo:IAO_0000114 obo:IAO_0000125 .
+# 
+
+statistics:OCRE200002 obo:IAO_0000117 "Samson"^^xsd:string .
+# 
+
+<http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant> obo:IAO_0000119 "http://biomedgt.nci.nih.gov/wiki/index.php/Category:BFO_generically_dependent_continuant(GenericallyDependentContinuant)"^^xsd:string ;
+	obo:IAO_0000115 "A continuant [snap:Continuant] that is dependent on one or other independent continuant [snap:IndependentContinuant] bearers. For every instance of A requires some instance of (an independent continuant [snap:IndependentContinuant] type) B but which instance of B serves can change from time to time."^^xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid347 owl:intersectionOf _:genid350 .
+
+_:genid350 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid348 .
+
+_:genid348 a rdf:List ;
+	rdf:first _:genid349 .
+
+_:genid349 a owl:Restriction ;
+	owl:onProperty :OCRE811090 ;
+	owl:someValuesFrom study_protocol:OCRE300012 .
+
+_:genid348 rdf:rest rdf:nil .
+
+_:genid347 a owl:Class ;
+	owl:equivalentClass _:genid351 .
+
+_:genid351 owl:intersectionOf _:genid354 .
+
+_:genid354 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid352 .
+
+_:genid352 a rdf:List ;
+	rdf:first _:genid353 .
+
+_:genid353 a owl:Restriction ;
+	owl:onProperty :OCRE859845 ;
+	owl:someValuesFrom :OCRE400072 .
+
+_:genid352 rdf:rest rdf:nil .
+
+_:genid351 a owl:Class .
+# 
+
+_:genid355 owl:intersectionOf _:genid358 .
+
+_:genid358 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid356 .
+
+_:genid356 a rdf:List ;
+	rdf:first _:genid357 .
+
+_:genid357 a owl:Restriction ;
+	owl:onProperty :OCRE818327 ;
+	owl:someValuesFrom study_protocol:OCRE300012 .
+
+_:genid356 rdf:rest rdf:nil .
+
+_:genid355 a owl:Class ;
+	owl:equivalentClass _:genid359 .
+
+_:genid359 owl:intersectionOf _:genid362 .
+
+_:genid362 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid360 .
+
+_:genid360 a rdf:List ;
+	rdf:first _:genid361 .
+
+_:genid361 a owl:Restriction ;
+	owl:onProperty :OCRE837473 ;
+	owl:someValuesFrom :OCRE400072 .
+
+_:genid360 rdf:rest rdf:nil .
+
+_:genid359 a owl:Class .
+# 
+
+_:genid363 owl:intersectionOf _:genid366 .
+
+_:genid366 a rdf:List ;
+	rdf:first :OCRE832477 ;
+	rdf:rest _:genid364 .
+
+_:genid364 a rdf:List ;
+	rdf:first _:genid365 .
+
+_:genid365 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE001000 .
+
+_:genid364 rdf:rest rdf:nil .
+
+_:genid363 a owl:Class ;
+	rdfs:subClassOf _:genid367 .
+
+_:genid367 a owl:Class ;
+	owl:unionOf _:genid376 .
+
+_:genid376 a rdf:List ;
+	rdf:first _:genid377 .
+
+_:genid377 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400016 .
+
+_:genid376 rdf:rest _:genid374 .
+
+_:genid374 a rdf:List ;
+	rdf:first _:genid375 .
+
+_:genid375 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400030 .
+
+_:genid374 rdf:rest _:genid372 .
+
+_:genid372 a rdf:List ;
+	rdf:first _:genid373 .
+
+_:genid373 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400068 .
+
+_:genid372 rdf:rest _:genid370 .
+
+_:genid370 a rdf:List ;
+	rdf:first _:genid371 .
+
+_:genid371 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400073 .
+
+_:genid370 rdf:rest _:genid368 .
+
+_:genid368 a rdf:List ;
+	rdf:first _:genid369 .
+
+_:genid369 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400075 .
+
+_:genid368 rdf:rest rdf:nil .
+# 
+
+_:genid378 owl:intersectionOf _:genid381 .
+
+_:genid381 a rdf:List ;
+	rdf:first :OCRE832477 ;
+	rdf:rest _:genid379 .
+
+_:genid379 a rdf:List ;
+	rdf:first _:genid380 .
+
+_:genid380 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400000 .
+
+_:genid379 rdf:rest rdf:nil .
+
+_:genid378 a owl:Class ;
+	rdfs:subClassOf _:genid382 .
+
+_:genid382 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400073 .
+# 
+
+_:genid383 owl:intersectionOf _:genid386 .
+
+_:genid386 a rdf:List ;
+	rdf:first :OCRE832477 ;
+	rdf:rest _:genid384 .
+
+_:genid384 a rdf:List ;
+	rdf:first _:genid385 .
+
+_:genid385 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400006 .
+
+_:genid384 rdf:rest rdf:nil .
+
+_:genid383 a owl:Class ;
+	rdfs:subClassOf _:genid387 .
+
+_:genid387 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE261000 .
+# 
+
+_:genid388 owl:intersectionOf _:genid391 .
+
+_:genid391 a rdf:List ;
+	rdf:first :OCRE832477 ;
+	rdf:rest _:genid389 .
+
+_:genid389 a rdf:List ;
+	rdf:first _:genid390 .
+
+_:genid390 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE400053 .
+
+_:genid389 rdf:rest rdf:nil .
+
+_:genid388 a owl:Class ;
+	rdfs:subClassOf _:genid392 .
+
+_:genid392 a owl:Class ;
+	owl:unionOf _:genid395 .
+
+_:genid395 a rdf:List ;
+	rdf:first _:genid396 .
+
+_:genid396 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400030 .
+
+_:genid395 rdf:rest _:genid393 .
+
+_:genid393 a rdf:List ;
+	rdf:first _:genid394 .
+
+_:genid394 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400068 .
+
+_:genid393 rdf:rest rdf:nil .
+# 
+
+_:genid397 owl:intersectionOf _:genid400 .
+
+_:genid400 a rdf:List ;
+	rdf:first :OCRE832477 ;
+	rdf:rest _:genid398 .
+
+_:genid398 a rdf:List ;
+	rdf:first _:genid399 .
+
+_:genid399 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE824000 .
+
+_:genid398 rdf:rest rdf:nil .
+
+_:genid397 a owl:Class ;
+	rdfs:subClassOf _:genid401 .
+
+_:genid401 a owl:Class ;
+	owl:unionOf _:genid406 .
+
+_:genid406 a rdf:List ;
+	rdf:first _:genid407 .
+
+_:genid407 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400030 .
+
+_:genid406 rdf:rest _:genid404 .
+
+_:genid404 a rdf:List ;
+	rdf:first _:genid405 .
+
+_:genid405 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400068 .
+
+_:genid404 rdf:rest _:genid402 .
+
+_:genid402 a rdf:List ;
+	rdf:first _:genid403 .
+
+_:genid403 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400075 .
+
+_:genid402 rdf:rest rdf:nil .
+# 
+
+_:genid408 owl:intersectionOf _:genid411 .
+
+_:genid411 a rdf:List ;
+	rdf:first :OCRE832477 ;
+	rdf:rest _:genid409 .
+
+_:genid409 a rdf:List ;
+	rdf:first _:genid410 .
+
+_:genid410 a owl:Restriction ;
+	owl:onProperty :OCRE890531 ;
+	owl:someValuesFrom :OCRE908000 .
+
+_:genid409 rdf:rest rdf:nil .
+
+_:genid408 a owl:Class ;
+	rdfs:subClassOf _:genid412 .
+
+_:genid412 a owl:Class ;
+	owl:unionOf _:genid415 .
+
+_:genid415 a rdf:List ;
+	rdf:first _:genid416 .
+
+_:genid416 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400030 .
+
+_:genid415 rdf:rest _:genid413 .
+
+_:genid413 a rdf:List ;
+	rdf:first _:genid414 .
+
+_:genid414 a owl:Restriction ;
+	owl:onProperty :OCRE901007 ;
+	owl:someValuesFrom :OCRE400068 .
+
+_:genid413 rdf:rest rdf:nil .
+# 
+
+_:genid417 a owl:Restriction ;
+	owl:onProperty _:genid418 .
+
+_:genid418 owl:inverseOf :OCRE967500 .
+
+_:genid417 owl:someValuesFrom _:genid419 .
+
+_:genid419 owl:intersectionOf _:genid423 .
+
+_:genid423 a rdf:List ;
+	rdf:first :OCRE400050 ;
+	rdf:rest _:genid420 .
+
+_:genid420 a rdf:List ;
+	rdf:first _:genid421 .
+
+_:genid421 a owl:Restriction ;
+	owl:onProperty _:genid422 .
+
+_:genid422 owl:inverseOf :OCRE900056 .
+
+_:genid421 owl:someValuesFrom study_protocol:OCRE300012 .
+
+_:genid420 rdf:rest rdf:nil .
+
+_:genid419 a owl:Class .
+
+_:genid417 rdfs:subClassOf :OCRE400041 .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

@@ -1,0 +1,60 @@
+@prefix : <http://purl.org/net/OCRe/generic#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix statistics: <http://purl.org/net/OCRe/statistics#> .
+@prefix study_protocol: <http://purl.org/net/OCRe/study_protocol#> .
+@prefix study_protocol2: <http://purl.org/net/OCRe/study_protocol2#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/net/OCRe/generic> a owl:Ontology ;
+    owl:imports <http://purl.obolibrary.org/obo/iao/dev/ontology-metadata> .
+
+statistics:definition a owl:AnnotationProperty .
+
+study_protocol2:OCRE885707 a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "OCRe is divided into" ;
+    statistics:definition "This is a relationship between two acts. This relationship asserts that an epoch must be a division of one and only one study protocol. This relationship also asserts that a study protocol must be divided into one or more epochs."^^xsd:string ;
+    rdfs:subPropertyOf :OCRE794000 ;
+    owl:inverseOf study_protocol2:OCRE891072 ;
+    skos:prefLabel "is divided into"^^xsd:string .
+
+study_protocol:OCRE818327 a owl:ObjectProperty ;
+    rdfs:label "OCRe composite" ;
+    obo:IAO_0000115 "The \"composite\" entity in a reified decomposition relationship. The reified decomposition relationship links a \"component\" entity to the composite entity." ;
+    rdfs:subPropertyOf :OCRE794000 ;
+    skos:prefLabel "composite"^^xsd:string .
+
+study_protocol:OCRE850272 a owl:ObjectProperty ;
+    rdfs:label "OCRe occurs in" ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf study_protocol:OCRE861346 ;
+    skos:prefLabel "occurs in"^^xsd:string .
+
+study_protocol:OCRE859340 a owl:ObjectProperty ;
+    rdfs:label "OCRe component" ;
+    obo:IAO_0000115 "The \"component\" entity in a reified decomposition relationship. The reified decomposition relationship links a component entity to the \"composite\" entity." ;
+    rdfs:subPropertyOf :OCRE794000 ;
+    skos:prefLabel "component"^^xsd:string .
+
+study_protocol2:OCRE891072 a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "OCRe is a division of" ;
+    statistics:definition "This is a relationship between two acts. This relationship asserts that an epoch must be a division of one and only one study protocol. This relationship also asserts that a study protocol must be divided into one or more epochs."^^xsd:string ;
+    rdfs:subPropertyOf :OCRE794000 ;
+    skos:prefLabel "is a division of"^^xsd:string .
+
+study_protocol:OCRE861346 a owl:ObjectProperty ;
+    rdfs:label "OCRe contains" ;
+    obo:IAO_0000115 "To hold a discrete entity within" ;
+    rdfs:subPropertyOf :OCRE794000 ;
+    skos:prefLabel "contains"^^xsd:string .
+
+:OCRE794000 a owl:ObjectProperty ;
+    rdfs:label "OCRe is structurally related to" ;
+    skos:prefLabel "is structurally related to"^^xsd:string .
+

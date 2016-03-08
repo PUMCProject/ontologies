@@ -1,0 +1,1189 @@
+@prefix : <http://purl.org/net/OCRe/statistics#> .
+@prefix OCRe: <http://purl.org/net/OCRe/OCRe#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix study_protocol: <http://purl.org/net/OCRe/study_protocol#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+
+obo:IAO_0000115 a owl:AnnotationProperty .
+
+obo:IAO_0000116 a owl:AnnotationProperty .
+
+obo:IAO_0000117 a owl:AnnotationProperty .
+
+obo:IAO_0000119 a owl:AnnotationProperty .
+
+obo:IAO_0000232 a owl:AnnotationProperty .
+
+OCRe:OCRE200107 a owl:Class ;
+    rdfs:label "OCRe I dichotomous D quantitative" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is dichotomous and the dependent variable is quantitative"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200070 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200098 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "I dichotomous D quantitative"^^xsd:string .
+
+OCRe:OCRE900300 a owl:Class ;
+    rdfs:label "OCRe I dichotomous D nominalGT2" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is dichotomous and the dependent variable is nominal with cardinality greater than 2"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200012 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200004 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200032 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "I dichotomous D nominalGT2"^^xsd:string .
+
+OCRe:OCRE900301 a owl:Class ;
+    rdfs:label "OCRe I nominalGT2 D nominalGT2" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable nominal with cardinality greater than 2 and the dependent dependent variable is nominal with cardinality greater than 2"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200004 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200012 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200032 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200084 ] ] ) ] ;
+    skos:prefLabel "I nominalGT2 D nominalGT2"^^xsd:string .
+
+OCRe:OCRE900302 a owl:Class ;
+    rdfs:label "OCRe I ordinal D nominalGT2" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is ordinal and the dependent variable is nominal with cardinality greater than 2"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200066 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200032 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "I ordinal D nominalGT2"^^xsd:string .
+
+OCRe:OCRE900303 a owl:Class ;
+    rdfs:label "OCRe I quantitative D nominalGT2" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is quantitative and the dependent variable is nominal with cardinality greater than 2"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200066 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200032 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200049 ] ] ) ] ;
+    skos:prefLabel "I quantitative D nominalGT2"^^xsd:string .
+
+OCRe:OCRE900304 a owl:Class ;
+    rdfs:label "OCRe I dichotomous D ordinal" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is dichotomous and the dependent variable is ordinal "^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200081 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200060 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "I dichotomous D ordinal"^^xsd:string .
+
+OCRe:OCRE900305 a owl:Class ;
+    rdfs:label "OCRe I  nominalGT2 D ordinal" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is nominal with cardinality greater than 2 and the dependent variable is ordinal"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200013 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200060 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200084 ] ] ) ] ;
+    skos:prefLabel "I  nominalGT2 D ordinal"^^xsd:string .
+
+OCRe:OCRE900306 a owl:Class ;
+    rdfs:label "OCRe I ordinal D ordinal" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is ordinal and the dependent variable is ordinal"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200060 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "I ordinal D ordinal"^^xsd:string .
+
+OCRe:OCRE900307 a owl:Class ;
+    rdfs:label "OCRe I quantitative D ordinal" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is quantitative and the dependent variable is ordinal"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200066 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200060 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200049 ] ] ) ] ;
+    skos:prefLabel "I quantitative D ordinal"^^xsd:string .
+
+OCRe:OCRE900308 a owl:Class ;
+    rdfs:label "OCRe I  nominalGT2 D quantitative" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is nominal with cardinality greater than 2 and the dependent variable is quantitative"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200033 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200098 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200084 ] ] ) ] ;
+    skos:prefLabel "I  nominalGT2 D quantitative"^^xsd:string .
+
+OCRe:OCRE900309 a owl:Class ;
+    rdfs:label "OCRe I ordinal D quantitative" ;
+    obo:IAO_0000115 "A univariate analysis where the  independent variable is ordinal and the dependent variable is quantitative"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200066 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200098 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "I ordinal D quantitative"^^xsd:string .
+
+OCRe:OCRE900310 a owl:Class ;
+    rdfs:label "OCRe I quantitative D quantitative" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is quantitative and the dependent variable is quantitative"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200006 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200098 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200049 ] ] ) ] ;
+    skos:prefLabel "I quantitative D quantitative"^^xsd:string .
+
+OCRe:OCRE900311 a owl:Class ;
+    rdfs:label "OCRe I dichotomous D survival data" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is dichotomous and the dependent variable is survival"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200081 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200073 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200106 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "I dichotomous D survival data"^^xsd:string .
+
+OCRe:OCRE900312 a owl:Class ;
+    rdfs:label "OCRe I ordinal D survival data" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is ordinal and the dependent variable is survival"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200054 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200106 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "I ordinal D survival data"^^xsd:string .
+
+<http://purl.org/net/OCRe/statistics> a owl:Ontology ;
+    rdfs:comment "An ontology of objects and relationships in statistics that are useful for describing statistical analysis used in human studies. It is part of the Ontology for Clinical Research (OCRe)."^^xsd:string .
+
+:OCRE200005 a owl:Class ;
+    rdfs:label "OCRe Mixed linear model" ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Mixed linear model"^^xsd:string .
+
+:OCRE200007 a owl:Class ;
+    rdfs:label "OCRe Range" ;
+    obo:IAO_0000115 "The range is the difference between the lowest and highest numerical values; the limits or scale of variation."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "NCI Thesaurus entry for Range. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C38013"^^xsd:string ;
+    rdfs:subClassOf :OCRE200093 ;
+    owl:disjointWith :OCRE200055 ;
+    skos:prefLabel "Range"^^xsd:string .
+
+:OCRE200008 a owl:Class ;
+    rdfs:label "OCRe Right open" ;
+    obo:IAO_0000115 "The right boundary is not included in the interval"^^xsd:string ;
+    obo:IAO_0000116 "[ )"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200034 ;
+    skos:prefLabel "Right open"^^xsd:string .
+
+:OCRE200009 a owl:Class ;
+    rdfs:label "OCRe Poisson regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Poisson regression"^^xsd:string .
+
+:OCRE200010 a owl:Class ;
+    rdfs:label "OCRe Sensitivity" ;
+    obo:IAO_0000115 "An index of performance of a discriminant test calculated as the percentage of correct positives in all true postives"^^xsd:string ;
+    obo:IAO_0000117 "Samson"^^xsd:string ;
+    :synonym "recall"^^xsd:string ;
+    rdfs:subClassOf :OCRE200100 ;
+    skos:prefLabel "Sensitivity"^^xsd:string .
+
+:OCRE200011 a owl:Class ;
+    rdfs:label "OCRe Ratio" ;
+    obo:IAO_0000115 "A ratio is a quotient of quantities of the same kind for different components within the same system."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "NCI Thesaurus entry for Ratio. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C44256"^^xsd:string ;
+    rdfs:subClassOf :OCRE200028 ;
+    skos:prefLabel "Ratio"^^xsd:string .
+
+:OCRE200014 a owl:Class ;
+    rdfs:label "OCRe Multivariate I nominal D quantitative" ;
+    obo:IAO_0000115 "A plan for multivariate analysis where the independent variable is nominal and the dependent variable is quantitative"^^xsd:string ;
+    obo:IAO_0000232 "Simona: needs review; labels and definitions in this subtree are not clear."^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200071 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200097 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200049 ] ] ) ] ;
+    skos:prefLabel "Multivariate I nominal D quantitative"^^xsd:string .
+
+:OCRE200016 a owl:Class ;
+    rdfs:label "OCRe Independent variable nominal" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is nominal"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200092 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200000 ] ] ) ] ;
+    skos:prefLabel "Independent variable nominal"^^xsd:string .
+
+:OCRE200018 a owl:Class ;
+    rdfs:label "OCRe I quantitative D dichotomous" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is quantitative and the dependent variable is dichotomous"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200012 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200027 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200079 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900009 ;
+                                owl:someValuesFrom :OCRE200078 ] ] [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200049 ] ] ) ] ;
+    skos:prefLabel "I quantitative D dichotomous"^^xsd:string .
+
+:OCRE200019 a owl:Class ;
+    rdfs:label "OCRe Robust regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Robust regression"^^xsd:string .
+
+:OCRE200020 a owl:Class ;
+    rdfs:label "OCRe Point observation" ;
+    obo:IAO_0000115 """In point observation, the width of the censoring interval is 0. 
+The frequency of measurements prevents one from being more accurate in time, or one of the possible states cannot be observed.
+
+Example: we are all biallelic, but sometimes we cannot observe both allels"""^^xsd:string ;
+    obo:IAO_0000116 "[x, y] x=y"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200088 ;
+    skos:prefLabel "Point observation"^^xsd:string .
+
+:OCRE200021 a owl:Class ;
+    rdfs:label "OCRe Interval censored" ;
+    obo:IAO_0000115 """The event occurred within an interval, but it is not known exactly when. 
+
+Example: the last measurement day one person was HIV negative and the first measurement day the person was positive are known, but when the seroconversion happened within that interval is not known"""^^xsd:string ;
+    obo:IAO_0000116 "[x, y] x~=y"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200088 ;
+    skos:prefLabel "Interval censored"^^xsd:string .
+
+:OCRE200022 a owl:Class ;
+    rdfs:label "OCRe I nominalGT2 D dichotomous " ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is nominal with cardinality greater than 2 and the dependent variable is dichotomous"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200004 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200012 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200079 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200084 ] ] ) ] ;
+    skos:prefLabel "I nominalGT2 D dichotomous "^^xsd:string .
+
+:OCRE200023 a owl:Class ;
+    rdfs:label "OCRe Poisson distribution" ;
+    obo:IAO_0000115 "A distribution function used to describe the occurrence of rare events or to describe the sampling distribution of isolated counts in a continuum of time or space. This special probability distribution can apply to the number of discrete independent random events occurring in a given interval when knowing their average rate of occurrence over a very long interval."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "NCI Thesaurus entry for Poisson distribution. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C53212"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Poisson distribution"^^xsd:string .
+
+:OCRE200025 a owl:Class ;
+    rdfs:label "OCRe Proportion" ;
+    obo:IAO_0000115 "A proportion is a measure of the frequency of some phenomenon of interest within an average population"^^xsd:string ;
+    obo:IAO_0000116 "Ranges from 0 to 1. One way to summarize count data."^^xsd:string ;
+    rdfs:subClassOf :OCRE200028 ;
+    skos:prefLabel "Proportion"^^xsd:string .
+
+:OCRE200030 a owl:Class ;
+    rdfs:label "OCRe Infinite non-countable" ;
+    rdfs:subClassOf :OCRE200084 ;
+    skos:prefLabel "Infinite non-countable"^^xsd:string .
+
+:OCRE200031 a owl:Class ;
+    rdfs:label "OCRe Closed" ;
+    obo:IAO_0000115 "Both boundaries are included in the interval"^^xsd:string ;
+    obo:IAO_0000116 "[ ]"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200034 ;
+    skos:prefLabel "Closed"^^xsd:string .
+
+:OCRE200035 a owl:Class ;
+    rdfs:label "OCRe Sum" ;
+    obo:IAO_0000115 "Variables derived from taking the sum of two other variables"^^xsd:string ;
+    rdfs:subClassOf :OCRE200026 ;
+    skos:prefLabel "Sum"^^xsd:string .
+
+:OCRE200037 a owl:Class ;
+    rdfs:label "OCRe Lambda" ;
+    obo:IAO_0000116 "The lambda co-efficient of an exponential distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200080 ;
+    skos:prefLabel "Lambda"^^xsd:string .
+
+:OCRE200038 a owl:Class ;
+    rdfs:label "OCRe Discrete" ;
+    obo:IAO_0000116 "Ties are exact"^^xsd:string ;
+    rdfs:subClassOf :OCRE693000 ;
+    owl:disjointWith :OCRE200062 ;
+    skos:prefLabel "Discrete"^^xsd:string .
+
+:OCRE200039 a owl:Class ;
+    rdfs:label "OCRe Median" ;
+    obo:IAO_0000115 "The median is the middle value in a data set: i.e., the value which has an equal number of values greater and less than it."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200024 ;
+    owl:disjointWith :OCRE200058 ;
+    skos:prefLabel "Median"^^xsd:string .
+
+:OCRE200040 a owl:Class ;
+    rdfs:label "OCRe Difference" ;
+    obo:IAO_0000115 "Variables derived from taking the difference of two other variables. For example, the first difference of a time series {yt} is defined as Dyt = yt - yt-1"^^xsd:string ;
+    rdfs:subClassOf :OCRE200026 ;
+    skos:prefLabel "Difference"^^xsd:string .
+
+:OCRE200041 a owl:Class ;
+    rdfs:label "OCRe Exponential distribution" ;
+    obo:IAO_0000115 "In probability theory and statistics, the exponential distribution (a.k.a. negative exponential distribution) is a family of continuous probability distributions. It describes the time between events in a Poisson process, i.e. a process in which events occur continuously and independently at a constant average rate."^^xsd:string ;
+    obo:IAO_0000116 "A class of probability distribution with probability density function (pdf) of f(x;lambda) = 1 - exp(-lambda*x) for x >-0 ; 0 otherwise"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Exponential distribution. Available at http://en.wikipedia.org/wiki/Exponential_distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Exponential distribution"^^xsd:string .
+
+:OCRE200042 a owl:Class ;
+    rdfs:label "OCRe Rate" ;
+    obo:IAO_0000115 "A rate is a quantity per unit of time."^^xsd:string ;
+    obo:IAO_0000116 """(Cambridge Dictionary of Statistics 3nd ed.) A measure of the frequency of some phenomenon of interest given by rate: number of events in specified period / average population during the period.
+
+The (Cambridge Dictionary of Statistics 3nd ed.) definition of rate is our definition of proportion."""^^xsd:string ;
+    rdfs:subClassOf :OCRE200028 ;
+    skos:prefLabel "Rate"^^xsd:string .
+
+:OCRE200043 a owl:Class ;
+    rdfs:label "OCRe Log-normal distribution" ;
+    obo:IAO_0000115 "In probability theory, a log-normal distribution is a probability distribution of a random variable whose logarithm is normally distributed. If X is a random variable with a normal distribution, then Y = exp(X) has a log-normal distribution; likewise, if Y is log-normally distributed, then X = log(Y) is normally distributed. (This is true regardless of the base of the logarithmic function: if loga(Y) is normally distributed, then so is logb(Y), for any two positive numbers a, b ≠ 1.)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Log-normal distribution. Available at http://en.wikipedia.org/wiki/Log-normal_distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Log-normal distribution"^^xsd:string .
+
+:OCRE200045 a owl:Class ;
+    rdfs:label "OCRe I dichotomous D dichotomous" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is dichotomous and the dependent variable is dichotomous"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200004 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200012 ],
+        [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200029 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200079 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "I dichotomous D dichotomous"^^xsd:string .
+
+:OCRE200046 a owl:Class ;
+    rdfs:label "OCRe Multivariate I nominal D nominalGT2" ;
+    obo:IAO_0000115 "A plan for multivariate analysis where the independent variable is nominal and the dependent variable is nominal with cardinality greater than 2 "^^xsd:string ;
+    obo:IAO_0000232 "Simona: needs review; labels and definitions in this subtree are not clear."^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200044 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200097 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( [ a owl:Restriction ;
+                                            owl:onProperty :OCRE900026 ;
+                                            owl:someValuesFrom :OCRE200000 ] [ a owl:Restriction ;
+                                            owl:onProperty :OCRE900026 ;
+                                            owl:someValuesFrom :OCRE200084 ] ) ] ] ) ] ;
+    skos:prefLabel "Multivariate I nominal D nominalGT2"^^xsd:string .
+
+:OCRE200048 a owl:Class ;
+    rdfs:label "OCRe Left open" ;
+    obo:IAO_0000115 "The left boundary is not included in the interval"^^xsd:string ;
+    obo:IAO_0000116 "(  ]"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200034 ;
+    skos:prefLabel "Left open"^^xsd:string .
+
+:OCRE200050 a owl:Class ;
+    rdfs:label "OCRe Chi-square distribution" ;
+    obo:IAO_0000115 "In probability theory and statistics, the chi-square distribution (also chi-squared or χ²-distribution) with k degrees of freedom is the distribution of a sum of the squares of k independent standard normal random variables."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Chi-square distribution. Available at http://en.wikipedia.org/wiki/Chi-square_distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Chi-square distribution"^^xsd:string .
+
+:OCRE200052 a owl:Class ;
+    rdfs:label "OCRe Open" ;
+    obo:IAO_0000115 "Neither boundary is included in the interval"^^xsd:string ;
+    obo:IAO_0000116 "( )"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200034 ;
+    skos:prefLabel "Open"^^xsd:string .
+
+:OCRE200056 a owl:Class ;
+    rdfs:label "OCRe Quantile regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Quantile regression"^^xsd:string .
+
+:OCRE200057 a owl:Class ;
+    rdfs:label "OCRe Mean" ;
+    obo:IAO_0000115 "The mean is the sum of a set of values divided by the number of values in the set."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "NCI thesaurus entry for Mean Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C53319"^^xsd:string ;
+    :synonym "Statistical mean"^^xsd:string ;
+    rdfs:subClassOf :OCRE200024 ;
+    skos:prefLabel "Mean"^^xsd:string .
+
+:OCRE200059 a owl:Class ;
+    rdfs:label "OCRe I ordinalGT2 D dichotomous" ;
+    obo:IAO_0000115 "A univariate analysis where the independent variable is ordinal with cardinality greater than 2 and the dependent variable is dichotomous"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200081 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200079 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "I ordinalGT2 D dichotomous"^^xsd:string .
+
+:OCRE200063 a owl:Class ;
+    rdfs:label "OCRe Gamma distribution" ;
+    obo:IAO_0000115 """In probability theory and statistics, the gamma distribution is a two-parameter family of continuous probability distributions. It has a scale parameter θ and a shape parameter k. If k is an integer, then the distribution represents an Erlang distribution, i.e., the sum of k independent exponentially distributed random variables, each of which has a mean of θ (which is equivalent to a rate parameter of θ −1) .
+The gamma distribution is frequently a probability model for waiting times; for instance, in life testing, the waiting time until death is a random variable that is frequently modeled with a gamma distribution."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Gamma distribution. Available at http://en.wikipedia.org/wiki/Gamma_distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Gamma distribution"^^xsd:string .
+
+:OCRE200064 a owl:Class ;
+    rdfs:label "OCRe Left censored" ;
+    obo:IAO_0000115 """The event occurred some time before the last measurement, but it is not known exactly when. 
+
+Example: one person tests HIV positive, but there is no negative test result, so it is not possible to estalish a time interval for seroconversion"""^^xsd:string ;
+    obo:IAO_0000116 "[x, y], x unknown"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200088 ;
+    skos:prefLabel "Left censored"^^xsd:string .
+
+:OCRE200065 a owl:Class ;
+    rdfs:label "OCRe Binomial distribution" ;
+    obo:IAO_0000115 "In probability theory and statistics, the binomial distribution is the discrete probability distribution of the number of successes in a sequence of n independent yes/no experiments, each of which yields success with probability p. Such a success/failure experiment is also called a Bernoulli experiment or Bernoulli trial."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Binomial distribution. Available at http://en.wikipedia.org/wiki/Binomial_distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Binomial distribution"^^xsd:string .
+
+:OCRE200067 a owl:Class ;
+    rdfs:label "OCRe General estimating equation" ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "General estimating equation"^^xsd:string .
+
+:OCRE200068 a owl:Class ;
+    rdfs:label "OCRe Odds" ;
+    obo:IAO_0000115 "Odds is a quotient in which the relative likelihood that an event will occur is divided by the the relative likelihood that it won't. In probability theory and statistics, where the variable \"p\" is the probability in favor of the event, and the probability against the event is 1-p, \"the odds\" of the event are the quotient of the two, or p / (1-p)"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200028 ;
+    skos:prefLabel "Odds"^^xsd:string .
+
+:OCRE200069 a owl:Class ;
+    rdfs:label "OCRe Multivariate D ordinal" ;
+    obo:IAO_0000115 "A plan for multivariate analysis where the independent variable is multivariate and the dependent variable is ordinal"^^xsd:string ;
+    obo:IAO_0000232 "Simona: needs review; labels and definitions in this subtree are not clear."^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200044 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200097 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "Multivariate D ordinal"^^xsd:string .
+
+:OCRE200074 a owl:Class ;
+    rdfs:label "OCRe Analysis of covariance" ;
+    obo:IAO_0000115 "The analysis of covariance (ANCOVA) is a general linear model with one continuous outcome variable (quantitative) and one or more factor variables (qualitative). ANCOVA is a merger of ANOVA and regression for continuous variables. ANCOVA tests whether certain factors have an effect on the outcome variable after removing the variance for which quantitative predictors (covariates) account. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Analysis of covariance. Available at: http://en.wikipedia.org/wiki/Analysis_of_covariance"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Analysis of covariance"^^xsd:string .
+
+:OCRE200075 a owl:Class ;
+    rdfs:label "OCRe Variance" ;
+    obo:IAO_0000115 "The variance is the mean square deviation of the variable around the average value. It reflects the dispersion of the empirical values around its mean. (http://stats.oecd.org/glossary/detail.asp?ID=5160)"^^xsd:string ;
+    rdfs:subClassOf :OCRE200093 ;
+    skos:prefLabel "Variance"^^xsd:string .
+
+:OCRE200077 a owl:Class ;
+    rdfs:label "OCRe ROC curve" ;
+    obo:IAO_0000115 "A plot of the sensitivity of a discriminant test against one minus its specificity"^^xsd:string ;
+    rdfs:subClassOf :OCRE200100 ;
+    skos:prefLabel "ROC curve"^^xsd:string .
+
+:OCRE200082 a owl:Class ;
+    rdfs:label "OCRe Multivariate D survival data" ;
+    obo:IAO_0000115 "A plan for multivariate analysis where the independent variable is multivariate and the dependent variable is survival data"^^xsd:string ;
+    obo:IAO_0000232 "Simona: needs review; labels and definitions in this subtree are not clear."^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200027 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200097 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200103 ] ] ) ] ;
+    skos:prefLabel "Multivariate D survival data"^^xsd:string .
+
+:OCRE200083 a owl:Class ;
+    rdfs:label "OCRe Discrete uniform distribution" ;
+    obo:IAO_0000115 """In probability theory and statistics, the discrete uniform distribution is a probability distribution whereby a finite number of equally spaced values are equally likely to be observed; every one of n values has equal probability 1/n. Another way of saying "discrete uniform distribution" would be "a known, finite number of equally spaced outcomes equally likely to happen."
+If a random variable has any of n possible values  that are equally spaced and equally probable, then it has a discrete uniform distribution. The probability of any outcome ki  is 1 / n. A simple example of the discrete uniform distribution is throwing a fair die. """^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Uniform distribution (discrete). Available at http://en.wikipedia.org/wiki/Uniform_distribution_(discrete)"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Discrete uniform distribution"^^xsd:string .
+
+:OCRE200086 a owl:Class ;
+    rdfs:label "OCRe F measure" ;
+    obo:IAO_0000115 "A measure of a test's accuracy defined as the harmonic mean of sensitivity and specificity F= 2*(specificity * sensitivity)/(specificity + sensitivity)"^^xsd:string ;
+    :synonym "F1 score"^^xsd:string ;
+    rdfs:subClassOf :OCRE200100 ;
+    skos:prefLabel "F measure"^^xsd:string .
+
+:OCRE200090 a owl:Class ;
+    rdfs:label "OCRe Specificity" ;
+    obo:IAO_0000115 "An index of performance of a discriminant test calculated as the percentage of negatives in all true negatives"^^xsd:string ;
+    obo:IAO_0000117 "Samson"^^xsd:string ;
+    rdfs:subClassOf :OCRE200100 ;
+    skos:prefLabel "Specificity"^^xsd:string .
+
+:OCRE200091 a owl:Class ;
+    rdfs:label "OCRe Polychotomous finite" ;
+    rdfs:subClassOf :OCRE200084 ;
+    skos:prefLabel "Polychotomous finite"^^xsd:string .
+
+:OCRE200094 a owl:Class ;
+    rdfs:label "OCRe Polarity" ;
+    rdfs:subClassOf :OCRE200002 ;
+    skos:prefLabel "Polarity"^^xsd:string .
+
+:OCRE200096 a owl:Class ;
+    rdfs:label "OCRe Continuous uniform distribution" ;
+    obo:IAO_0000115 "In probability theory and statistics, the continuous uniform distribution or rectangular distribution is a family of probability distributions such that for each member of the family, all intervals of the same length on the distribution's support are equally probable. The support is defined by the two parameters, a and b, which are its minimum and maximum values. The distribution is often abbreviated U(a,b)."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Uniform distribution (continuous). Available at http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)"^^xsd:string ;
+    obo:IAO_0000232 "Simona: Wikipedia entry \"does not cite any references or sources\" Confirmation needed"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Continuous uniform distribution"^^xsd:string .
+
+:OCRE200099 a owl:Class ;
+    rdfs:label "OCRe Multivariate I non-ordinal D dichotomous" ;
+    obo:IAO_0000115 "A plan for multivariate analysis where some independent variables are non-ordinal and the dependent variable is dichotomous"^^xsd:string ;
+    obo:IAO_0000232 "Simona: needs review; labels and definitions in this subtree are not clear."^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :OCRE900025 ;
+            owl:someValuesFrom :OCRE200027 ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200097 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "Multivariate I non-ordinal D dichotomous"^^xsd:string .
+
+:OCRE200101 a owl:Class ;
+    rdfs:label "OCRe Infinite countable" ;
+    obo:IAO_0000115 "In mathematics, a countable set is a set with the same cardinality (number of elements) as some subset of the set of natural numbers."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Countable set. Available at http://en.wikipedia.org/wiki/Countable_set"^^xsd:string ;
+    rdfs:subClassOf :OCRE200084 ;
+    skos:prefLabel "Infinite countable"^^xsd:string .
+
+:OCRE200102 a owl:Class ;
+    rdfs:label "OCRe Linear mixed effect model" ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Linear mixed effect model"^^xsd:string .
+
+:OCRE200104 a owl:Class ;
+    rdfs:label "OCRe Non linear mixed effect model" ;
+    rdfs:subClassOf :OCRE200051 ;
+    skos:prefLabel "Non linear mixed effect model"^^xsd:string .
+
+:OCRE200105 a owl:Class ;
+    rdfs:label "OCRe Right censored" ;
+    obo:IAO_0000115 """The event my have occurred some time after the last measurement, but it is not known exactly whether it has, because there are no further observations. 
+
+Example: one person tests HIV negative at some point, but there are no further observations (e.g., the individual moved, or died), so it is not known whether the person has seroconverted or not"""^^xsd:string ;
+    obo:IAO_0000116 "[x, y], x unknown"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200088 ;
+    skos:prefLabel "Right censored"^^xsd:string .
+
+:definition a owl:AnnotationProperty ;
+    rdfs:label "OCRe deprecated:definition" ;
+    skos:prefLabel "deprecated:definition"^^xsd:string .
+
+:synonym a owl:AnnotationProperty .
+
+study_protocol:develop_comment a owl:AnnotationProperty .
+
+rdfs:comment a owl:AnnotationProperty .
+
+rdfs:label a owl:AnnotationProperty .
+
+owl:Thing a owl:Class ;
+    rdfs:label "OCRe Thing" ;
+    skos:prefLabel "Thing"^^xsd:string .
+
+:OCRE200006 a owl:Class ;
+    rdfs:label "OCRe Linear regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Linear regression"^^xsd:string .
+
+:OCRE200013 a owl:Class ;
+    rdfs:label "OCRe Kruskal Wallis method" ;
+    obo:IAO_0000115 "The Kruskal-Wallis one-way analysis of variance by ranks (named after William Kruskal and W. Allen Wallis) is a non-parametric method for testing equality of population medians among groups. It is identical to a one-way analysis of variance with the data replaced by their ranks. It is an extension of the Mann-Whitney U test to 3 or more groups. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Kruskal–Wallis one-way analysis of variance. Available at http://en.wikipedia.org/wiki/Wallis_statistic"^^xsd:string ;
+    rdfs:subClassOf :OCRE200051 ;
+    skos:prefLabel "Kruskal Wallis method"^^xsd:string .
+
+:OCRE200017 a owl:Class ;
+    rdfs:label "OCRe Interval scale level" ;
+    obo:IAO_0000115 "In S. Steven's typology of measurement scale, a variable is \"a continuous variable that has an arbitrary zero point.\""^^xsd:string ;
+    obo:IAO_0000116 "Cannot meaningfully compute ratios"^^xsd:string ;
+    obo:IAO_0000119 "Cambridge Dictionary of Statistics 3rd edition"^^xsd:string ;
+    rdfs:subClassOf :OCRE200049 ;
+    skos:prefLabel "Interval scale level"^^xsd:string .
+
+:OCRE200029 a owl:Class ;
+    rdfs:label "OCRe Z-test" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200047 ;
+    skos:prefLabel "Z-test"^^xsd:string .
+
+:OCRE200033 a owl:Class ;
+    rdfs:label "OCRe Analysis of variance" ;
+    obo:IAO_0000115 "The analysis of variance is a collection of statistical models, and their associated procedures, in which the observed variance is partitioned into components due to different explanatory variables. [source: Wikipedia] The total variation displayed by a set of observations, as measured by the sums of squares of deviations from the mean, may in certain circumstances be separated into components associated with defined sources of variation used as criteria of classification for the observations. Such an analysis is called an analysis of variance, although in the strict sense it is an analysis of sums of squares. "^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "OECD Glossary of Statistical Terms entry for Variance Analysis. Available at http://stats.oecd.org/glossary/detail.asp?ID=3885"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Analysis of variance"^^xsd:string .
+
+:OCRE200054 a owl:Class ;
+    rdfs:label "OCRe Cox regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onProperty :OCRE900011 ],
+        :OCRE200095 ;
+    skos:prefLabel "Cox regression"^^xsd:string .
+
+:OCRE200055 a owl:Class ;
+    rdfs:label "OCRe Interquartile range" ;
+    obo:IAO_0000115 "The variate distance between the upper and lower quartiles. This range contains one half of the total frequency and provides a simple measure of dispersion which is useful in descriptive statistics"^^xsd:string ;
+    obo:IAO_0000119 " OECD glossary of Statistical Terms entry for Interquartile range. Available at http://stats.oecd.org/glossary/detail.asp?ID=3761"^^xsd:string ;
+    rdfs:subClassOf :OCRE200093 ;
+    skos:prefLabel "Interquartile range"^^xsd:string .
+
+:OCRE200058 a owl:Class ;
+    rdfs:label "OCRe Mode" ;
+    obo:IAO_0000115 "The mode is the value which occurs most often in a set of values. If no value is repeated, there is no mode. If more than one value occurs with the same greatest frequency, each value is a mode."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "NCI thesaurus entry for Mode. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C53320"^^xsd:string ;
+    rdfs:subClassOf :OCRE200024 ;
+    skos:prefLabel "Mode"^^xsd:string .
+
+:OCRE200062 a owl:Class ;
+    rdfs:label "OCRe Continuous" ;
+    obo:IAO_0000116 "Ties are not exact"^^xsd:string ;
+    rdfs:subClassOf :OCRE693000 ;
+    skos:prefLabel "Continuous"^^xsd:string .
+
+:OCRE200070 a owl:Class ;
+    rdfs:label "OCRe Student's t-test" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Student's t-test"^^xsd:string .
+
+:OCRE200073 a owl:Class ;
+    rdfs:label "OCRe Product limit estimation" ;
+    obo:IAO_0000116 "Logrank test"^^xsd:string ;
+    obo:IAO_0000232 "Simona: changed label to 'Product limit estimation', which can be tested with a logrank test and the result is the Kaplan-Meier curve. The logrank test allows to compare two or more KM curves "^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :OCRE900010 ],
+        :OCRE200095 ;
+    skos:prefLabel "Product limit estimation"^^xsd:string .
+
+:OCRE200078 a owl:Class ;
+    rdfs:label "OCRe Normal distribution" ;
+    obo:IAO_0000115 "The normal distribution is a family of probability density functions whose mean, median and mode are identical. The function generates a symmetrical curve, whose position and shape is determined by its location and scale parameters, the mean and standard deviation respectively. The standard normal distribution has a location parameter of 0 and a scale parameter of 1."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "NCI Thesaurus entry for Normal distribution. Available at http://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C53215"^^xsd:string ;
+    rdfs:subClassOf :OCRE200087 ;
+    skos:prefLabel "Normal distribution"^^xsd:string .
+
+:OCRE200080 a owl:Class ;
+    rdfs:label "OCRe Exponential distribution metric" ;
+    obo:IAO_0000115 "A distribution metric of the exponential distribution"^^xsd:string ;
+    rdfs:subClassOf :OCRE200003 ;
+    skos:prefLabel "Exponential distribution metric"^^xsd:string .
+
+:OCRE200089 a owl:Class ;
+    rdfs:label "OCRe Absolute scale level" ;
+    obo:IAO_0000115 """In S. Steven's typology of measurement scale, a ratio variable is "a continuous variable that has a fixed rather than an arbitrary zero point."
+
+Examples: weight, height, temperature measured in degrees Kelvin"""^^xsd:string ;
+    obo:IAO_0000116 "Can compute ratios"^^xsd:string ;
+    obo:IAO_0000119 "Cambridge Dictionary of Statistics 3rd edition"^^xsd:string ;
+    rdfs:subClassOf :OCRE200049 ;
+    skos:prefLabel "Absolute scale level"^^xsd:string .
+
+:OCRE900009 a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "OCRe has distribution" ;
+    :definition "The probability distribution of a variable in a plan for statistical analysis"^^xsd:string ;
+    rdfs:subPropertyOf :OCRE900007 ;
+    skos:prefLabel "has distribution"^^xsd:string .
+
+:OCRE900022 a owl:ObjectProperty ;
+    rdfs:label "OCRe is permissible method of" ;
+    :definition "A statistical analysis for which a statistical method is permissible, given the data types of the variables involved"^^xsd:string ;
+    rdfs:subPropertyOf :OCRE900007 ;
+    skos:prefLabel "is permissible method of"^^xsd:string .
+
+:OCRE200044 a owl:Class ;
+    rdfs:label "OCRe Polychotomous regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200051 ;
+    skos:prefLabel "Polychotomous regression"^^xsd:string .
+
+:OCRE200047 a owl:Class ;
+    rdfs:label "OCRe Categorical method" ;
+    obo:IAO_0000115 "A categorical method is a statistical technique that uses categorical (nominal) data."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200061 ;
+    skos:prefLabel "Categorical method"^^xsd:string .
+
+:OCRE200076 a owl:Class ;
+    rdfs:label "OCRe Granularity" ;
+    obo:IAO_0000115 "Number of possible outcomes"^^xsd:string ;
+    obo:IAO_0000116 "Describe background of data, how to present data when you plot it"^^xsd:string ;
+    rdfs:subClassOf :OCRE200002 ;
+    skos:prefLabel "Granularity"^^xsd:string .
+
+:OCRE200085 a owl:Class ;
+    rdfs:label "OCRe Tie-breaking distinction" ;
+    obo:IAO_0000115 "How measurements of \"equal value\" can be differentiated"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200002 ;
+    skos:prefLabel "Tie-breaking distinction"^^xsd:string .
+
+:OCRE200095 a owl:Class ;
+    rdfs:label "OCRe Time-to-failure method" ;
+    obo:IAO_0000115 "An time-to-failure method is a statistical technique relating to preparation of mortality and other analytical tables. It uses data from the past to predict the future."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200061 ;
+    skos:prefLabel "Time-to-failure method"^^xsd:string .
+
+:OCRE200103 a owl:Class ;
+    rdfs:label "OCRe Time to event" ;
+    obo:IAO_0000115 "Data representing the times of the occurrances of events of interest"^^xsd:string ;
+    obo:IAO_0000116 """On scale of time. Often censored. A difference in time.
+Also whether an event occurs (lowerbound of time to event) Measurement can be one number or an interval. 3 categories: same L & Ul,  right censoring (know lowerbound), an interval"""^^xsd:string ;
+    :synonym "Survival data"^^xsd:string ;
+    rdfs:subClassOf :OCRE200026 ;
+    skos:prefLabel "Time to event"^^xsd:string .
+
+:OCRE200106 a owl:Class ;
+    rdfs:label "OCRe Dependent variable survival data" ;
+    obo:IAO_0000115 "A univariate analysis where the dependent variable is survival data"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200092 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200103 ] ] ) ] ;
+    skos:prefLabel "Dependent variable survival data"^^xsd:string .
+
+:OCRE693000 a owl:Class ;
+    rdfs:label "OCRe Point data tie-breaking distinction" ;
+    obo:IAO_0000115 "How measurements of \"equal value\" of point data can be differentiated"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200085 ;
+    skos:prefLabel "Point data tie-breaking distinction"^^xsd:string .
+
+:OCRE200000 a owl:Class ;
+    rdfs:label "OCRe Nominal scale level" ;
+    obo:IAO_0000115 "Variables whose values are one or more labels for predefined categories that enumerate possble states of some characteristic (e.g., blood types A, B, AB, or O). AKA \"categorical data\""^^xsd:string ;
+    rdfs:subClassOf :OCRE200036 ;
+    skos:prefLabel "Nominal scale level"^^xsd:string .
+
+:OCRE200003 a owl:Class ;
+    rdfs:label "OCRe Distributional metric" ;
+    obo:IAO_0000115 "A numeric characteristic of a distribution or of a random variable"^^xsd:string ;
+    obo:IAO_0000117 "Samson"^^xsd:string ;
+    :synonym "Descriptive statistics"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Distributional metric"^^xsd:string .
+
+:OCRE200024 a owl:Class ;
+    rdfs:label "OCRe Central tendency" ;
+    obo:IAO_0000115 "A metric measuring the \"middle\" or \"expected\" value of a distribution or of a random variable"^^xsd:string ;
+    obo:IAO_0000117 "Samson"^^xsd:string ;
+    rdfs:subClassOf :OCRE200003 ;
+    skos:prefLabel "Central tendency"^^xsd:string .
+
+:OCRE200027 a owl:Class ;
+    rdfs:label "OCRe Logistic regression" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200071 ;
+    skos:prefLabel "Logistic regression"^^xsd:string .
+
+:OCRE200053 a owl:Class ;
+    rdfs:label "OCRe Statistical analysis type" ;
+    obo:IAO_0000115 "Meta data characterizing the plan to analyze a set of data"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Statistical analysis type"^^xsd:string .
+
+:OCRE200081 a owl:Class ;
+    rdfs:label "OCRe Wilcoxon rank sum test" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200051 ;
+    skos:prefLabel "Wilcoxon rank sum test"^^xsd:string .
+
+:OCRE200093 a owl:Class ;
+    rdfs:label "OCRe Dispersion" ;
+    obo:IAO_0000115 "A metric measuring the variability of a distribution or of a random variable"^^xsd:string ;
+    rdfs:subClassOf :OCRE200003 ;
+    skos:prefLabel "Dispersion"^^xsd:string .
+
+:OCRE200002 a owl:Class ;
+    rdfs:label "OCRe Variable dimension" ;
+    obo:IAO_0000115 "A typology of scales measure"^^xsd:string ;
+    obo:IAO_0000116 "Dimensions about how data can be ordered"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( :OCRE200026 :OCRE200036 ) ] ;
+    skos:prefLabel "Variable dimension"^^xsd:string .
+
+:OCRE200004 a owl:Class ;
+    rdfs:label "OCRe Chi-square test" ;
+    obo:IAO_0000115 "A chi-square test (also chi squared test or χ2 test) is any statistical hypothesis test in which the sampling distribution of the test statistic is a chi-square distribution when the null hypothesis is true, or any in which this is asymptotically true, meaning that the sampling distribution (if the null hypothesis is true) can be made to approximate a chi-square distribution as closely as desired by making the sample size large enough."^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    obo:IAO_0000119 "Wikipedia entry for Chi-square test. Available at http://en.wikipedia.org/wiki/Chi-square_test"^^xsd:string ;
+    rdfs:subClassOf :OCRE200047 ;
+    skos:prefLabel "Chi-square test"^^xsd:string .
+
+:OCRE200026 a owl:Class ;
+    rdfs:label "OCRe Scoring or aggregation method" ;
+    obo:IAO_0000115 "Method for deriving a variable by scoring from multiple observations or aggregating from multiple events in a subject or from multiple subjects"^^xsd:string ;
+    obo:IAO_0000116 "E.g., population-level variables"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Scoring or aggregation method"^^xsd:string .
+
+:OCRE200028 a owl:Class ;
+    rdfs:label "OCRe Quotient" ;
+    obo:IAO_0000115 "A quotient is the result obtained by dividing one quantity by another"^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Quotient"^^xsd:string .
+
+:OCRE200032 a owl:Class ;
+    rdfs:label "OCRe Dependent variable nominalGT2" ;
+    obo:IAO_0000115 "A univariate analysis where the dependent variable is nominal with cardinality greater than 2"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200092 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Class ;
+                                owl:intersectionOf ( [ a owl:Restriction ;
+                                            owl:onProperty :OCRE900026 ;
+                                            owl:someValuesFrom :OCRE200000 ] [ a owl:Restriction ;
+                                            owl:onProperty :OCRE900026 ;
+                                            owl:someValuesFrom :OCRE200084 ] ) ] ] ) ] ;
+    skos:prefLabel "Dependent variable nominalGT2"^^xsd:string .
+
+:OCRE200034 a owl:Class ;
+    rdfs:label "OCRe Interval data tie-breaking distinction" ;
+    obo:IAO_0000115 """How measurements of "equal value" of interval data can be differentiated
+Whether 0, 1 or both interval boundaries are included."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200085 ;
+    skos:prefLabel "Interval data tie-breaking distinction"^^xsd:string .
+
+:OCRE200036 a owl:Class ;
+    rdfs:label "OCRe Scale level" ;
+    obo:IAO_0000115 "Variables whose values are unitary measurements that cannot be defined from other variables"^^xsd:string ;
+    rdfs:subClassOf :OCRE200002 ;
+    skos:prefLabel "Scale level"^^xsd:string .
+
+:OCRE200060 a owl:Class ;
+    rdfs:label "OCRe Dependent variable ordinal" ;
+    obo:IAO_0000115 "A univariate analysis where the dependent variable is ordinal"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200092 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200015 ] ] ) ] ;
+    skos:prefLabel "Dependent variable ordinal"^^xsd:string .
+
+:OCRE200066 a owl:Class ;
+    rdfs:label "OCRe Spearmans rank correlation coefficient" ;
+    obo:IAO_0000115 "[see standard reference]"^^xsd:string ;
+    rdfs:subClassOf :OCRE200051 ;
+    skos:prefLabel "Spearmans rank correlation coefficient"^^xsd:string .
+
+:OCRE200079 a owl:Class ;
+    rdfs:label "OCRe Dependent variable dichotomous" ;
+    obo:IAO_0000115 "A univariate analysis where the dependent variable is dichotomous"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200092 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200001 ] ] ) ] ;
+    skos:prefLabel "Dependent variable dichotomous"^^xsd:string .
+
+:OCRE200088 a owl:Class ;
+    rdfs:label "OCRe Censoring type" ;
+    obo:IAO_0000115 """Censoring type is a particular type of interval creation. 
+Censoring means that one event prevents another event from being observed (e.g., end of study prevents possible evidence of success or failure from being observed).
+Though usually employed in the context of time-to-failure, this is not only about time, but it can be about any dimension of interest (e.g., if the measurement is above the maximum value in the scale used, then the measurement is right censored; if it is lower than the minimum detectable, then it is left censored)."""^^xsd:string ;
+    obo:IAO_0000117 "Simona"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Censoring type"^^xsd:string .
+
+:OCRE200098 a owl:Class ;
+    rdfs:label "OCRe Dependent variable quantitative scale" ;
+    obo:IAO_0000115 "A univariate analysis where the dependent variable is interval/absolute scale level"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200092 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900010 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom :OCRE200049 ] ] ) ] ;
+    skos:prefLabel "Dependent variable quantitative scale"^^xsd:string .
+
+:OCRE200100 a owl:Class ;
+    rdfs:label "OCRe Classification analysis metric" ;
+    obo:IAO_0000115 "An index of performance of a discriminant test with binary outcome"^^xsd:string ;
+    obo:IAO_0000117 "Samson"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Classification analysis metric"^^xsd:string .
+
+:OCRE200012 a owl:Class ;
+    rdfs:label "OCRe Exact test" ;
+    rdfs:subClassOf :OCRE200051 ;
+    skos:prefLabel "Exact test"^^xsd:string .
+
+:OCRE200061 a owl:Class ;
+    rdfs:label "OCRe Statistical method" ;
+    obo:IAO_0000115 "A procedure for performing statistical inference"^^xsd:string ;
+    obo:IAO_0000116 "Note that we are excluding descriptive statistical method"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Statistical method"^^xsd:string .
+
+:OCRE200097 a owl:Class ;
+    rdfs:label "OCRe Multivariate analysis I non-ordinal" ;
+    obo:IAO_0000115 "A plan for statistical analysis where there is more than one independent variable and some of those variables are not of the ordinal scale"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200053 [ a owl:Restriction ;
+                        owl:onProperty :OCRE900011 ;
+                        owl:someValuesFrom [ a owl:Restriction ;
+                                owl:onProperty :OCRE900026 ;
+                                owl:someValuesFrom [ a owl:Class ;
+                                        owl:complementOf :OCRE200015 ] ] ] [ a owl:Restriction ;
+                        owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :OCRE900011 ] ) ] ;
+    skos:prefLabel "Multivariate analysis I non-ordinal"^^xsd:string .
+
+:OCRE200051 a owl:Class ;
+    rdfs:label "OCRe Non-linear model" ;
+    rdfs:subClassOf :OCRE200061 ;
+    skos:prefLabel "Non-linear model"^^xsd:string .
+
+:OCRE200092 a owl:Class ;
+    rdfs:label "OCRe Univariate analysis" ;
+    obo:IAO_0000115 "A plan for statistical analysis where there is only one independent variable"^^xsd:string ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :OCRE200053 [ a owl:Restriction ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onProperty :OCRE900011 ] ) ] ;
+    skos:prefLabel "Univariate analysis"^^xsd:string .
+
+:OCRE900007 a owl:ObjectProperty ;
+    rdfs:label "OCRe statistics property" ;
+    :definition "A property of a statistical concept"^^xsd:string ;
+    skos:prefLabel "statistics property"^^xsd:string .
+
+:OCRE200001 a owl:Class ;
+    rdfs:label "OCRe Dichotomous" ;
+    obo:IAO_0000115 "Measurements whose values are in one of two possible states, these often being labeled 0 and 1."^^xsd:string ;
+    obo:IAO_0000117 "Samson"^^xsd:string ;
+    obo:IAO_0000119 "adapted from Cambridge Dictionary of Statistics 3rd edition"^^xsd:string ;
+    rdfs:subClassOf :OCRE200076 ;
+    owl:disjointWith :OCRE200084 ;
+    skos:prefLabel "Dichotomous"^^xsd:string .
+
+:OCRE200015 a owl:Class ;
+    rdfs:label "OCRe Ordinal scale level" ;
+    obo:IAO_0000115 "A measurement that allows a sample of individuals to be ranked with respect to some characteristics but where differences at different points of the scale are not necessarily equivalent. (Cambridge Dictionary of Statistics 3nd ed.)"^^xsd:string ;
+    rdfs:subClassOf :OCRE200036 ;
+    skos:prefLabel "Ordinal scale level"^^xsd:string .
+
+:OCRE200049 a owl:Class ;
+    rdfs:label "OCRe Quantitative scale level" ;
+    rdfs:subClassOf :OCRE200036 ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( :OCRE200017 :OCRE200089 ) ] ;
+    skos:prefLabel "Quantitative scale level"^^xsd:string .
+
+:OCRE200072 a owl:Class ;
+    rdfs:label "OCRe Statistical concept" ;
+    obo:IAO_0000115 "Object and values that related to the description of statistical analysis"^^xsd:string ;
+    skos:prefLabel "Statistical concept"^^xsd:string .
+
+:OCRE200087 a owl:Class ;
+    rdfs:label "OCRe Probability distribution" ;
+    obo:IAO_0000115 "For a discrete random variable, a mathematical formula that gives the probability of each value of the variable. For a continuous random variable, a curve described by a mathematical formula which specifies, by way of areas under the curve, the probability that the variable falls within a particular interval."^^xsd:string ;
+    obo:IAO_0000119 "Cambridge Dictionary of Statistics 3rd edition"^^xsd:string ;
+    rdfs:subClassOf :OCRE200072 ;
+    skos:prefLabel "Probability distribution"^^xsd:string .
+
+:OCRE200084 a owl:Class ;
+    rdfs:label "OCRe Polychotomous" ;
+    obo:IAO_0000115 "Categorical variables with more than two categories"^^xsd:string ;
+    rdfs:subClassOf :OCRE200076 ;
+    skos:prefLabel "Polychotomous"^^xsd:string .
+
+:OCRE900010 a owl:ObjectProperty ;
+    rdfs:label "OCRe has dependent variable" ;
+    rdfs:subPropertyOf :OCRE900007 ;
+    skos:prefLabel "has dependent variable"^^xsd:string .
+
+:OCRE200071 a owl:Class ;
+    rdfs:label "OCRe Generalized linear model" ;
+    rdfs:subClassOf :OCRE200061 ;
+    skos:prefLabel "Generalized linear model"^^xsd:string .
+
+:OCRE900011 a owl:ObjectProperty ;
+    rdfs:label "OCRe has independent variable" ;
+    rdfs:subPropertyOf :OCRE900007 ;
+    skos:prefLabel "has independent variable"^^xsd:string .
+
+:OCRE900025 a owl:ObjectProperty ;
+    rdfs:label "OCRe has permissible method" ;
+    :definition "A permissible statistical method of a statistical analysis, given the data types of the variables involved"^^xsd:string ;
+    rdfs:domain :OCRE200053 ;
+    rdfs:range :OCRE200061 ;
+    rdfs:subPropertyOf :OCRE900007 ;
+    owl:inverseOf :OCRE900022 ;
+    skos:prefLabel "has permissible method"^^xsd:string .
+
+:OCRE900026 a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "OCRe has measurement dimension" ;
+    :definition "The data type of a variable in a plan for statistical analysis"^^xsd:string ;
+    rdfs:subPropertyOf :OCRE900007 ;
+    skos:prefLabel "has measurement dimension"^^xsd:string .
+
