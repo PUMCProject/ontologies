@@ -1,0 +1,254 @@
+@prefix : <http://iso.org/iso11179-3e3/rels#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://iso.org/iso11179-3e3/rels> .
+
+<http://iso.org/iso11179-3e3/rels> rdf:type owl:Ontology ;
+                                   
+                                   owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/rels> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://iso.org/iso11179-3e3/Link.relation
+
+<http://iso.org/iso11179-3e3/Link.relation> rdf:type owl:ObjectProperty ;
+                                            
+                                            rdfs:subPropertyOf <http://iso.org/iso11179-3e3/relation> ;
+                                            
+                                            owl:inverseOf <http://iso.org/iso11179-3e3/memberLink> ;
+                                            
+                                            rdfs:domain <http://iso.org/iso11179-3e3/Link> .
+
+
+
+###  http://iso.org/iso11179-3e3/RelationRole.relation
+
+<http://iso.org/iso11179-3e3/RelationRole.relation> rdf:type owl:ObjectProperty ;
+                                                    
+                                                    rdfs:subPropertyOf <http://iso.org/iso11179-3e3/relation> ;
+                                                    
+                                                    owl:inverseOf <http://iso.org/iso11179-3e3/role> ;
+                                                    
+                                                    rdfs:domain <http://iso.org/iso11179-3e3/RelationRole> .
+
+
+
+###  http://iso.org/iso11179-3e3/end
+
+<http://iso.org/iso11179-3e3/end> rdf:type owl:ObjectProperty ;
+                                  
+                                  owl:inverseOf <http://iso.org/iso11179-3e3/link> ;
+                                  
+                                  rdfs:range <http://iso.org/iso11179-3e3/LinkEnd> .
+
+
+
+###  http://iso.org/iso11179-3e3/endConcept
+
+<http://iso.org/iso11179-3e3/endConcept> rdf:type owl:ObjectProperty ,
+                                                  owl:FunctionalProperty ;
+                                         
+                                         rdfs:domain <http://iso.org/iso11179-3e3/LinkEnd> ;
+                                         
+                                         rdfs:range <http://iso.org/iso11179-3e3/Concept> .
+
+
+
+###  http://iso.org/iso11179-3e3/endRole
+
+<http://iso.org/iso11179-3e3/endRole> rdf:type owl:ObjectProperty ,
+                                               owl:FunctionalProperty ;
+                                      
+                                      rdfs:domain <http://iso.org/iso11179-3e3/LinkEnd> ;
+                                      
+                                      rdfs:range <http://iso.org/iso11179-3e3/RelationRole> .
+
+
+
+###  http://iso.org/iso11179-3e3/link
+
+<http://iso.org/iso11179-3e3/link> rdf:type owl:ObjectProperty ,
+                                            owl:FunctionalProperty ;
+                                   
+                                   rdfs:domain <http://iso.org/iso11179-3e3/LinkEnd> .
+
+
+
+###  http://iso.org/iso11179-3e3/memberLink
+
+<http://iso.org/iso11179-3e3/memberLink> rdf:type owl:ObjectProperty ,
+                                                  owl:InverseFunctionalProperty ;
+                                         
+                                         rdfs:domain <http://iso.org/iso11179-3e3/Relation> ;
+                                         
+                                         rdfs:range <http://iso.org/iso11179-3e3/Link> .
+
+
+
+###  http://iso.org/iso11179-3e3/relation
+
+<http://iso.org/iso11179-3e3/relation> rdf:type owl:ObjectProperty ,
+                                                owl:FunctionalProperty ;
+                                       
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <http://iso.org/iso11179-3e3/Link>
+                                                                   <http://iso.org/iso11179-3e3/RelationRole>
+                                                                 )
+                                                   ] ;
+                                       
+                                       rdfs:range <http://iso.org/iso11179-3e3/Relation> .
+
+
+
+###  http://iso.org/iso11179-3e3/role
+
+<http://iso.org/iso11179-3e3/role> rdf:type owl:ObjectProperty ,
+                                            owl:InverseFunctionalProperty ;
+                                   
+                                   rdfs:domain <http://iso.org/iso11179-3e3/Relation> ;
+                                   
+                                   rdfs:range <http://iso.org/iso11179-3e3/RelationRole> .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://iso.org/iso11179-3e3/maxCardinality
+
+<http://iso.org/iso11179-3e3/maxCardinality> rdf:type owl:DatatypeProperty ,
+                                                      owl:FunctionalProperty ;
+                                             
+                                             rdfs:domain <http://iso.org/iso11179-3e3/RelationRole> ;
+                                             
+                                             rdfs:range xsd:int .
+
+
+
+###  http://iso.org/iso11179-3e3/minCardinality
+
+<http://iso.org/iso11179-3e3/minCardinality> rdf:type owl:DatatypeProperty ,
+                                                      owl:FunctionalProperty ;
+                                             
+                                             rdfs:domain <http://iso.org/iso11179-3e3/RelationRole> ;
+                                             
+                                             rdfs:range xsd:int .
+
+
+
+###  http://iso.org/iso11179-3e3/ordinal
+
+<http://iso.org/iso11179-3e3/ordinal> rdf:type owl:DatatypeProperty ,
+                                               owl:FunctionalProperty ;
+                                      
+                                      rdfs:domain <http://iso.org/iso11179-3e3/RelationRole> ;
+                                      
+                                      rdfs:range xsd:int .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://iso.org/iso11179-3e3/Concept
+
+<http://iso.org/iso11179-3e3/Concept> rdf:type owl:Class ;
+                                      
+                                      owl:disjointWith <http://iso.org/iso11179-3e3/Link> ,
+                                                       <http://iso.org/iso11179-3e3/LinkEnd> .
+
+
+
+###  http://iso.org/iso11179-3e3/Link
+
+<http://iso.org/iso11179-3e3/Link> rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf owl:Thing ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://iso.org/iso11179-3e3/end> ;
+                                                     owl:minCardinality "2"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://iso.org/iso11179-3e3/Link.relation> ;
+                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ;
+                                   
+                                   owl:disjointWith <http://iso.org/iso11179-3e3/LinkEnd> ,
+                                                    <http://iso.org/iso11179-3e3/Relation> ,
+                                                    <http://iso.org/iso11179-3e3/RelationRole> .
+
+
+
+###  http://iso.org/iso11179-3e3/LinkEnd
+
+<http://iso.org/iso11179-3e3/LinkEnd> rdf:type owl:Class ;
+                                      
+                                      rdfs:subClassOf owl:Thing ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://iso.org/iso11179-3e3/endConcept> ;
+                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://iso.org/iso11179-3e3/endRole> ;
+                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://iso.org/iso11179-3e3/link> ;
+                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                      ] ;
+                                      
+                                      owl:disjointWith <http://iso.org/iso11179-3e3/Relation> ,
+                                                       <http://iso.org/iso11179-3e3/RelationRole> .
+
+
+
+###  http://iso.org/iso11179-3e3/Relation
+
+<http://iso.org/iso11179-3e3/Relation> rdf:type owl:Class ;
+                                       
+                                       rdfs:subClassOf owl:Thing ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://iso.org/iso11179-3e3/role> ;
+                                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                       ] ;
+                                       
+                                       owl:disjointWith <http://iso.org/iso11179-3e3/RelationRole> .
+
+
+
+###  http://iso.org/iso11179-3e3/RelationRole
+
+<http://iso.org/iso11179-3e3/RelationRole> rdf:type owl:Class ;
+                                           
+                                           rdfs:subClassOf owl:Thing ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://iso.org/iso11179-3e3/RelationRole.relation> ;
+                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                           ] .
+
+
+
+
+###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
+

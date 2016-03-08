@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/data" uri="data.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/dat" uri="designation.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/admin" uri="admin.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/id" uri="id.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/rels" uri="rels.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/naming" uri="naming.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology" uri="ontology.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/basic" uri="basic.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/class" uri="class.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/data" uri="data.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/dat" uri="designation.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/admin" uri="admin.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/id" uri="id.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/rels" uri="rels.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/naming" uri="naming.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/ontology" uri="ontology.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/basic" uri="basic.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3/ontology/class" uri="class.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://iso.org/iso11179-3e3" uri="iso11179.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>

@@ -1,0 +1,189 @@
+@prefix : <http://iso.org/iso11179-3e3/basic/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+
+iso11179:basic a owl:Ontology ;
+	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/basic> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/notation
+
+iso11179:notation a owl:ObjectProperty ;
+	rdfs:range iso11179:Notation .
+# 
+# http://iso.org/iso11179-3e3/provider
+
+iso11179:provider a owl:ObjectProperty ;
+	rdfs:domain iso11179:ReferenceDocument ;
+	rdfs:range iso11179:Organization .
+# 
+# http://iso.org/iso11179-3e3/representativeIndividual
+
+iso11179:representativeIndividual a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Representative ;
+	rdfs:range iso11179:Individual .
+# 
+# http://iso.org/iso11179-3e3/representedOrganization
+
+iso11179:representedOrganization a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Representative ;
+	rdfs:range iso11179:Organization .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/email
+
+iso11179:email a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Representative ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/internationalCodeDesignator
+
+iso11179:internationalCodeDesignator a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationAuthorityIdentifier ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/language
+
+iso11179:language a owl:DatatypeProperty ;
+	rdfs:domain iso11179:ReferenceDocument .
+# 
+# http://iso.org/iso11179-3e3/mailAddress
+
+iso11179:mailAddress a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first iso11179:Organization ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first iso11179:Representative ;
+	rdf:rest rdf:nil .
+# 
+# http://iso.org/iso11179-3e3/name
+
+iso11179:name a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Class ;
+	owl:unionOf _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first iso11179:Individual ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first iso11179:Organization ;
+	rdf:rest rdf:nil .
+# 
+# http://iso.org/iso11179-3e3/opiSource
+
+iso11179:opiSource a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationAuthorityIdentifier ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/organizationIdentifier
+
+iso11179:organizationIdentifier a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationAuthorityIdentifier ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/organizationPartIdentifier
+
+iso11179:organizationPartIdentifier a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationAuthorityIdentifier ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/phone
+
+iso11179:phone a owl:DatatypeProperty ;
+	rdfs:domain iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/representativeTitle
+
+iso11179:representativeTitle a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/title
+
+iso11179:title a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:ReferenceDocument .
+# 
+# http://iso.org/iso11179-3e3/typeDescription
+
+iso11179:typeDescription a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:ReferenceDocument .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/Individual
+
+iso11179:Individual a owl:Class ;
+	owl:disjointWith iso11179:Notation , iso11179:Organization , iso11179:ReferenceDocument , iso11179:RegistrationAuthorityIdentifier , iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/Notation
+
+iso11179:Notation a owl:Class ;
+	owl:disjointWith iso11179:Organization , iso11179:ReferenceDocument , iso11179:RegistrationAuthorityIdentifier , iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/Organization
+
+iso11179:Organization a owl:Class ;
+	owl:disjointWith iso11179:RegistrationAuthorityIdentifier , iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/ReferenceDocument
+
+iso11179:ReferenceDocument a owl:Class ;
+	owl:disjointWith iso11179:RegistrationAuthorityIdentifier , iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/RegistrationAuthorityIdentifier
+
+iso11179:RegistrationAuthorityIdentifier a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid7 .
+
+_:genid7 a owl:Restriction ;
+	owl:onProperty iso11179:internationalCodeDesignator ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationAuthorityIdentifier rdfs:subClassOf _:genid8 .
+
+_:genid8 a owl:Restriction ;
+	owl:onProperty iso11179:organizationIdentifier ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationAuthorityIdentifier owl:disjointWith iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/Representative
+
+iso11179:Representative a owl:Class .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

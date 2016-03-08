@@ -1,0 +1,415 @@
+@prefix : <http://iso.org/iso11179-3e3/admin/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+
+iso11179:admin a owl:Ontology ;
+	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/admin> ;
+	owl:imports iso11179:basic .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/administeredItem
+
+iso11179:administeredItem a owl:ObjectProperty ;
+	owl:inverseOf iso11179:registration ;
+	a owl:FunctionalProperty ;
+	rdfs:domain iso11179:Registration ;
+	rdfs:range iso11179:AdministeredItem .
+# 
+# http://iso.org/iso11179-3e3/attachedItem
+
+iso11179:attachedItem a owl:ObjectProperty ;
+	owl:inverseOf iso11179:owner ;
+	rdfs:domain iso11179:AdministeredItem ;
+	rdfs:range iso11179:AttachedItem .
+# 
+# http://iso.org/iso11179-3e3/authority
+
+iso11179:authority a owl:ObjectProperty ;
+	owl:inverseOf iso11179:registrar ;
+	a owl:FunctionalProperty ;
+	rdfs:domain iso11179:Registrar ;
+	rdfs:range iso11179:RegistrationAuthority .
+# 
+# http://iso.org/iso11179-3e3/contact
+
+iso11179:contact a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first iso11179:Stewardship ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first iso11179:Submission ;
+	rdf:rest rdf:nil .
+
+iso11179:contact rdfs:range iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/document
+
+iso11179:document a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Reference ;
+	rdfs:range iso11179:ReferenceDocument .
+# 
+# http://iso.org/iso11179-3e3/manager
+
+iso11179:manager a owl:ObjectProperty ;
+	owl:inverseOf iso11179:register ;
+	a owl:FunctionalProperty ;
+	rdfs:domain iso11179:Register ;
+	rdfs:range iso11179:RegistrationAuthority .
+# 
+# http://iso.org/iso11179-3e3/owner
+
+iso11179:owner a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AttachedItem ;
+	rdfs:range iso11179:AdministeredItem .
+# 
+# http://iso.org/iso11179-3e3/previousState
+
+iso11179:previousState a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord ;
+	rdfs:range iso11179:RegistrationRecord .
+# 
+# http://iso.org/iso11179-3e3/raIdentifier
+
+iso11179:raIdentifier a owl:ObjectProperty , owl:FunctionalProperty , owl:InverseFunctionalProperty ;
+	rdfs:domain iso11179:RegistrationAuthority ;
+	rdfs:range iso11179:RegistrationAuthorityIdentifier .
+# 
+# http://iso.org/iso11179-3e3/reference
+
+iso11179:reference a owl:ObjectProperty ;
+	owl:inverseOf iso11179:referencingItem ;
+	a owl:InverseFunctionalProperty ;
+	rdfs:domain iso11179:RegisteredItem ;
+	rdfs:range iso11179:Reference .
+# 
+# http://iso.org/iso11179-3e3/referencingItem
+
+iso11179:referencingItem a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Reference ;
+	rdfs:range iso11179:RegisteredItem .
+# 
+# http://iso.org/iso11179-3e3/register
+
+iso11179:register a owl:ObjectProperty ;
+	rdfs:domain iso11179:RegistrationAuthority ;
+	rdfs:range iso11179:Register .
+# 
+# http://iso.org/iso11179-3e3/registrar
+
+iso11179:registrar a owl:ObjectProperty , owl:InverseFunctionalProperty ;
+	rdfs:domain iso11179:RegistrationAuthority ;
+	rdfs:range iso11179:Registrar .
+# 
+# http://iso.org/iso11179-3e3/registration
+
+iso11179:registration a owl:ObjectProperty ;
+	rdfs:domain iso11179:AdministeredItem ;
+	rdfs:range iso11179:Registration .
+# 
+# http://iso.org/iso11179-3e3/registrationAuthority
+
+iso11179:registrationAuthority a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord ;
+	rdfs:range iso11179:RegistrationAuthority .
+# 
+# http://iso.org/iso11179-3e3/registrationState
+
+iso11179:registrationState a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Registration ;
+	rdfs:range iso11179:RegistrationRecord .
+# 
+# http://iso.org/iso11179-3e3/steward
+
+iso11179:steward a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Stewardship ;
+	rdfs:range iso11179:Organization .
+# 
+# http://iso.org/iso11179-3e3/stewardship
+
+iso11179:stewardship a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem ;
+	rdfs:range iso11179:Stewardship .
+# 
+# http://iso.org/iso11179-3e3/submission
+
+iso11179:submission a owl:ObjectProperty ;
+	rdfs:domain iso11179:RegisteredItem ;
+	rdfs:range iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/submitter
+
+iso11179:submitter a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Submission ;
+	rdfs:range iso11179:Organization .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/administrativeNote
+
+iso11179:administrativeNote a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord .
+# 
+# http://iso.org/iso11179-3e3/administrativeStatus
+
+iso11179:administrativeStatus a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/changeDescription
+
+iso11179:changeDescription a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem .
+# 
+# http://iso.org/iso11179-3e3/creationDate
+
+iso11179:creationDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem ;
+	rdfs:range xsd:dateTime .
+# 
+# http://iso.org/iso11179-3e3/documentationLanguage
+
+iso11179:documentationLanguage a owl:DatatypeProperty ;
+	rdfs:domain iso11179:RegistrationAuthority .
+# 
+# http://iso.org/iso11179-3e3/effectiveDate
+
+iso11179:effectiveDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord ;
+	rdfs:range xsd:dateTime .
+# 
+# http://iso.org/iso11179-3e3/explanatoryComment
+
+iso11179:explanatoryComment a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem .
+# 
+# http://iso.org/iso11179-3e3/lastChangeDate
+
+iso11179:lastChangeDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem ;
+	rdfs:range xsd:dateTime .
+# 
+# http://iso.org/iso11179-3e3/origin
+
+iso11179:origin a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem .
+# 
+# http://iso.org/iso11179-3e3/referenceType
+
+iso11179:referenceType a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Reference ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/registrationStatus
+
+iso11179:registrationStatus a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord ;
+	rdfs:range xsd:string .
+# 
+# http://iso.org/iso11179-3e3/unresolvedIssue
+
+iso11179:unresolvedIssue a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord .
+# 
+# http://iso.org/iso11179-3e3/untilDate
+
+iso11179:untilDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:RegistrationRecord ;
+	rdfs:range xsd:dateTime .
+# 
+# http://iso.org/iso11179-3e3/version
+
+iso11179:version a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:AdministeredItem ;
+	rdfs:range xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/AdministeredItem
+
+iso11179:AdministeredItem a owl:Class ;
+	rdfs:subClassOf iso11179:RegisteredItem ;
+	owl:disjointWith iso11179:AttachedItem .
+# 
+# http://iso.org/iso11179-3e3/AttachedItem
+
+iso11179:AttachedItem a owl:Class ;
+	rdfs:subClassOf iso11179:RegisteredItem .
+# 
+# http://iso.org/iso11179-3e3/Organization
+
+iso11179:Organization owl:disjointWith iso11179:Reference , iso11179:Register , iso11179:Registration , iso11179:RegistrationRecord , iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/Reference
+
+iso11179:Reference a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty iso11179:document ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:Reference rdfs:subClassOf _:genid5 .
+
+_:genid5 a owl:Restriction ;
+	owl:onProperty iso11179:referencingItem ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:Reference owl:disjointWith iso11179:Register , iso11179:Registration , iso11179:RegistrationRecord , iso11179:Representative , iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/Register
+
+iso11179:Register a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty iso11179:manager ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:Register owl:disjointWith iso11179:RegisteredItem , iso11179:Registration , iso11179:RegistrationRecord , iso11179:Representative , iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/RegisteredItem
+
+iso11179:RegisteredItem a owl:Class ;
+	owl:equivalentClass _:genid7 .
+
+_:genid7 a owl:Class ;
+	owl:unionOf _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first iso11179:AdministeredItem ;
+	rdf:rest _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first iso11179:AttachedItem ;
+	rdf:rest rdf:nil .
+
+iso11179:RegisteredItem owl:disjointWith iso11179:Registration , iso11179:RegistrationRecord , iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/Registrar
+
+iso11179:Registrar a owl:Class ;
+	rdfs:subClassOf iso11179:Representative .
+# 
+# http://iso.org/iso11179-3e3/Registration
+
+iso11179:Registration a owl:Class ;
+	owl:disjointWith iso11179:RegistrationRecord , iso11179:Representative , iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/RegistrationAuthority
+
+iso11179:RegistrationAuthority a owl:Class ;
+	rdfs:subClassOf iso11179:Organization , _:genid10 .
+
+_:genid10 a owl:Restriction ;
+	owl:onProperty iso11179:register ;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationAuthority rdfs:subClassOf _:genid11 .
+
+_:genid11 a owl:Restriction ;
+	owl:onProperty iso11179:registrar ;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationAuthority rdfs:subClassOf _:genid12 .
+
+_:genid12 a owl:Restriction ;
+	owl:onProperty iso11179:raIdentifier ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationAuthority rdfs:subClassOf _:genid13 .
+
+_:genid13 a owl:Restriction ;
+	owl:onProperty iso11179:documentationLanguage ;
+	owl:minCardinality "1"^^xsd:nonNegativeInteger .
+# 
+# http://iso.org/iso11179-3e3/RegistrationRecord
+
+iso11179:RegistrationRecord a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid14 .
+
+_:genid14 a owl:Restriction ;
+	owl:onProperty iso11179:administrativeStatus ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationRecord rdfs:subClassOf _:genid15 .
+
+_:genid15 a owl:Restriction ;
+	owl:onProperty iso11179:effectiveDate ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationRecord rdfs:subClassOf _:genid16 .
+
+_:genid16 a owl:Restriction ;
+	owl:onProperty iso11179:registrationStatus ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:RegistrationRecord owl:disjointWith iso11179:Representative , iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/Representative
+
+iso11179:Representative owl:disjointWith iso11179:Stewardship , iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/Stewardship
+
+iso11179:Stewardship a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid17 .
+
+_:genid17 a owl:Restriction ;
+	owl:onProperty iso11179:contact ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:Stewardship rdfs:subClassOf _:genid18 .
+
+_:genid18 a owl:Restriction ;
+	owl:onProperty iso11179:steward ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:Stewardship owl:disjointWith iso11179:Submission .
+# 
+# http://iso.org/iso11179-3e3/Submission
+
+iso11179:Submission a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid19 .
+
+_:genid19 a owl:Restriction ;
+	owl:onProperty iso11179:contact ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:Submission rdfs:subClassOf _:genid20 .
+
+_:genid20 a owl:Restriction ;
+	owl:onProperty iso11179:submitter ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

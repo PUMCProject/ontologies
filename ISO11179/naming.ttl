@@ -1,0 +1,172 @@
+@prefix : <http://iso.org/iso11179-3e3/naming#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+
+iso11179:naming a owl:Ontology ;
+	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/naming> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/acceptableConvention
+
+iso11179:acceptableConvention a owl:ObjectProperty ;
+	owl:inverseOf iso11179:utilization ;
+	rdfs:domain iso11179:Namespace ;
+	rdfs:range iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/conformantDesignation
+
+iso11179:conformantDesignation a owl:ObjectProperty ;
+	owl:inverseOf iso11179:convention ;
+	rdfs:domain iso11179:NamingConvention ;
+	rdfs:range iso11179:Designation .
+# 
+# http://iso.org/iso11179-3e3/convention
+
+iso11179:convention a owl:ObjectProperty ;
+	rdfs:domain iso11179:Designation ;
+	rdfs:range iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/includedDesignation
+
+iso11179:includedDesignation a owl:ObjectProperty ;
+	owl:inverseOf iso11179:namespace ;
+	rdfs:domain iso11179:Namespace ;
+	rdfs:range iso11179:Designation .
+# 
+# http://iso.org/iso11179-3e3/namespace
+
+iso11179:namespace a owl:ObjectProperty ;
+	rdfs:domain iso11179:Designation ;
+	rdfs:range iso11179:Namespace .
+# 
+# http://iso.org/iso11179-3e3/namingAuthority
+
+iso11179:namingAuthority a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Namespace ;
+	rdfs:range iso11179:Organization .
+# 
+# http://iso.org/iso11179-3e3/utilization
+
+iso11179:utilization a owl:ObjectProperty ;
+	rdfs:domain iso11179:NamingConvention ;
+	rdfs:range iso11179:Namespace .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/authorityRule
+
+iso11179:authorityRule a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/lexicalRule
+
+iso11179:lexicalRule a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/mandatoryNamingConvention
+
+iso11179:mandatoryNamingConvention a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Namespace ;
+	rdfs:range xsd:boolean .
+# 
+# http://iso.org/iso11179-3e3/oneItemPerName
+
+iso11179:oneItemPerName a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Namespace ;
+	rdfs:range xsd:boolean .
+# 
+# http://iso.org/iso11179-3e3/oneNamePerItem
+
+iso11179:oneNamePerItem a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:Namespace ;
+	rdfs:range xsd:boolean .
+# 
+# http://iso.org/iso11179-3e3/scopeRule
+
+iso11179:scopeRule a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/semanticRule
+
+iso11179:semanticRule a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/syntacticRule
+
+iso11179:syntacticRule a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain iso11179:NamingConvention .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://iso.org/iso11179-3e3/Designation
+
+iso11179:Designation a owl:Class .
+# 
+# http://iso.org/iso11179-3e3/Namespace
+
+iso11179:Namespace a owl:Class ;
+	owl:disjointWith iso11179:NamingConvention .
+# 
+# http://iso.org/iso11179-3e3/NamingConvention
+
+iso11179:NamingConvention a owl:Class ;
+	rdfs:subClassOf owl:Thing , _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty iso11179:authorityRule ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:NamingConvention rdfs:subClassOf _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty iso11179:lexicalRule ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:NamingConvention rdfs:subClassOf _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty iso11179:scopeRule ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:NamingConvention rdfs:subClassOf _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty iso11179:semanticRule ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+iso11179:NamingConvention rdfs:subClassOf _:genid5 .
+
+_:genid5 a owl:Restriction ;
+	owl:onProperty iso11179:syntacticRule ;
+	owl:cardinality "1"^^xsd:nonNegativeInteger .
+# 
+# http://iso.org/iso11179-3e3/Organization
+
+iso11179:Organization a owl:Class .
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
