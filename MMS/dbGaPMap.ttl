@@ -1,0 +1,23 @@
+@prefix : <http://mayo.org/informatics/biocaddie/mms/> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mms: <http://ncbi.nlm.nih.gov/gap/mms#> .
+@base <http://mayo.org/informatics/biocaddie/mms> .
+
+<http://mayo.org/informatics/biocaddie/mms/> rdf:type owl:Ontology ;
+                              
+                              owl:imports <http://iso.org/iso11179-3e3> ,
+                                          <http://ncbi.nlm.nih.gov/gap/mms#> ,
+                                          <http://purl.org/net/OCRe/OCRe>  ;
+                              
+                              rdfs:comment "Merger of 11179, OCRe and dbGaP"^^xsd:string ;
+                              owl:versionIRI <hhttp://mayo.org/informatics/biocaddie/mms/v0.1> .
+
+
+mms:Variable a iso11179:ObjectClass .
+mms:Variable_name a iso11179:DataElementConcept ;
+       iso11179:objectClass mms:Variable .

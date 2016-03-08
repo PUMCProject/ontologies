@@ -41,4 +41,9 @@ It is a bit of a challenge to convince Protege to load the sources locally rathe
 
 Additionally, we added  the text "OCRe " to all `rdfs:label`s in the local files and preserved the original name as `skos:prefLabel`
 
+## dbGaP
+This is a conversion of the XML Schema for dbGaPEx2.1.5, with "GAP" prefixes on the labels.
+
+## MMS
+This is the mapping directory.  The file, `dbGaPMap.ttl` imports iso11179, OCRe and the dbGaP schema.  This is the file that we are using to prototype maps between dbGaP schema elements, ISO 11179 ObjectClass, Characteristic, DataElement, DataElementConcept, etc.  
 
