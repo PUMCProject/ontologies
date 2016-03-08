@@ -1,160 +1,119 @@
 @prefix : <http://iso.org/iso11179-3e3/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:containedIdentifier a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO containedIdentifier" ;
+    rdfs:domain :Namespace ;
+    rdfs:range :ScopedIdentifier ;
+    owl:inverseOf :identifierScope .
+
+:fullExpansion a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO fullExpansion" ;
+    rdfs:domain :ScopedIdentifier ;
+    rdfs:range xsd:string .
 
 :id a owl:Ontology ;
-	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/id> .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/containedIdentifier
+    rdfs:label "ISO id" ;
+    owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/id> .
 
-:containedIdentifier a owl:ObjectProperty ;
-	owl:inverseOf :identifierScope ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:domain :Namespace ;
-	rdfs:range :ScopedIdentifier .
-# 
-# http://iso.org/iso11179-3e3/identification
+:shorthandExpansion a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO shorthandExpansion" ;
+    rdfs:domain :ScopedIdentifier ;
+    rdfs:range xsd:string .
 
-:identification a owl:ObjectProperty ;
-	owl:inverseOf :identifiedItem ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:domain :IdentifiedItem ;
-	rdfs:range :ScopedIdentifier .
-# 
-# http://iso.org/iso11179-3e3/identifiedItem
+:shorthandPrefix a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO shorthandPrefix" ;
+    rdfs:domain :Namespace ;
+    rdfs:range xsd:string .
 
-:identifiedItem a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain :ScopedIdentifier ;
-	rdfs:range :IdentifiedItem .
-# 
-# http://iso.org/iso11179-3e3/identifierScope
+:slot a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO slot" ;
+    rdfs:domain :IdentifiedItem ;
+    rdfs:range :Slot .
 
-:identifierScope a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain :ScopedIdentifier ;
-	rdfs:range :Namespace .
-# 
-# http://iso.org/iso11179-3e3/slot
+:slotType a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO slotType" ;
+    rdfs:domain :Slot ;
+    rdfs:range xsd:string .
 
-:slot a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain :IdentifiedItem ;
-	rdfs:range :Slot .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/fullExpansion
+:identification a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO identification" ;
+    rdfs:domain :IdentifiedItem ;
+    rdfs:range :ScopedIdentifier ;
+    owl:inverseOf :identifiedItem .
 
-:fullExpansion a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :ScopedIdentifier ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/identifier
+:identifiedItem a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO identifiedItem" ;
+    rdfs:domain :ScopedIdentifier ;
+    rdfs:range :IdentifiedItem .
 
-:identifier a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :ScopedIdentifier ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/shorthandExpansion
+:identifier a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO identifier" ;
+    rdfs:domain :ScopedIdentifier ;
+    rdfs:range xsd:string .
 
-:shorthandExpansion a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :ScopedIdentifier ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/shorthandPrefix
+:slotName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO slotName" ;
+    rdfs:domain :Slot ;
+    rdfs:range xsd:string .
 
-:shorthandPrefix a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Namespace ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/slotName
+:slotValues a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO slotValues" ;
+    rdfs:domain :Slot .
 
-:slotName a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Slot ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/slotType
-
-:slotType a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Slot ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/slotValues
-
-:slotValues a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Slot .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/IdentifiedItem
+:identifierScope a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO identifierScope" ;
+    rdfs:domain :ScopedIdentifier ;
+    rdfs:range :Namespace .
 
 :IdentifiedItem a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid1 .
-
-_:genid1 a owl:Restriction ;
-	owl:onProperty :identification ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-
-:IdentifiedItem owl:disjointWith :ScopedIdentifier , :Slot .
-# 
-# http://iso.org/iso11179-3e3/Namespace
+    rdfs:label "ISO IdentifiedItem" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :identification ],
+        owl:Thing ;
+    owl:disjointWith :ScopedIdentifier,
+        :Slot .
 
 :Namespace a owl:Class ;
-	owl:disjointWith :ScopedIdentifier , :Slot .
-# 
-# http://iso.org/iso11179-3e3/ScopedIdentifier
-
-:ScopedIdentifier a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid2 .
-
-_:genid2 a owl:Restriction ;
-	owl:onProperty :identifierScope ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-:ScopedIdentifier rdfs:subClassOf _:genid3 .
-
-_:genid3 a owl:Restriction ;
-	owl:onProperty :identifier ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-:ScopedIdentifier owl:disjointWith :Slot .
-# 
-# http://iso.org/iso11179-3e3/Slot
+    rdfs:label "ISO Namespace" ;
+    owl:disjointWith :ScopedIdentifier,
+        :Slot .
 
 :Slot a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid4 .
+    rdfs:label "ISO Slot" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :slotName ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :slotValues ],
+        owl:Thing .
 
-_:genid4 a owl:Restriction ;
-	owl:onProperty :slotName ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
+:ScopedIdentifier a owl:Class ;
+    rdfs:label "ISO ScopedIdentifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :identifierScope ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :identifier ],
+        owl:Thing ;
+    owl:disjointWith :Slot .
 
-:Slot rdfs:subClassOf _:genid5 .
-
-_:genid5 a owl:Restriction ;
-	owl:onProperty :slotValues ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-# 
-# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

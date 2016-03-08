@@ -1,205 +1,119 @@
 @prefix : <http://iso.org/iso11179-3e3/ontology/> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix iso11179: <http://iso.org/iso11179-3e3/> .
 
-iso11179:ontology a owl:Ontology ;
-	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/ontology> .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/assertion
-
-iso11179:assertion a owl:ObjectProperty ;
-	owl:inverseOf iso11179:assertor ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:Ontology ;
-	rdfs:range iso11179:Assertion .
-# 
-# http://iso.org/iso11179-3e3/assertor
-
-iso11179:assertor a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:Assertion ;
-	rdfs:range iso11179:Ontology .
-# 
-# http://iso.org/iso11179-3e3/import
+iso11179:assertion a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO assertion" ;
+    rdfs:domain iso11179:Ontology ;
+    rdfs:range iso11179:Assertion ;
+    owl:inverseOf iso11179:assertor .
 
 iso11179:import a owl:ObjectProperty ;
-	owl:inverseOf iso11179:importer ;
-	rdfs:domain iso11179:Ontology ;
-	rdfs:range iso11179:Ontology .
-# 
-# http://iso.org/iso11179-3e3/importer
+    rdfs:label "ISO import" ;
+    rdfs:domain iso11179:Ontology ;
+    rdfs:range iso11179:Ontology ;
+    owl:inverseOf iso11179:importer .
 
-iso11179:importer a owl:ObjectProperty ;
-	rdfs:domain iso11179:Ontology ;
-	rdfs:range iso11179:Ontology .
-# 
-# http://iso.org/iso11179-3e3/referrer
+iso11179:ontology a owl:Ontology ;
+    rdfs:label "ISO ontology" ;
+    owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/ontology> .
 
 iso11179:referrer a owl:ObjectProperty ;
-	owl:inverseOf iso11179:term ;
-	rdfs:domain iso11179:OntologyEntry ;
-	rdfs:range _:genid1 .
-
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid3 .
-
-_:genid3 a rdf:List ;
-	rdf:first iso11179:Assertion ;
-	rdf:rest _:genid2 .
-
-_:genid2 a rdf:List ;
-	rdf:first iso11179:DenotedOntologyEntry ;
-	rdf:rest rdf:nil .
-# 
-# http://iso.org/iso11179-3e3/term
-
-iso11179:term a owl:ObjectProperty ;
-	rdfs:domain _:genid4 .
-
-_:genid4 a owl:Class ;
-	owl:unionOf _:genid6 .
-
-_:genid6 a rdf:List ;
-	rdf:first iso11179:Assertion ;
-	rdf:rest _:genid5 .
-
-_:genid5 a rdf:List ;
-	rdf:first iso11179:DenotedOntologyEntry ;
-	rdf:rest rdf:nil .
-
-iso11179:term rdfs:range iso11179:OntologyEntry .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/formula
-
-iso11179:formula a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain _:genid7 .
-
-_:genid7 a owl:Class ;
-	owl:unionOf _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first iso11179:DenotedOntologyEntry ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first iso11179:OntologyEntry ;
-	rdf:rest rdf:nil .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/Assertion
-
-iso11179:Assertion a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid10 .
-
-_:genid10 a owl:Restriction ;
-	owl:onProperty iso11179:term ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Assertion rdfs:subClassOf _:genid11 .
-
-_:genid11 a owl:Restriction ;
-	owl:onProperty iso11179:assertor ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Assertion owl:disjointWith iso11179:Ontology , iso11179:OntologyEntry .
-# 
-# http://iso.org/iso11179-3e3/DenotedOntologyEntry
-
-iso11179:DenotedOntologyEntry a owl:Class ;
-	owl:equivalentClass _:genid12 .
-
-_:genid12 owl:intersectionOf _:genid15 .
-
-_:genid15 a rdf:List ;
-	rdf:first iso11179:OntologyEntry ;
-	rdf:rest _:genid13 .
-
-_:genid13 a rdf:List ;
-	rdf:first _:genid14 .
-
-_:genid14 a owl:Restriction ;
-	owl:onProperty iso11179:formula ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-_:genid13 rdf:rest rdf:nil .
-
-_:genid12 a owl:Class .
-
-iso11179:DenotedOntologyEntry rdfs:subClassOf _:genid16 .
-
-_:genid16 a owl:Restriction ;
-	owl:onProperty iso11179:term ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/IdentifiedOntologyEntry
+    rdfs:label "ISO referrer" ;
+    rdfs:domain iso11179:OntologyEntry ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:Assertion ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:DenotedOntologyEntry ;
+                            rdf:rest () ] ] ] ;
+    owl:inverseOf iso11179:term .
 
 iso11179:IdentifiedOntologyEntry a owl:Class ;
-	owl:equivalentClass _:genid17 .
+    rdfs:label "ISO IdentifiedOntologyEntry" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf [ a rdf:List ;
+                    rdf:first iso11179:OntologyEntry ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ScopedIdentifier ;
+                            rdf:rest () ] ] ] .
 
-_:genid17 owl:intersectionOf _:genid19 .
+iso11179:ScopedIdentifier a owl:Class ;
+    rdfs:label "ISO ScopedIdentifier" .
 
-_:genid19 a rdf:List ;
-	rdf:first iso11179:OntologyEntry ;
-	rdf:rest _:genid18 .
+iso11179:formula a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO formula" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:DenotedOntologyEntry ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:OntologyEntry ;
+                            rdf:rest () ] ] ] .
 
-_:genid18 a rdf:List ;
-	rdf:first iso11179:ScopedIdentifier ;
-	rdf:rest rdf:nil .
+iso11179:importer a owl:ObjectProperty ;
+    rdfs:label "ISO importer" ;
+    rdfs:domain iso11179:Ontology ;
+    rdfs:range iso11179:Ontology .
 
-_:genid17 a owl:Class .
-# 
-# http://iso.org/iso11179-3e3/Ontology
+iso11179:assertor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO assertor" ;
+    rdfs:domain iso11179:Assertion ;
+    rdfs:range iso11179:Ontology .
+
+iso11179:term a owl:ObjectProperty ;
+    rdfs:label "ISO term" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:Assertion ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:DenotedOntologyEntry ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range iso11179:OntologyEntry .
+
+iso11179:Assertion a owl:Class ;
+    rdfs:label "ISO Assertion" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:term ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:assertor ],
+        owl:Thing ;
+    owl:disjointWith iso11179:Ontology,
+        iso11179:OntologyEntry .
+
+iso11179:DenotedOntologyEntry a owl:Class ;
+    rdfs:label "ISO DenotedOntologyEntry" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:term ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf [ a rdf:List ;
+                    rdf:first iso11179:OntologyEntry ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first [ a owl:Restriction ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onProperty iso11179:formula ] ;
+                            rdf:rest () ] ] ] .
 
 iso11179:Ontology a owl:Class ;
-	rdfs:subClassOf owl:Thing ;
-	owl:disjointWith iso11179:OntologyEntry .
-# 
-# http://iso.org/iso11179-3e3/OntologyEntry
+    rdfs:label "ISO Ontology" ;
+    rdfs:subClassOf owl:Thing ;
+    owl:disjointWith iso11179:OntologyEntry .
 
 iso11179:OntologyEntry a owl:Class ;
-	owl:equivalentClass _:genid20 .
+    rdfs:label "ISO OntologyEntry" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:DenotedOntologyEntry ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:IdentifiedOntologyEntry ;
+                            rdf:rest () ] ] ] .
 
-_:genid20 a owl:Class ;
-	owl:unionOf _:genid22 .
-
-_:genid22 a rdf:List ;
-	rdf:first iso11179:DenotedOntologyEntry ;
-	rdf:rest _:genid21 .
-
-_:genid21 a rdf:List ;
-	rdf:first iso11179:IdentifiedOntologyEntry ;
-	rdf:rest rdf:nil .
-# 
-# http://iso.org/iso11179-3e3/ScopedIdentifier
-
-iso11179:ScopedIdentifier a owl:Class .
-# 
-# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

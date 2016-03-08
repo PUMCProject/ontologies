@@ -1,121 +1,90 @@
 @prefix : <http://iso.org/iso11179-3e3/class/> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+
+iso11179:child a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO child" ;
+    rdfs:domain iso11179:ClassificationNode ;
+    rdfs:range iso11179:ClassificationNode ;
+    owl:inverseOf iso11179:parent .
 
 iso11179:class a owl:Ontology ;
-	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/class> .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/child
+    rdfs:label "ISO class" ;
+    owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/class> .
 
-iso11179:child a owl:ObjectProperty ;
-	owl:inverseOf iso11179:parent ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:ClassificationNode ;
-	rdfs:range iso11179:ClassificationNode .
-# 
-# http://iso.org/iso11179-3e3/classification
+iso11179:classification a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO classification" ;
+    rdfs:domain iso11179:ClassifiableItem ;
+    rdfs:range iso11179:Classification ;
+    owl:inverseOf iso11179:classifiedItem .
 
-iso11179:classification a owl:ObjectProperty ;
-	owl:inverseOf iso11179:classifiedItem ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:ClassifiableItem ;
-	rdfs:range iso11179:Classification .
-# 
-# http://iso.org/iso11179-3e3/classifiedItem
+iso11179:memberNode a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO memberNode" ;
+    rdfs:domain iso11179:ClassificationScheme ;
+    rdfs:range iso11179:ClassificationNode ;
+    owl:inverseOf iso11179:scheme .
 
-iso11179:classifiedItem a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:Classification ;
-	rdfs:range iso11179:ClassifiableItem .
-# 
-# http://iso.org/iso11179-3e3/memberNode
+iso11179:node a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO node" ;
+    rdfs:domain iso11179:Classification ;
+    rdfs:range iso11179:ClassificationNode ;
+    owl:inverseOf iso11179:occurrence .
 
-iso11179:memberNode a owl:ObjectProperty ;
-	owl:inverseOf iso11179:scheme ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:ClassificationScheme ;
-	rdfs:range iso11179:ClassificationNode .
-# 
-# http://iso.org/iso11179-3e3/node
+iso11179:occurrence a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO occurrence" ;
+    rdfs:domain iso11179:ClassificationNode ;
+    rdfs:range iso11179:Classification .
 
-iso11179:node a owl:ObjectProperty ;
-	owl:inverseOf iso11179:occurrence ;
-	a owl:FunctionalProperty ;
-	rdfs:domain iso11179:Classification ;
-	rdfs:range iso11179:ClassificationNode .
-# 
-# http://iso.org/iso11179-3e3/occurrence
+iso11179:parent a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO parent" ;
+    rdfs:domain iso11179:ClassificationNode ;
+    rdfs:range iso11179:ClassificationNode .
 
-iso11179:occurrence a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:ClassificationNode ;
-	rdfs:range iso11179:Classification .
-# 
-# http://iso.org/iso11179-3e3/parent
+iso11179:ClassifiableItem a owl:Class ;
+    rdfs:label "ISO ClassifiableItem" .
 
-iso11179:parent a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:ClassificationNode ;
-	rdfs:range iso11179:ClassificationNode .
-# 
-# http://iso.org/iso11179-3e3/scheme
+iso11179:classifiedItem a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO classifiedItem" ;
+    rdfs:domain iso11179:Classification ;
+    rdfs:range iso11179:ClassifiableItem .
 
-iso11179:scheme a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:ClassificationNode ;
-	rdfs:range iso11179:ClassificationScheme .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/ClassifiableItem
-
-iso11179:ClassifiableItem a owl:Class .
-# 
-# http://iso.org/iso11179-3e3/Classification
+iso11179:scheme a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO scheme" ;
+    rdfs:domain iso11179:ClassificationNode ;
+    rdfs:range iso11179:ClassificationScheme .
 
 iso11179:Classification a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid1 .
+    rdfs:label "ISO Classification" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:classifiedItem ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:node ],
+        owl:Thing ;
+    owl:disjointWith iso11179:ClassificationNode,
+        iso11179:ClassificationScheme .
 
-_:genid1 a owl:Restriction ;
-	owl:onProperty iso11179:classifiedItem ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Classification rdfs:subClassOf _:genid2 .
-
-_:genid2 a owl:Restriction ;
-	owl:onProperty iso11179:node ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Classification owl:disjointWith iso11179:ClassificationNode , iso11179:ClassificationScheme .
-# 
-# http://iso.org/iso11179-3e3/ClassificationNode
+iso11179:ClassificationScheme a owl:Class ;
+    rdfs:label "ISO ClassificationScheme" .
 
 iso11179:ClassificationNode a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid3 .
+    rdfs:label "ISO ClassificationNode" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:scheme ],
+        owl:Thing ;
+    owl:disjointWith iso11179:ClassificationScheme .
 
-_:genid3 a owl:Restriction ;
-	owl:onProperty iso11179:scheme ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:ClassificationNode owl:disjointWith iso11179:ClassificationScheme .
-# 
-# http://iso.org/iso11179-3e3/ClassificationScheme
-
-iso11179:ClassificationScheme a owl:Class .
-# 
-# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

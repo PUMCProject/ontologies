@@ -1,238 +1,150 @@
 @prefix : <http://iso.org/iso11179-3e3/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:acceptability a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO acceptability" ;
+    rdfs:comment "The value of this property is implicitly scoped to within a single Context.  Uniqueness may be violated in a graph which includes assertions from multiple Contexts."^^xsd:string ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first :Definition ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first :Designation ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range :AcceptabilityStatus .
 
 :dat a owl:Ontology ;
-	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/dat> .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/acceptability
+    rdfs:label "ISO dat" ;
+    owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/dat> .
 
-:acceptability a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain _:genid1 .
+:definition a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO definition" ;
+    rdfs:domain :DesignatableItem ;
+    rdfs:range :Definition .
 
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid3 .
+:designation a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO designation" ;
+    rdfs:domain :DesignatableItem ;
+    rdfs:range :Designation .
 
-_:genid3 a rdf:List ;
-	rdf:first :Definition ;
-	rdf:rest _:genid2 .
-
-_:genid2 a rdf:List ;
-	rdf:first :Designation ;
-	rdf:rest rdf:nil .
-
-:acceptability rdfs:range :AcceptabilityStatus ;
-	rdfs:comment "The value of this property is implicitly scoped to within a single Context.  Uniqueness may be violated in a graph which includes assertions from multiple Contexts."^^xsd:string .
-# 
-# http://iso.org/iso11179-3e3/definition
-
-:definition a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain :DesignatableItem ;
-	rdfs:range :Definition .
-# 
-# http://iso.org/iso11179-3e3/designation
-
-:designation a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain :DesignatableItem ;
-	rdfs:range :Designation .
-# 
-# http://iso.org/iso11179-3e3/heading
-
-:heading a owl:ObjectProperty ;
-	owl:inverseOf :specificDefinition ;
-	a owl:FunctionalProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain :Definition ;
-	rdfs:range :Designation .
-# 
-# http://iso.org/iso11179-3e3/scope
+:heading a owl:FunctionalProperty,
+        owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO heading" ;
+    rdfs:domain :Definition ;
+    rdfs:range :Designation ;
+    owl:inverseOf :specificDefinition .
 
 :scope a owl:ObjectProperty ;
-	rdfs:domain _:genid4 .
+    rdfs:label "ISO scope" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first :Definition ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first :Designation ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range :Context .
 
-_:genid4 a owl:Class ;
-	owl:unionOf _:genid6 .
+:sign a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO sign" ;
+    rdfs:domain :Designation .
 
-_:genid6 a rdf:List ;
-	rdf:first :Definition ;
-	rdf:rest _:genid5 .
+:specificDefinition a owl:FunctionalProperty,
+        owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO specificDefinition" ;
+    rdfs:domain :Designation ;
+    rdfs:range :Definition .
 
-_:genid5 a rdf:List ;
-	rdf:first :Designation ;
-	rdf:rest rdf:nil .
-
-:scope rdfs:range :Context .
-# 
-# http://iso.org/iso11179-3e3/specificDefinition
-
-:specificDefinition a owl:ObjectProperty , owl:FunctionalProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain :Designation ;
-	rdfs:range :Definition .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/sign
-
-:sign a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Designation .
-# 
-# http://iso.org/iso11179-3e3/text
-
-:text a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain :Definition .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/AcceptabilityStatus
-
-:AcceptabilityStatus a owl:Class ;
-	owl:equivalentClass _:genid7 .
-
-_:genid7 a owl:Class ;
-	owl:oneOf _:genid12 .
-
-_:genid12 a rdf:List ;
-	rdf:first :admitted ;
-	rdf:rest _:genid11 .
-
-_:genid11 a rdf:List ;
-	rdf:first :deprecated ;
-	rdf:rest _:genid10 .
-
-_:genid10 a rdf:List ;
-	rdf:first :obsolete ;
-	rdf:rest _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first :preferred ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first :superseded ;
-	rdf:rest rdf:nil .
-
-:AcceptabilityStatus owl:disjointWith :Context , :Definition , :DesignatableItem , :Designation .
-# 
-# http://iso.org/iso11179-3e3/Context
+:text a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO text" ;
+    rdfs:domain :Definition .
 
 :Context a owl:Class ;
-	owl:disjointWith :Definition , :Designation .
-# 
-# http://iso.org/iso11179-3e3/Definition
+    rdfs:label "ISO Context" ;
+    owl:disjointWith :Definition,
+        :Designation .
 
-:Definition a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid13 .
+:admitted a :AcceptabilityStatus,
+        owl:NamedIndividual ;
+    rdfs:label "ISO admitted" .
 
-_:genid13 a owl:Restriction ;
-	owl:onProperty :text ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
+:deprecated a :AcceptabilityStatus,
+        owl:NamedIndividual ;
+    rdfs:label "ISO deprecated" .
 
-:Definition owl:disjointWith :DesignatableItem , :Designation .
-# 
-# http://iso.org/iso11179-3e3/DesignatableItem
+:obsolete a :AcceptabilityStatus,
+        owl:NamedIndividual ;
+    rdfs:label "ISO obsolete" .
+
+:preferred a :AcceptabilityStatus,
+        owl:NamedIndividual ;
+    rdfs:label "ISO preferred" .
+
+:superseded a :AcceptabilityStatus,
+        owl:NamedIndividual ;
+    rdfs:label "ISO superseded" .
 
 :DesignatableItem a owl:Class ;
-	owl:disjointWith :Designation .
-# 
-# http://iso.org/iso11179-3e3/Designation
+    rdfs:label "ISO DesignatableItem" ;
+    owl:disjointWith :Designation .
+
+:AcceptabilityStatus a owl:Class ;
+    rdfs:label "ISO AcceptabilityStatus" ;
+    owl:disjointWith :Context,
+        :Definition,
+        :DesignatableItem,
+        :Designation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first :admitted ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first :deprecated ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first :obsolete ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first :preferred ;
+                                            rdf:rest [ a rdf:List ;
+                                                    rdf:first :superseded ;
+                                                    rdf:rest () ] ] ] ] ] ] .
+
+:Definition a owl:Class ;
+    rdfs:label "ISO Definition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :text ],
+        owl:Thing ;
+    owl:disjointWith :DesignatableItem,
+        :Designation .
 
 :Designation a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid14 .
+    rdfs:label "ISO Designation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :scope ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty :sign ],
+        owl:Thing .
 
-_:genid14 a owl:Restriction ;
-	owl:onProperty :scope ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
+[] a owl:AllDifferent ;
+    owl:distinctMembers [ a rdf:List ;
+            rdf:first :admitted ;
+            rdf:rest [ a rdf:List ;
+                    rdf:first :deprecated ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first :obsolete ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first :preferred ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first :superseded ;
+                                            rdf:rest () ] ] ] ] ] .
 
-:Designation rdfs:subClassOf _:genid15 .
-
-_:genid15 a owl:Restriction ;
-	owl:onProperty :sign ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/admitted
-
-:admitted a owl:NamedIndividual , :AcceptabilityStatus .
-# 
-# http://iso.org/iso11179-3e3/deprecated
-
-:deprecated a owl:NamedIndividual , :AcceptabilityStatus .
-# 
-# http://iso.org/iso11179-3e3/obsolete
-
-:obsolete a owl:NamedIndividual , :AcceptabilityStatus .
-# 
-# http://iso.org/iso11179-3e3/preferred
-
-:preferred a owl:NamedIndividual , :AcceptabilityStatus .
-# 
-# http://iso.org/iso11179-3e3/superseded
-
-:superseded a owl:NamedIndividual , :AcceptabilityStatus .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    General axioms
-# #
-# #################################################################
-# 
-# 
-
-_:genid16 a owl:AllDifferent ;
-	owl:distinctMembers _:genid21 .
-
-_:genid21 a rdf:List ;
-	rdf:first :admitted ;
-	rdf:rest _:genid20 .
-
-_:genid20 a rdf:List ;
-	rdf:first :deprecated ;
-	rdf:rest _:genid19 .
-
-_:genid19 a rdf:List ;
-	rdf:first :obsolete ;
-	rdf:rest _:genid18 .
-
-_:genid18 a rdf:List ;
-	rdf:first :preferred ;
-	rdf:rest _:genid17 .
-
-_:genid17 a rdf:List ;
-	rdf:first :superseded ;
-	rdf:rest rdf:nil .
-# 
-# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi

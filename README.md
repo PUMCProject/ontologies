@@ -30,7 +30,7 @@ Additional changes:
 ```
 * All files were converted from rdf/xml format to turtle format for readability purposes.
 * The base URI was changed from `http://xmdr.org/ont/iso11179-3e3cd2rc7.owl#` to `http://iso.org/iso11179-3e3/`
-* "ISO " was prefixed to the rdfs:label's to allow 11179 identifiers to be readily recognized.
+* An rdfs:label was created for every non-BNode subject with an 'ISO ' prefix,  to allow 11179 entities to be readily identified.
 
 Note that the root module for ISO11179 is `caDSR.ttl`, which, in turn imports all of the other modules.
 

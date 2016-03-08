@@ -1,337 +1,292 @@
 @prefix : <https://nci.nih.gov/caDSR/> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+
+iso11179:DataElement rdfs:label "ISO DataElement" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
+
+iso11179:Dimensionality rdfs:label "ISO Dimensionality" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
+
+iso11179:UnitOfMeasure rdfs:label "ISO UnitOfMeasure" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
+
+iso11179:ValueDomain rdfs:label "ISO ValueDomain" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
 <https://nci.nih.gov/caDSR> a owl:Ontology ;
-	owl:versionIRI <https://nci.nih.gov/10854184/caDSR> ;
-	owl:imports <http://iso.org/iso11179-3e3> .
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/AdministeredItem
+    rdfs:label "ISO caDSR" ;
+    owl:imports <http://iso.org/iso11179-3e3> ;
+    owl:versionIRI <https://nci.nih.gov/10854184/caDSR> .
 
-iso11179:AdministeredItem rdfs:subClassOf iso11179:DesignatableItem , iso11179:IdentifiedItem , _:genid1 .
+iso11179:Characteristic rdfs:label "ISO Characteristic" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
-_:genid1 a owl:Restriction ;
-	owl:onProperty iso11179:definition ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
+iso11179:ConceptualDomain rdfs:label "ISO ConceptualDomain" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
-iso11179:AdministeredItem rdfs:subClassOf _:genid2 .
+iso11179:Context rdfs:label "ISO Context" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
-_:genid2 a owl:Restriction ;
-	owl:onProperty iso11179:designation ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/Characteristic
+iso11179:DataElementConcept rdfs:label "ISO DataElementConcept" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
-iso11179:Characteristic rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/Concept
+iso11179:ObjectClass rdfs:label "ISO ObjectClass" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
-iso11179:Concept rdfs:subClassOf iso11179:DesignatableItem , iso11179:IdentifiedItem , _:genid3 .
-
-_:genid3 a owl:Class ;
-	owl:unionOf _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first iso11179:Characteristic ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first iso11179:ConceptualDomain ;
-	rdf:rest _:genid7 .
-
-_:genid7 a rdf:List ;
-	rdf:first iso11179:DataElementConcept ;
-	rdf:rest _:genid6 .
-
-_:genid6 a rdf:List ;
-	rdf:first iso11179:ObjectClass ;
-	rdf:rest _:genid5 .
-
-_:genid5 a rdf:List ;
-	rdf:first iso11179:ValueMeaning ;
-	rdf:rest _:genid4 .
-
-_:genid4 a rdf:List ;
-	rdf:first :Reference_Concept ;
-	rdf:rest rdf:nil .
-
-iso11179:Concept rdfs:subClassOf _:genid10 .
-
-_:genid10 a owl:Restriction ;
-	owl:onProperty iso11179:definition ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Concept rdfs:subClassOf _:genid11 .
-
-_:genid11 a owl:Restriction ;
-	owl:onProperty iso11179:designation ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/ConceptualDomain
-
-iso11179:ConceptualDomain rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/Context
-
-iso11179:Context rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/DataElement
-
-iso11179:DataElement rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/DataElementConcept
-
-iso11179:DataElementConcept rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/Definition
-
-iso11179:Definition rdfs:subClassOf _:genid12 .
-
-_:genid12 a owl:Restriction ;
-	owl:onProperty iso11179:scope ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/Dimensionality
-
-iso11179:Dimensionality rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/ObjectClass
-
-iso11179:ObjectClass rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/Relation
-
-iso11179:Relation rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/RelationRole
-
-iso11179:RelationRole rdfs:subClassOf iso11179:Concept .
-# 
-# http://iso.org/iso11179-3e3/UnitOfMeasure
-
-iso11179:UnitOfMeasure rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# http://iso.org/iso11179-3e3/ValueDomain
-
-iso11179:ValueDomain rdfs:subClassOf iso11179:AdministeredItem .
-# 
-# https://nci.nih.gov/caDSR/Reference_Concept
+iso11179:Relation rdfs:label "ISO Relation" ;
+    rdfs:subClassOf iso11179:AdministeredItem .
 
 :Reference_Concept a owl:Class ;
-	rdfs:subClassOf iso11179:AdministeredItem , iso11179:Concept ;
-	rdfs:comment "Concept from a vocabulary or ontology (as opposed to a data description concept)."^^xsd:string .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# https://nci.nih.gov/caDSR/caDSR
+    rdfs:label "ISO Reference_Concept" ;
+    rdfs:comment "Concept from a vocabulary or ontology (as opposed to a data description concept)."^^xsd:string ;
+    rdfs:subClassOf iso11179:AdministeredItem,
+        iso11179:Concept .
 
-:caDSR a owl:NamedIndividual , iso11179:Context , iso11179:Namespace ;
-	iso11179:containedIdentifier :caDSR_id , :caDSR_item_id , :concept1_id , :concept2_id , :concept3_id , :concepts_id ;
-	iso11179:definition :caDSR_def ;
-	iso11179:designation :caDSR_designation ;
-	iso11179:identification :caDSR_id ;
-	iso11179:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
-	iso11179:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime ;
-	iso11179:version "1.0"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/caDSR_def
+:caDSR_def a iso11179:Definition,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_def" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:text "caDSR Context and Namespace"^^xsd:string .
 
-:caDSR_def a owl:NamedIndividual , iso11179:Definition ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:text "caDSR Context and Namespace"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/caDSR_designation
+:caDSR_designation a iso11179:Designation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_designation" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:sign "caDSR"^^xsd:string .
 
-:caDSR_designation a owl:NamedIndividual , iso11179:Designation ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:sign "caDSR"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/caDSR_id
+:caDSR_item_def a iso11179:Definition,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_item_def" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:text "caDSR item being defined"^^xsd:string .
 
-:caDSR_id a owl:NamedIndividual , iso11179:ScopedIdentifier ;
-	iso11179:identifiedItem :caDSR ;
-	iso11179:identifierScope :caDSR ;
-	iso11179:identifier "caDSR"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/caDSR_item
+:caDSR_item_designation a iso11179:Designation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_item_designation" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:sign "caDSR item"^^xsd:string .
 
-:caDSR_item a owl:NamedIndividual , iso11179:RelationRole ;
-	iso11179:RelationRole.relation :concepts ;
-	iso11179:definition :caDSR_item_def ;
-	iso11179:designation :caDSR_item_designation ;
-	iso11179:identification :caDSR_item_id ;
-	iso11179:maxCardinality "1"^^xsd:int ;
-	iso11179:minCardinality "1"^^xsd:int ;
-	iso11179:ordinal "0"^^xsd:int .
-# 
-# https://nci.nih.gov/caDSR/caDSR_item_def
+:concept1_def a iso11179:Definition,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept1_def" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:text "primary concept"^^xsd:string .
 
-:caDSR_item_def a owl:NamedIndividual , iso11179:Definition ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:text "caDSR item being defined"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/caDSR_item_designation
+:concept1_designation a iso11179:Designation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept1_designation" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:sign "primary concept"^^xsd:string .
 
-:caDSR_item_designation a owl:NamedIndividual , iso11179:Designation ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:sign "caDSR item"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/caDSR_item_id
+:concept2_def a iso11179:Definition,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept2_def" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:text "secondary concept"^^xsd:string .
 
-:caDSR_item_id a owl:NamedIndividual , iso11179:ScopedIdentifier ;
-	iso11179:identifiedItem :caDSR_item ;
-	iso11179:identifierScope :caDSR ;
-	iso11179:identifier "caDSR_item"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept1
+:concept2_designation a iso11179:Designation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept2_designation" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:sign "secondary concept"^^xsd:string .
 
-:concept1 a owl:NamedIndividual , iso11179:RelationRole ;
-	iso11179:RelationRole.relation :concepts ;
-	iso11179:definition :concept1_def ;
-	iso11179:designation :concept1_designation ;
-	iso11179:identification :concept1_id ;
-	iso11179:maxCardinality "1"^^xsd:int ;
-	iso11179:minCardinality "1"^^xsd:int ;
-	iso11179:ordinal "1"^^xsd:int .
-# 
-# https://nci.nih.gov/caDSR/concept1_def
+:concept3_def a iso11179:Definition,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept3_def" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:text "tertiary concept"^^xsd:string .
 
-:concept1_def a owl:NamedIndividual , iso11179:Definition ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:text "primary concept"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept1_designation
+:concept3_designation a iso11179:Designation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept3_designation" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:sign "tertiary concept"^^xsd:string .
 
-:concept1_designation a owl:NamedIndividual , iso11179:Designation ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:sign "primary concept"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept1_id
+:concepts_def a iso11179:Definition,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concepts_def" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:text "association from caDSR item to EVS concepts"^^xsd:string .
 
-:concept1_id a owl:NamedIndividual , iso11179:ScopedIdentifier ;
-	iso11179:identifiedItem :concept1 ;
-	iso11179:identifierScope :caDSR ;
-	iso11179:identifier "concept1"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept2
+:concepts_designation a iso11179:Designation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concepts_designation" ;
+    iso11179:acceptability iso11179:preferred ;
+    iso11179:scope :caDSR ;
+    iso11179:sign "concepts"^^xsd:string .
 
-:concept2 a owl:NamedIndividual , iso11179:RelationRole ;
-	iso11179:RelationRole.relation :concepts ;
-	iso11179:definition :concept2_def ;
-	iso11179:designation :concept2_designation ;
-	iso11179:identification :concept2_id ;
-	iso11179:maxCardinality "1"^^xsd:int ;
-	iso11179:minCardinality "0"^^xsd:int ;
-	iso11179:ordinal "2"^^xsd:int .
-# 
-# https://nci.nih.gov/caDSR/concept2_def
+iso11179:Concept rdfs:label "ISO Concept" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:definition ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:designation ],
+        [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:Characteristic ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ConceptualDomain ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first iso11179:DataElementConcept ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first iso11179:ObjectClass ;
+                                            rdf:rest [ a rdf:List ;
+                                                    rdf:first iso11179:ValueMeaning ;
+                                                    rdf:rest [ a rdf:List ;
+                                                            rdf:first :Reference_Concept ;
+                                                            rdf:rest () ] ] ] ] ] ] ],
+        iso11179:DesignatableItem,
+        iso11179:IdentifiedItem .
 
-:concept2_def a owl:NamedIndividual , iso11179:Definition ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:text "secondary concept"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept2_designation
+:caDSR_id a iso11179:ScopedIdentifier,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_id" ;
+    iso11179:identifiedItem :caDSR ;
+    iso11179:identifier "caDSR"^^xsd:string ;
+    iso11179:identifierScope :caDSR .
 
-:concept2_designation a owl:NamedIndividual , iso11179:Designation ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:sign "secondary concept"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept2_id
+:caDSR_item a iso11179:RelationRole,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_item" ;
+    iso11179:RelationRole.relation :concepts ;
+    iso11179:definition :caDSR_item_def ;
+    iso11179:designation :caDSR_item_designation ;
+    iso11179:identification :caDSR_item_id ;
+    iso11179:maxCardinality "1"^^xsd:int ;
+    iso11179:minCardinality "1"^^xsd:int ;
+    iso11179:ordinal "0"^^xsd:int .
 
-:concept2_id a owl:NamedIndividual , iso11179:ScopedIdentifier ;
-	iso11179:identifiedItem :concept2 ;
-	iso11179:identifierScope :caDSR ;
-	iso11179:identifier "concept2"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept3
+:caDSR_item_id a iso11179:ScopedIdentifier,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR_item_id" ;
+    iso11179:identifiedItem :caDSR_item ;
+    iso11179:identifier "caDSR_item"^^xsd:string ;
+    iso11179:identifierScope :caDSR .
 
-:concept3 a owl:NamedIndividual , iso11179:RelationRole ;
-	iso11179:RelationRole.relation :concepts ;
-	iso11179:definition :concept3_def ;
-	iso11179:designation :concept3_designation ;
-	iso11179:identification :concept3_id ;
-	iso11179:maxCardinality "1"^^xsd:int ;
-	iso11179:minCardinality "0"^^xsd:int ;
-	iso11179:ordinal "3"^^xsd:int .
-# 
-# https://nci.nih.gov/caDSR/concept3_def
+:concept1 a iso11179:RelationRole,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept1" ;
+    iso11179:RelationRole.relation :concepts ;
+    iso11179:definition :concept1_def ;
+    iso11179:designation :concept1_designation ;
+    iso11179:identification :concept1_id ;
+    iso11179:maxCardinality "1"^^xsd:int ;
+    iso11179:minCardinality "1"^^xsd:int ;
+    iso11179:ordinal "1"^^xsd:int .
 
-:concept3_def a owl:NamedIndividual , iso11179:Definition ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:text "tertiary concept"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept3_designation
+:concept1_id a iso11179:ScopedIdentifier,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept1_id" ;
+    iso11179:identifiedItem :concept1 ;
+    iso11179:identifier "concept1"^^xsd:string ;
+    iso11179:identifierScope :caDSR .
 
-:concept3_designation a owl:NamedIndividual , iso11179:Designation ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:sign "tertiary concept"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concept3_id
+:concept2 a iso11179:RelationRole,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept2" ;
+    iso11179:RelationRole.relation :concepts ;
+    iso11179:definition :concept2_def ;
+    iso11179:designation :concept2_designation ;
+    iso11179:identification :concept2_id ;
+    iso11179:maxCardinality "1"^^xsd:int ;
+    iso11179:minCardinality "0"^^xsd:int ;
+    iso11179:ordinal "2"^^xsd:int .
 
-:concept3_id a owl:NamedIndividual , iso11179:ScopedIdentifier ;
-	iso11179:identifiedItem :concept3 ;
-	iso11179:identifierScope :caDSR ;
-	iso11179:identifier "concept3"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concepts
+:concept2_id a iso11179:ScopedIdentifier,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept2_id" ;
+    iso11179:identifiedItem :concept2 ;
+    iso11179:identifier "concept2"^^xsd:string ;
+    iso11179:identifierScope :caDSR .
 
-:concepts a owl:NamedIndividual , iso11179:Relation ;
-	iso11179:definition :concepts_def ;
-	iso11179:designation :concepts_designation ;
-	iso11179:identification :concepts_id ;
-	iso11179:role :caDSR_item , :concept1 , :concept2 , :concept3 ;
-	iso11179:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
-	iso11179:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime ;
-	iso11179:version "1.0"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concepts_def
+:concept3 a iso11179:RelationRole,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept3" ;
+    iso11179:RelationRole.relation :concepts ;
+    iso11179:definition :concept3_def ;
+    iso11179:designation :concept3_designation ;
+    iso11179:identification :concept3_id ;
+    iso11179:maxCardinality "1"^^xsd:int ;
+    iso11179:minCardinality "0"^^xsd:int ;
+    iso11179:ordinal "3"^^xsd:int .
 
-:concepts_def a owl:NamedIndividual , iso11179:Definition ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:text "association from caDSR item to EVS concepts"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concepts_designation
+:concept3_id a iso11179:ScopedIdentifier,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concept3_id" ;
+    iso11179:identifiedItem :concept3 ;
+    iso11179:identifier "concept3"^^xsd:string ;
+    iso11179:identifierScope :caDSR .
 
-:concepts_designation a owl:NamedIndividual , iso11179:Designation ;
-	iso11179:acceptability iso11179:preferred ;
-	iso11179:scope :caDSR ;
-	iso11179:sign "concepts"^^xsd:string .
-# 
-# https://nci.nih.gov/caDSR/concepts_id
+:concepts_id a iso11179:ScopedIdentifier,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concepts_id" ;
+    iso11179:identifiedItem :concepts ;
+    iso11179:identifier "concepts"^^xsd:string ;
+    iso11179:identifierScope :caDSR .
 
-:concepts_id a owl:NamedIndividual , iso11179:ScopedIdentifier ;
-	iso11179:identifiedItem :concepts ;
-	iso11179:identifierScope :caDSR ;
-	iso11179:identifier "concepts"^^xsd:string .
-# 
-# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
+iso11179:RelationRole rdfs:label "ISO RelationRole" ;
+    rdfs:subClassOf iso11179:Concept .
+
+:concepts a iso11179:Relation,
+        owl:NamedIndividual ;
+    rdfs:label "ISO concepts" ;
+    iso11179:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+    iso11179:definition :concepts_def ;
+    iso11179:designation :concepts_designation ;
+    iso11179:identification :concepts_id ;
+    iso11179:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+    iso11179:role :caDSR_item,
+        :concept1,
+        :concept2,
+        :concept3 ;
+    iso11179:version "1.0"^^xsd:string .
+
+iso11179:Definition rdfs:label "ISO Definition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:scope ] .
+
+iso11179:AdministeredItem rdfs:label "ISO AdministeredItem" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:definition ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:designation ],
+        iso11179:DesignatableItem,
+        iso11179:IdentifiedItem .
+
+:caDSR a iso11179:Context,
+        iso11179:Namespace,
+        owl:NamedIndividual ;
+    rdfs:label "ISO caDSR" ;
+    iso11179:containedIdentifier :caDSR_id,
+        :caDSR_item_id,
+        :concept1_id,
+        :concept2_id,
+        :concept3_id,
+        :concepts_id ;
+    iso11179:creationDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+    iso11179:definition :caDSR_def ;
+    iso11179:designation :caDSR_designation ;
+    iso11179:identification :caDSR_id ;
+    iso11179:lastChangeDate "2009-02-24T00:00:00"^^xsd:dateTime ;
+    iso11179:version "1.0"^^xsd:string .
+

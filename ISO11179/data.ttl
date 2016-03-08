@@ -1,662 +1,458 @@
 @prefix : <http://iso.org/iso11179-3e3/data#> .
+@prefix iso11179: <http://iso.org/iso11179-3e3/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix iso11179: <http://iso.org/iso11179-3e3/> .
+
+iso11179:annotation a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO annotation" ;
+    rdfs:domain iso11179:Datatype .
+
+iso11179:application a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO application" ;
+    rdfs:range iso11179:DataElementDerivation ;
+    owl:inverseOf iso11179:rule .
+
+iso11179:characteristic a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO characteristic" ;
+    rdfs:domain iso11179:DataElementConcept ;
+    rdfs:range iso11179:Characteristic .
+
+iso11179:coordinate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO coordinate" ;
+    rdfs:domain iso11179:Dimensionality ;
+    rdfs:range xsd:boolean .
 
 iso11179:data a owl:Ontology ;
-	owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/data> ;
-	owl:imports iso11179:rels .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/application
-
-iso11179:application a owl:ObjectProperty ;
-	owl:inverseOf iso11179:rule ;
-	a owl:InverseFunctionalProperty ;
-	rdfs:range iso11179:DataElementDerivation .
-# 
-# http://iso.org/iso11179-3e3/characteristic
-
-iso11179:characteristic a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:DataElementConcept ;
-	rdfs:range iso11179:Characteristic .
-# 
-# http://iso.org/iso11179-3e3/containingDomain
-
-iso11179:containingDomain a owl:ObjectProperty ;
-	owl:inverseOf iso11179:domainMember ;
-	a owl:FunctionalProperty ;
-	rdfs:domain _:genid1 .
-
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid3 .
-
-_:genid3 a rdf:List ;
-	rdf:first iso11179:PermissibleValue ;
-	rdf:rest _:genid2 .
-
-_:genid2 a rdf:List ;
-	rdf:first iso11179:ValueMeaning ;
-	rdf:rest rdf:nil .
-
-iso11179:containingDomain rdfs:range _:genid4 .
-
-_:genid4 a owl:Class ;
-	owl:unionOf _:genid6 .
-
-_:genid6 a rdf:List ;
-	rdf:first iso11179:EnumeratedConceptualDomain ;
-	rdf:rest _:genid5 .
-
-_:genid5 a rdf:List ;
-	rdf:first iso11179:EnumeratedValueDomain ;
-	rdf:rest rdf:nil .
-# 
-# http://iso.org/iso11179-3e3/datatype
-
-iso11179:datatype a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:ValueDomain ;
-	rdfs:range iso11179:Datatype .
-# 
-# http://iso.org/iso11179-3e3/derivation
-
-iso11179:derivation a owl:ObjectProperty ;
-	owl:inverseOf iso11179:output ;
-	a owl:FunctionalProperty ;
-	rdfs:range iso11179:DataElementDerivation .
-# 
-# http://iso.org/iso11179-3e3/dimensionality
-
-iso11179:dimensionality a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain _:genid7 .
-
-_:genid7 a owl:Class ;
-	owl:unionOf _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first iso11179:ConceptualDomain ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first iso11179:UnitOfMeasure ;
-	rdf:rest rdf:nil .
-
-iso11179:dimensionality rdfs:range iso11179:Dimensionality .
-# 
-# http://iso.org/iso11179-3e3/domain
-
-iso11179:domain a owl:ObjectProperty ;
-	owl:inverseOf iso11179:usage ;
-	a owl:FunctionalProperty ;
-	rdfs:domain _:genid10 .
-
-_:genid10 a owl:Class ;
-	owl:unionOf _:genid12 .
-
-_:genid12 a rdf:List ;
-	rdf:first iso11179:DataElement ;
-	rdf:rest _:genid11 .
-
-_:genid11 a rdf:List ;
-	rdf:first iso11179:DataElementConcept ;
-	rdf:rest rdf:nil .
-
-iso11179:domain rdfs:range _:genid13 .
-
-_:genid13 a owl:Class ;
-	owl:unionOf _:genid15 .
-
-_:genid15 a rdf:List ;
-	rdf:first iso11179:ConceptualDomain ;
-	rdf:rest _:genid14 .
-
-_:genid14 a rdf:List ;
-	rdf:first iso11179:ValueDomain ;
-	rdf:rest rdf:nil .
-# 
-# http://iso.org/iso11179-3e3/domainMember
-
-iso11179:domainMember a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain _:genid16 .
-
-_:genid16 a owl:Class ;
-	owl:unionOf _:genid18 .
-
-_:genid18 a rdf:List ;
-	rdf:first iso11179:EnumeratedConceptualDomain ;
-	rdf:rest _:genid17 .
-
-_:genid17 a rdf:List ;
-	rdf:first iso11179:EnumeratedValueDomain ;
-	rdf:rest rdf:nil .
-
-iso11179:domainMember rdfs:range _:genid19 .
-
-_:genid19 a owl:Class ;
-	owl:unionOf _:genid21 .
-
-_:genid21 a rdf:List ;
-	rdf:first iso11179:PermissibleValue ;
-	rdf:rest _:genid20 .
-
-_:genid20 a rdf:List ;
-	rdf:first iso11179:ValueMeaning ;
-	rdf:rest rdf:nil .
-# 
-# http://iso.org/iso11179-3e3/input
-
-iso11179:input a owl:ObjectProperty ;
-	owl:inverseOf iso11179:inputter ;
-	rdfs:domain iso11179:DataElementDerivation .
-# 
-# http://iso.org/iso11179-3e3/inputter
-
-iso11179:inputter a owl:ObjectProperty ;
-	rdfs:range iso11179:DataElementDerivation .
-# 
-# http://iso.org/iso11179-3e3/meaning
-
-iso11179:meaning a owl:ObjectProperty ;
-	owl:inverseOf iso11179:representation ;
-	a owl:FunctionalProperty ;
-	rdfs:domain iso11179:Representation ;
-	rdfs:range iso11179:Concept .
-# 
-# http://iso.org/iso11179-3e3/objectClass
-
-iso11179:objectClass a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:DataElementConcept ;
-	rdfs:range iso11179:ObjectClass .
-# 
-# http://iso.org/iso11179-3e3/output
-
-iso11179:output a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:DataElementDerivation .
-# 
-# http://iso.org/iso11179-3e3/representation
-
-iso11179:representation a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain iso11179:Concept ;
-	rdfs:range iso11179:Representation .
-# 
-# http://iso.org/iso11179-3e3/rule
-
-iso11179:rule a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:DataElementDerivation .
-# 
-# http://iso.org/iso11179-3e3/subdomain
-
-iso11179:subdomain a owl:ObjectProperty ;
-	owl:inverseOf iso11179:superdomain ;
-	rdfs:domain iso11179:ValueDomain ;
-	rdfs:range iso11179:ValueDomain .
-# 
-# http://iso.org/iso11179-3e3/superdomain
-
-iso11179:superdomain a owl:ObjectProperty ;
-	rdfs:domain iso11179:ValueDomain ;
-	rdfs:range iso11179:ValueDomain .
-# 
-# http://iso.org/iso11179-3e3/unitOfMeasure
-
-iso11179:unitOfMeasure a owl:ObjectProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:ValueDomain ;
-	rdfs:range iso11179:UnitOfMeasure .
-# 
-# http://iso.org/iso11179-3e3/usage
-
-iso11179:usage a owl:ObjectProperty , owl:InverseFunctionalProperty ;
-	rdfs:domain _:genid22 .
-
-_:genid22 a owl:Class ;
-	owl:unionOf _:genid24 .
-
-_:genid24 a rdf:List ;
-	rdf:first iso11179:ConceptualDomain ;
-	rdf:rest _:genid23 .
-
-_:genid23 a rdf:List ;
-	rdf:first iso11179:ValueDomain ;
-	rdf:rest rdf:nil .
-
-iso11179:usage rdfs:range _:genid25 .
-
-_:genid25 a owl:Class ;
-	owl:unionOf _:genid27 .
-
-_:genid27 a rdf:List ;
-	rdf:first iso11179:DataElement ;
-	rdf:rest _:genid26 .
-
-_:genid26 a rdf:List ;
-	rdf:first iso11179:DataElementConcept ;
-	rdf:rest rdf:nil .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/annotation
-
-iso11179:annotation a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:Datatype .
-# 
-# http://iso.org/iso11179-3e3/beginDate
-
-iso11179:beginDate a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain _:genid28 .
-
-_:genid28 a owl:Class ;
-	owl:unionOf _:genid30 .
-
-_:genid30 a rdf:List ;
-	rdf:first iso11179:PermissibleValue ;
-	rdf:rest _:genid29 .
-
-_:genid29 a rdf:List ;
-	rdf:first iso11179:ValueMeaning ;
-	rdf:rest rdf:nil .
-
-iso11179:beginDate rdfs:range xsd:dateTime .
-# 
-# http://iso.org/iso11179-3e3/coordinate
-
-iso11179:coordinate a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:Dimensionality ;
-	rdfs:range xsd:boolean .
-# 
-# http://iso.org/iso11179-3e3/datatypeName
-
-iso11179:datatypeName a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:Datatype ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/description
-
-iso11179:description a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain _:genid31 .
-
-_:genid31 a owl:Class ;
-	owl:unionOf _:genid34 .
-
-_:genid34 a rdf:List ;
-	rdf:first iso11179:Datatype ;
-	rdf:rest _:genid33 .
-
-_:genid33 a rdf:List ;
-	rdf:first iso11179:DescribedConceptualDomain ;
-	rdf:rest _:genid32 .
-
-_:genid32 a rdf:List ;
-	rdf:first iso11179:DescribedValueDomain ;
-	rdf:rest rdf:nil .
-# 
-# http://iso.org/iso11179-3e3/endDate
-
-iso11179:endDate a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain _:genid35 .
-
-_:genid35 a owl:Class ;
-	owl:unionOf _:genid37 .
-
-_:genid37 a rdf:List ;
-	rdf:first iso11179:PermissibleValue ;
-	rdf:rest _:genid36 .
-
-_:genid36 a rdf:List ;
-	rdf:first iso11179:ValueMeaning ;
-	rdf:rest rdf:nil .
-
-iso11179:endDate rdfs:range xsd:dateTime .
-# 
-# http://iso.org/iso11179-3e3/example
+    rdfs:label "ISO data" ;
+    owl:imports iso11179:rels ;
+    owl:versionIRI <http://iso.org/iso11179-3e3/cd2rc7/data> .
+
+iso11179:derivation a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO derivation" ;
+    rdfs:range iso11179:DataElementDerivation ;
+    owl:inverseOf iso11179:output .
+
+iso11179:dimensionality a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO dimensionality" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:ConceptualDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:UnitOfMeasure ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range iso11179:Dimensionality .
+
+iso11179:endDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO endDate" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:PermissibleValue ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ValueMeaning ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range xsd:dateTime .
 
 iso11179:example a owl:DatatypeProperty ;
-	rdfs:domain iso11179:DataElement .
-# 
-# http://iso.org/iso11179-3e3/format
+    rdfs:label "ISO example" ;
+    rdfs:domain iso11179:DataElement .
 
-iso11179:format a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:ValueDomain ;
-	rdfs:range xsd:string .
-# 
-# http://iso.org/iso11179-3e3/maxCharQuantity
+iso11179:format a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO format" ;
+    rdfs:domain iso11179:ValueDomain ;
+    rdfs:range xsd:string .
 
-iso11179:maxCharQuantity a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:ValueDomain ;
-	rdfs:range xsd:int .
-# 
-# http://iso.org/iso11179-3e3/precision
+iso11179:maxCharQuantity a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO maxCharQuantity" ;
+    rdfs:domain iso11179:ValueDomain ;
+    rdfs:range xsd:int .
 
-iso11179:precision a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:DataElement ;
-	rdfs:range xsd:int .
-# 
-# http://iso.org/iso11179-3e3/schemeReference
+iso11179:objectClass a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO objectClass" ;
+    rdfs:domain iso11179:DataElementConcept ;
+    rdfs:range iso11179:ObjectClass .
 
-iso11179:schemeReference a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:Datatype .
-# 
-# http://iso.org/iso11179-3e3/specification
+iso11179:precision a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO precision" ;
+    rdfs:domain iso11179:DataElement ;
+    rdfs:range xsd:int .
 
-iso11179:specification a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:DerivationRule .
-# 
-# http://iso.org/iso11179-3e3/value
+iso11179:schemeReference a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO schemeReference" ;
+    rdfs:domain iso11179:Datatype .
 
-iso11179:value a owl:DatatypeProperty , owl:FunctionalProperty ;
-	rdfs:domain iso11179:PermissibleValue .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://iso.org/iso11179-3e3/Characteristic
+iso11179:subdomain a owl:ObjectProperty ;
+    rdfs:label "ISO subdomain" ;
+    rdfs:domain iso11179:ValueDomain ;
+    rdfs:range iso11179:ValueDomain ;
+    owl:inverseOf iso11179:superdomain .
+
+iso11179:unitOfMeasure a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO unitOfMeasure" ;
+    rdfs:domain iso11179:ValueDomain ;
+    rdfs:range iso11179:UnitOfMeasure .
 
 iso11179:Characteristic a owl:Class ;
-	rdfs:subClassOf iso11179:Concept ;
-	owl:disjointWith iso11179:ConceptualDomain , iso11179:DataElementConcept , iso11179:ObjectClass .
-# 
-# http://iso.org/iso11179-3e3/Concept
+    rdfs:label "ISO Characteristic" ;
+    rdfs:subClassOf iso11179:Concept ;
+    owl:disjointWith iso11179:ConceptualDomain,
+        iso11179:DataElementConcept,
+        iso11179:ObjectClass .
 
-iso11179:Concept owl:disjointWith iso11179:DataElementDerivation , iso11179:Datatype , iso11179:DerivationRule , iso11179:Representation .
-# 
-# http://iso.org/iso11179-3e3/ConceptualDomain
+iso11179:datatype a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO datatype" ;
+    rdfs:domain iso11179:ValueDomain ;
+    rdfs:range iso11179:Datatype .
 
-iso11179:ConceptualDomain a owl:Class ;
-	owl:equivalentClass _:genid38 .
+iso11179:datatypeName a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO datatypeName" ;
+    rdfs:domain iso11179:Datatype ;
+    rdfs:range xsd:string .
 
-_:genid38 a owl:Class ;
-	owl:unionOf _:genid40 .
+iso11179:input a owl:ObjectProperty ;
+    rdfs:label "ISO input" ;
+    rdfs:domain iso11179:DataElementDerivation ;
+    owl:inverseOf iso11179:inputter .
 
-_:genid40 a rdf:List ;
-	rdf:first iso11179:DescribedConceptualDomain ;
-	rdf:rest _:genid39 .
+iso11179:inputter a owl:ObjectProperty ;
+    rdfs:label "ISO inputter" ;
+    rdfs:range iso11179:DataElementDerivation .
 
-_:genid39 a rdf:List ;
-	rdf:first iso11179:EnumeratedConceptualDomain ;
-	rdf:rest rdf:nil .
+iso11179:representation a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO representation" ;
+    rdfs:domain iso11179:Concept ;
+    rdfs:range iso11179:Representation .
 
-iso11179:ConceptualDomain rdfs:subClassOf iso11179:Concept , _:genid41 .
+iso11179:specification a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO specification" ;
+    rdfs:domain iso11179:DerivationRule .
 
-_:genid41 a owl:Restriction ;
-	owl:onProperty iso11179:usage ;
-	owl:allValuesFrom iso11179:DataElementConcept .
+iso11179:superdomain a owl:ObjectProperty ;
+    rdfs:label "ISO superdomain" ;
+    rdfs:domain iso11179:ValueDomain ;
+    rdfs:range iso11179:ValueDomain .
 
-iso11179:ConceptualDomain owl:disjointWith iso11179:DataElementConcept .
-# 
-# http://iso.org/iso11179-3e3/DataElement
-
-iso11179:DataElement a owl:Class ;
-	rdfs:subClassOf iso11179:Representation , _:genid42 .
-
-_:genid42 a owl:Restriction ;
-	owl:onProperty iso11179:domain ;
-	owl:allValuesFrom iso11179:ValueDomain .
-
-iso11179:DataElement rdfs:subClassOf _:genid43 .
-
-_:genid43 a owl:Restriction ;
-	owl:onProperty iso11179:meaning ;
-	owl:allValuesFrom iso11179:DataElementConcept .
-
-iso11179:DataElement rdfs:subClassOf _:genid44 .
-
-_:genid44 a owl:Restriction ;
-	owl:onProperty iso11179:domain ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:DataElement owl:disjointWith iso11179:PermissibleValue , iso11179:ValueDomain .
-# 
-# http://iso.org/iso11179-3e3/DataElementConcept
-
-iso11179:DataElementConcept a owl:Class ;
-	rdfs:subClassOf iso11179:Concept , _:genid45 .
-
-_:genid45 a owl:Restriction ;
-	owl:onProperty iso11179:domain ;
-	owl:allValuesFrom iso11179:ConceptualDomain .
-
-iso11179:DataElementConcept rdfs:subClassOf _:genid46 .
-
-_:genid46 a owl:Restriction ;
-	owl:onProperty iso11179:domain ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:DataElementConcept owl:disjointWith iso11179:ObjectClass , iso11179:ValueMeaning .
-# 
-# http://iso.org/iso11179-3e3/DataElementDerivation
-
-iso11179:DataElementDerivation a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid47 .
-
-_:genid47 a owl:Restriction ;
-	owl:onProperty iso11179:input ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:DataElementDerivation rdfs:subClassOf _:genid48 .
-
-_:genid48 a owl:Restriction ;
-	owl:onProperty iso11179:output ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:DataElementDerivation rdfs:subClassOf _:genid49 .
-
-_:genid49 a owl:Restriction ;
-	owl:onProperty iso11179:rule ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:DataElementDerivation owl:disjointWith iso11179:Datatype , iso11179:DerivationRule , iso11179:Dimensionality , iso11179:Representation , iso11179:UnitOfMeasure .
-# 
-# http://iso.org/iso11179-3e3/Datatype
-
-iso11179:Datatype a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid50 .
-
-_:genid50 a owl:Restriction ;
-	owl:onProperty iso11179:datatypeName ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Datatype rdfs:subClassOf _:genid51 .
-
-_:genid51 a owl:Restriction ;
-	owl:onProperty iso11179:description ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Datatype owl:disjointWith iso11179:DerivationRule , iso11179:Dimensionality , iso11179:UnitOfMeasure .
-# 
-# http://iso.org/iso11179-3e3/DerivationRule
-
-iso11179:DerivationRule a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid52 .
-
-_:genid52 a owl:Restriction ;
-	owl:onProperty iso11179:specification ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:DerivationRule owl:disjointWith iso11179:Dimensionality , iso11179:Representation , iso11179:UnitOfMeasure .
-# 
-# http://iso.org/iso11179-3e3/DescribedConceptualDomain
+iso11179:value a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO value" ;
+    rdfs:domain iso11179:PermissibleValue .
 
 iso11179:DescribedConceptualDomain a owl:Class ;
-	rdfs:subClassOf iso11179:ConceptualDomain , _:genid53 .
-
-_:genid53 a owl:Restriction ;
-	owl:onProperty iso11179:description ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/DescribedValueDomain
+    rdfs:label "ISO DescribedConceptualDomain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:description ],
+        iso11179:ConceptualDomain .
 
 iso11179:DescribedValueDomain a owl:Class ;
-	rdfs:subClassOf iso11179:ValueDomain , _:genid54 .
+    rdfs:label "ISO DescribedValueDomain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:description ],
+        iso11179:ValueDomain .
 
-_:genid54 a owl:Restriction ;
-	owl:onProperty iso11179:description ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/Dimensionality
+iso11179:beginDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO beginDate" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:PermissibleValue ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ValueMeaning ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range xsd:dateTime .
 
-iso11179:Dimensionality a owl:Class ;
-	owl:disjointWith iso11179:Representation , iso11179:UnitOfMeasure .
-# 
-# http://iso.org/iso11179-3e3/EnumeratedConceptualDomain
+iso11179:output a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO output" ;
+    rdfs:domain iso11179:DataElementDerivation .
+
+iso11179:rule a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO rule" ;
+    rdfs:domain iso11179:DataElementDerivation .
 
 iso11179:EnumeratedConceptualDomain a owl:Class ;
-	rdfs:subClassOf iso11179:ConceptualDomain , _:genid55 .
-
-_:genid55 a owl:Restriction ;
-	owl:onProperty iso11179:domainMember ;
-	owl:allValuesFrom iso11179:ValueMeaning .
-
-iso11179:EnumeratedConceptualDomain rdfs:subClassOf _:genid56 .
-
-_:genid56 a owl:Restriction ;
-	owl:onProperty iso11179:domainMember ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/EnumeratedValueDomain
+    rdfs:label "ISO EnumeratedConceptualDomain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ValueMeaning ;
+            owl:onProperty iso11179:domainMember ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:domainMember ],
+        iso11179:ConceptualDomain .
 
 iso11179:EnumeratedValueDomain a owl:Class ;
-	rdfs:subClassOf iso11179:ValueDomain , _:genid57 .
-
-_:genid57 a owl:Restriction ;
-	owl:onProperty iso11179:domainMember ;
-	owl:allValuesFrom iso11179:PermissibleValue .
-
-iso11179:EnumeratedValueDomain rdfs:subClassOf _:genid58 .
-
-_:genid58 a owl:Restriction ;
-	owl:onProperty iso11179:domainMember ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/ObjectClass
+    rdfs:label "ISO EnumeratedValueDomain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:PermissibleValue ;
+            owl:onProperty iso11179:domainMember ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:domainMember ],
+        iso11179:ValueDomain .
 
 iso11179:ObjectClass a owl:Class ;
-	rdfs:subClassOf iso11179:Concept .
-# 
-# http://iso.org/iso11179-3e3/PermissibleValue
+    rdfs:label "ISO ObjectClass" ;
+    rdfs:subClassOf iso11179:Concept .
+
+iso11179:description a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "ISO description" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:Datatype ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:DescribedConceptualDomain ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first iso11179:DescribedValueDomain ;
+                                    rdf:rest () ] ] ] ] .
+
+iso11179:usage a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO usage" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:ConceptualDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ValueDomain ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:DataElement ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:DataElementConcept ;
+                            rdf:rest () ] ] ] .
+
+iso11179:DerivationRule a owl:Class ;
+    rdfs:label "ISO DerivationRule" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:specification ],
+        owl:Thing ;
+    owl:disjointWith iso11179:Dimensionality,
+        iso11179:Representation,
+        iso11179:UnitOfMeasure .
+
+iso11179:containingDomain a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO containingDomain" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:PermissibleValue ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ValueMeaning ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:EnumeratedConceptualDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:EnumeratedValueDomain ;
+                            rdf:rest () ] ] ] ;
+    owl:inverseOf iso11179:domainMember .
+
+iso11179:domain a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO domain" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:DataElement ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:DataElementConcept ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:ConceptualDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ValueDomain ;
+                            rdf:rest () ] ] ] ;
+    owl:inverseOf iso11179:usage .
+
+iso11179:meaning a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO meaning" ;
+    rdfs:domain iso11179:Representation ;
+    rdfs:range iso11179:Concept ;
+    owl:inverseOf iso11179:representation .
+
+iso11179:DataElement a owl:Class ;
+    rdfs:label "ISO DataElement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ValueDomain ;
+            owl:onProperty iso11179:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:DataElementConcept ;
+            owl:onProperty iso11179:meaning ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:domain ],
+        iso11179:Representation ;
+    owl:disjointWith iso11179:PermissibleValue,
+        iso11179:ValueDomain .
+
+iso11179:Dimensionality a owl:Class ;
+    rdfs:label "ISO Dimensionality" ;
+    owl:disjointWith iso11179:Representation,
+        iso11179:UnitOfMeasure .
+
+iso11179:domainMember a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "ISO domainMember" ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:EnumeratedConceptualDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:EnumeratedValueDomain ;
+                            rdf:rest () ] ] ] ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:PermissibleValue ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:ValueMeaning ;
+                            rdf:rest () ] ] ] .
+
+iso11179:Concept rdfs:label "ISO Concept" ;
+    owl:disjointWith iso11179:DataElementDerivation,
+        iso11179:Datatype,
+        iso11179:DerivationRule,
+        iso11179:Representation .
+
+iso11179:DataElementDerivation a owl:Class ;
+    rdfs:label "ISO DataElementDerivation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:input ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:output ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:rule ],
+        owl:Thing ;
+    owl:disjointWith iso11179:Datatype,
+        iso11179:DerivationRule,
+        iso11179:Dimensionality,
+        iso11179:Representation,
+        iso11179:UnitOfMeasure .
+
+iso11179:Datatype a owl:Class ;
+    rdfs:label "ISO Datatype" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:datatypeName ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:description ],
+        owl:Thing ;
+    owl:disjointWith iso11179:DerivationRule,
+        iso11179:Dimensionality,
+        iso11179:UnitOfMeasure .
 
 iso11179:PermissibleValue a owl:Class ;
-	rdfs:subClassOf iso11179:Representation , _:genid59 .
+    rdfs:label "ISO PermissibleValue" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ValueDomain ;
+            owl:onProperty iso11179:containingDomain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ValueMeaning ;
+            owl:onProperty iso11179:meaning ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:containingDomain ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:beginDate ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:value ],
+        iso11179:Representation ;
+    owl:disjointWith iso11179:ValueDomain .
 
-_:genid59 a owl:Restriction ;
-	owl:onProperty iso11179:containingDomain ;
-	owl:allValuesFrom iso11179:ValueDomain .
-
-iso11179:PermissibleValue rdfs:subClassOf _:genid60 .
-
-_:genid60 a owl:Restriction ;
-	owl:onProperty iso11179:meaning ;
-	owl:allValuesFrom iso11179:ValueMeaning .
-
-iso11179:PermissibleValue rdfs:subClassOf _:genid61 .
-
-_:genid61 a owl:Restriction ;
-	owl:onProperty iso11179:containingDomain ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:PermissibleValue rdfs:subClassOf _:genid62 .
-
-_:genid62 a owl:Restriction ;
-	owl:onProperty iso11179:beginDate ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:PermissibleValue rdfs:subClassOf _:genid63 .
-
-_:genid63 a owl:Restriction ;
-	owl:onProperty iso11179:value ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:PermissibleValue owl:disjointWith iso11179:ValueDomain .
-# 
-# http://iso.org/iso11179-3e3/Representation
-
-iso11179:Representation a owl:Class ;
-	rdfs:subClassOf owl:Thing , _:genid64 .
-
-_:genid64 a owl:Restriction ;
-	owl:onProperty iso11179:meaning ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-
-iso11179:Representation owl:disjointWith iso11179:UnitOfMeasure .
-# 
-# http://iso.org/iso11179-3e3/UnitOfMeasure
-
-iso11179:UnitOfMeasure a owl:Class .
-# 
-# http://iso.org/iso11179-3e3/ValueDomain
-
-iso11179:ValueDomain a owl:Class ;
-	owl:equivalentClass _:genid65 .
-
-_:genid65 a owl:Class ;
-	owl:unionOf _:genid67 .
-
-_:genid67 a rdf:List ;
-	rdf:first iso11179:DescribedValueDomain ;
-	rdf:rest _:genid66 .
-
-_:genid66 a rdf:List ;
-	rdf:first iso11179:EnumeratedValueDomain ;
-	rdf:rest rdf:nil .
-
-iso11179:ValueDomain rdfs:subClassOf iso11179:Representation , _:genid68 .
-
-_:genid68 a owl:Restriction ;
-	owl:onProperty iso11179:meaning ;
-	owl:allValuesFrom iso11179:ConceptualDomain .
-
-iso11179:ValueDomain rdfs:subClassOf _:genid69 .
-
-_:genid69 a owl:Restriction ;
-	owl:onProperty iso11179:usage ;
-	owl:allValuesFrom iso11179:DataElement .
-
-iso11179:ValueDomain rdfs:subClassOf _:genid70 .
-
-_:genid70 a owl:Restriction ;
-	owl:onProperty iso11179:datatype ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-# 
-# http://iso.org/iso11179-3e3/ValueMeaning
+iso11179:UnitOfMeasure a owl:Class ;
+    rdfs:label "ISO UnitOfMeasure" .
 
 iso11179:ValueMeaning a owl:Class ;
-	rdfs:subClassOf iso11179:Concept , _:genid71 .
+    rdfs:label "ISO ValueMeaning" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ConceptualDomain ;
+            owl:onProperty iso11179:containingDomain ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:containingDomain ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:beginDate ],
+        iso11179:Concept .
 
-_:genid71 a owl:Restriction ;
-	owl:onProperty iso11179:containingDomain ;
-	owl:allValuesFrom iso11179:ConceptualDomain .
+iso11179:DataElementConcept a owl:Class ;
+    rdfs:label "ISO DataElementConcept" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ConceptualDomain ;
+            owl:onProperty iso11179:domain ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:domain ],
+        iso11179:Concept ;
+    owl:disjointWith iso11179:ObjectClass,
+        iso11179:ValueMeaning .
 
-iso11179:ValueMeaning rdfs:subClassOf _:genid72 .
+iso11179:ConceptualDomain a owl:Class ;
+    rdfs:label "ISO ConceptualDomain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:DataElementConcept ;
+            owl:onProperty iso11179:usage ],
+        iso11179:Concept ;
+    owl:disjointWith iso11179:DataElementConcept ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:DescribedConceptualDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:EnumeratedConceptualDomain ;
+                            rdf:rest () ] ] ] .
 
-_:genid72 a owl:Restriction ;
-	owl:onProperty iso11179:containingDomain ;
-	owl:minCardinality "1"^^xsd:nonNegativeInteger .
+iso11179:Representation a owl:Class ;
+    rdfs:label "ISO Representation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:meaning ],
+        owl:Thing ;
+    owl:disjointWith iso11179:UnitOfMeasure .
 
-iso11179:ValueMeaning rdfs:subClassOf _:genid73 .
+iso11179:ValueDomain a owl:Class ;
+    rdfs:label "ISO ValueDomain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:ConceptualDomain ;
+            owl:onProperty iso11179:meaning ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom iso11179:DataElement ;
+            owl:onProperty iso11179:usage ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty iso11179:datatype ],
+        iso11179:Representation ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf [ a rdf:List ;
+                    rdf:first iso11179:DescribedValueDomain ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first iso11179:EnumeratedValueDomain ;
+                            rdf:rest () ] ] ] .
 
-_:genid73 a owl:Restriction ;
-	owl:onProperty iso11179:beginDate ;
-	owl:cardinality "1"^^xsd:nonNegativeInteger .
-# 
-# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
